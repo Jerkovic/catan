@@ -13,12 +13,20 @@ public class Map : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{				
-		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), 1);
+		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), 3);
 		foreach (CubicHexCoord coord in board)
 		{			
 			float xPos = coord._x * xOffset;
 			if( Math.Abs(coord._z) % 2 == 1 ) {
-				xPos += xOffset/2f;
+				if (coord._z > 0)
+				{
+					xPos += xOffset/2f;	
+				}
+				else
+				{
+					xPos -= xOffset/2f;
+				}
+				
 			}
 
 			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3( xPos,0, coord._z *  zOffset ), Quaternion.identity  );				
