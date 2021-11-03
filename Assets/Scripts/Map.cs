@@ -12,27 +12,39 @@ public class Map : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-	{				
-		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), 3);
+	{
+		var radius = 3;
+		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius);
 		foreach (CubicHexCoord coord in board)
-		{			
+		{
 			float xPos = coord._x * xOffset;
-			if( Math.Abs(coord._z) % 2 == 1 ) {
-				if (coord._z > 0)
-				{
-					xPos += xOffset/2f;	
-				}
-				else
-				{
-					xPos -= xOffset/2f;
-				}
-				
+			float zPos = coord._z * zOffset;
+			
+			if( coord._z > 0 && coord._z % 2 == 1)
+			{
+				xPos += xOffset / 2f + (xOffset * (coord._z / 2));
 			}
-
-			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3( xPos,0, coord._z *  zOffset ), Quaternion.identity  );				
-			hex_go.name = "Hex_" + coord.ToString();
+			if( coord._z > 0 && coord._z % 2 == 0)
+			{
+				xPos += xOffset + (xOffset * (coord._z / 2));;
+				xPos -= xOffset;
+			}
+			
+			if( coord._z < 0 &&  (coord._z * -1) % 2 == 1)
+			{
+				xPos -= (xOffset / 2f) + (xOffset * (-coord._z / 2));
+			}
+			
+			if( coord._z < 0 && (coord._z * -1) % 2 == 0) // even 
+			{
+				xPos -= (xOffset) + (xOffset * (-coord._z / 2));
+				xPos += xOffset;
+			}
+			
+			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);				
+			hex_go.name = "Hex__" + coord.ToString();
 			hex_go.transform.SetParent(this.transform);				
-			hex_go.isStatic = true;
+			hex_go.isStatic = false;
 		}
 		Debug.Log(board.Length);
 		
