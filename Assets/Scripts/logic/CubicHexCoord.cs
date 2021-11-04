@@ -96,6 +96,20 @@ namespace logic
 		{
 			return ( lhs._x != rhs._x ) || ( lhs._y != rhs._y ) || ( lhs._z != rhs._z );
 		}
+		
+		public override
+			int 
+			GetHashCode()
+		{
+			unchecked
+			{
+				int hash = 17;
+				hash = hash * 23 + _x.GetHashCode();
+				hash = hash * 23 + _y.GetHashCode();
+				hash = hash * 23 + _z.GetHashCode();
+				return hash;
+			}
+		}
 
 
 		/// <summary>

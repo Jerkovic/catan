@@ -15,6 +15,10 @@ public class Map : MonoBehaviour {
 	{
 		var radius = 3;
 		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius);
+		
+		CubicHexCoord[] water = CubicHexCoord.Ring(new CubicHexCoord(0, 0, 0), radius);
+		
+		// this is the render method 
 		foreach (CubicHexCoord coord in board)
 		{
 			float xPos = coord._x * xOffset;
@@ -26,8 +30,7 @@ public class Map : MonoBehaviour {
 			}
 			if( coord._z > 0 && coord._z % 2 == 0)
 			{
-				xPos += xOffset + (xOffset * (coord._z / 2));;
-				xPos -= xOffset;
+				xPos += (xOffset * (coord._z / 2));;
 			}
 			
 			if( coord._z < 0 &&  (coord._z * -1) % 2 == 1)
@@ -37,38 +40,25 @@ public class Map : MonoBehaviour {
 			
 			if( coord._z < 0 && (coord._z * -1) % 2 == 0) // even 
 			{
-				xPos -= (xOffset) + (xOffset * (-coord._z / 2));
-				xPos += xOffset;
+				xPos -= (xOffset * (-coord._z / 2));
 			}
 			
-			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);				
-			hex_go.name = "Hex__" + coord.ToString();
-			hex_go.transform.SetParent(this.transform);				
-			hex_go.isStatic = false;
-		}
-		Debug.Log(board.Length);
-		
-		/*
-		for (int x = 0; x < width; x++) {
-			for (int y = 0; y < height; y++) {
-
-				float xPos = x * xOffset;
-
-				// Are we on an odd row?
-				if( y % 2 == 1 ) {
-					xPos += xOffset/2f;
-				}
-
-				GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3( xPos,0, y * zOffset  ), Quaternion.identity  );				
-				hex_go.name = "Hex_" + x + "_" + y;
-
-				hex_go.transform.SetParent(this.transform);
-				
-				hex_go.isStatic = true;
-
+			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);
+			var name = "Hex__" + coord.ToString();
+			if (Array.IndexOf(water, coord) > -1)
+			{
+				name = "Water";
+				MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
+				mr.material.color = Color.blue;
 			}
-		} */
-
+			else {
+				MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
+				mr.material.color = Color.green;
+			}
+			hex_go.name = name;
+			hex_go.transform.SetParent(this.transform);
+			hex_go.isStatic = true;
+		}
 	}
 		
 }
