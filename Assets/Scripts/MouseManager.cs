@@ -11,6 +11,9 @@ public class MouseManager : MonoBehaviour
 	
 	void Update () {
 		if (Input.GetMouseButtonDown(0)) {
+			if(EventSystem.current.IsPointerOverGameObject()) {
+				return;
+			}
 			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hitInfo;
 			if( Physics.Raycast(ray, out hitInfo) ) {
