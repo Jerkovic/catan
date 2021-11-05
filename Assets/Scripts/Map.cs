@@ -13,14 +13,10 @@ public class Map : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		var radius = 3;
-		CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius);
-		
-		CubicHexCoord[] water = CubicHexCoord.Ring(new CubicHexCoord(0, 0, 0), radius);
-		
-		// this is the render method 
-		foreach (CubicHexCoord coord in board)
+		Board board = new Board(4);
+		foreach (HexTile tile in board.tiles)
 		{
+			var coord = tile.coordinate;
 			float xPos = coord._x * xOffset;
 			float zPos = coord._z * zOffset;
 			
@@ -44,18 +40,11 @@ public class Map : MonoBehaviour {
 			}
 			
 			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);
-			var name = "Hex__" + coord.ToString();
-			if (Array.IndexOf(water, coord) > -1)
-			{
-				name = "Water";
-				MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
-				mr.material.color = Color.blue;
-			}
-			else {
-				MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
-				mr.material.color = Color.green;
-			}
+			
+			var name = "Hex__" + tile.getId();
 			hex_go.name = name;
+			MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
+			mr.material.color = tile.color;
 			hex_go.transform.SetParent(this.transform);
 			hex_go.isStatic = true;
 		}
