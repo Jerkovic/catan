@@ -7,46 +7,45 @@ public class Map : MonoBehaviour {
 
 	public GameObject hexPrefab;
 
-	float xOffset = 0.882f;
-	float zOffset = 0.764f;
+	private const float xOffset = 0.882f;
+	private const float zOffset = 0.764f;
 
 	// Use this for initialization
-	void Start ()
+	private void Start ()
 	{
-		Board board = new Board(4);
-		foreach (HexTile tile in board.tiles)
+		var board = new Board(4);
+		
+		foreach (var tile in board.tiles)
 		{
-			var coord = tile.coordinate;
-			float xPos = coord._x * xOffset;
-			float zPos = coord._z * zOffset;
+			var coordinate = tile.coordinate;
+			var xPos = coordinate._x * xOffset;
+			var zPos = coordinate._z * zOffset;
 			
-			if( coord._z > 0 && coord._z % 2 == 1)
+			if( coordinate._z > 0 && coordinate._z % 2 == 1)
 			{
-				xPos += xOffset / 2f + (xOffset * (coord._z / 2));
+				xPos += xOffset / 2f + xOffset * (coordinate._z / 2);
 			}
-			if( coord._z > 0 && coord._z % 2 == 0)
+			if( coordinate._z > 0 && coordinate._z % 2 == 0)
 			{
-				xPos += (xOffset * (coord._z / 2));;
-			}
-			
-			if( coord._z < 0 &&  (coord._z * -1) % 2 == 1)
-			{
-				xPos -= (xOffset / 2f) + (xOffset * (-coord._z / 2));
+				xPos += xOffset * (coordinate._z / 2);
 			}
 			
-			if( coord._z < 0 && (coord._z * -1) % 2 == 0) // even 
+			if( coordinate._z < 0 &&  (coordinate._z * -1) % 2 == 1)
 			{
-				xPos -= (xOffset * (-coord._z / 2));
+				xPos -= (xOffset / 2f) + xOffset * (-coordinate._z / 2);
 			}
 			
-			GameObject hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);
+			if( coordinate._z < 0 && (coordinate._z * -1) % 2 == 0) // even 
+			{
+				xPos -= xOffset * (-coordinate._z / 2);
+			}
 			
-			var name = "Hex__" + tile.getId();
-			hex_go.name = name;
-			MeshRenderer mr = hex_go.GetComponentInChildren<MeshRenderer>();
-			mr.material.color = tile.color;
-			hex_go.transform.SetParent(this.transform);
-			hex_go.isStatic = true;
+			var hexGo = Instantiate(hexPrefab, new Vector3(xPos, 0, zPos), Quaternion.identity);						 
+			hexGo.name = "Hex__" + tile.getId();;
+			var meshRenderer = hexGo.GetComponentInChildren<MeshRenderer>();
+			meshRenderer.material.color = tile.color;
+			hexGo.transform.SetParent(transform);
+			hexGo.isStatic = true;
 		}
 	}
 		

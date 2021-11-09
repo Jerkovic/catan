@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="" />
+    <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HexTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HexTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,56 +22,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+            <state relative-caret-position="68">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
               <folding>
-                <marker date="1635688580879" expanded="true" signature="6:71" ph="..." />
-                <marker date="1635688580879" expanded="true" signature="106:1232" ph="{...}" />
-                <marker date="1635688580879" expanded="true" signature="237:1227" ph="{...}" />
-                <marker date="1635688580879" expanded="true" signature="371:739" ph="{...}" />
-                <marker date="1635688580879" expanded="true" signature="452:482" ph="{...}" />
-                <marker date="1635688580879" expanded="true" signature="772:1223" ph="/* for (int x = 0; x &lt; width; x++) { ... */" />
+                <marker date="1636356705925" expanded="true" signature="21:311" ph="{...}" />
+                <marker date="1636356705925" expanded="true" signature="54:309" ph="{...}" />
+                <marker date="1636356705925" expanded="true" signature="153:294" ph="/* Events.onRollDice.Invoke(12); ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/FreeCam.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               <folding>
-                <marker date="1635676360857" expanded="true" signature="6:104" ph="..." />
-                <marker date="1635676360857" expanded="true" signature="106:478" ph="/// A simple free camera to be added to a Unity game object. ... " />
-                <marker date="1635676360857" expanded="true" signature="515:4360" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="522:595" ph="/// Normal speed of camera movement. ... " />
-                <marker date="1635676360857" expanded="true" signature="639:729" ph="/// Speed of camera movement when shift is held down, ... " />
-                <marker date="1635676360857" expanded="true" signature="778:845" ph="/// Sensitivity for free look. ... " />
-                <marker date="1635676360857" expanded="true" signature="894:988" ph="/// Amount to zoom the camera when using the mouse wheel. ... " />
-                <marker date="1635676360857" expanded="true" signature="1034:1140" ph="/// Amount to zoom the camera when using the mouse wheel (fast mode). ... " />
-                <marker date="1635676360857" expanded="true" signature="1190:1285" ph="/// Set to true when free looking (on right mouse button). ... " />
-                <marker date="1635676360857" expanded="true" signature="1338:3871" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="1593:1720" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="1794:1920" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="1991:2119" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="2192:2321" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="2359:2482" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="2520:2644" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="2714:2835" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="2907:3029" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3051:3381" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3462:3674" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3721:3769" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3818:3865" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3893:3928" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="3934:3995" ph="/// Enable free looking. ... " />
-                <marker date="1635676360857" expanded="true" signature="4026:4144" ph="{...}" />
-                <marker date="1635676360857" expanded="true" signature="4150:4212" ph="/// Disable free looking. ... " />
-                <marker date="1635676360857" expanded="true" signature="4242:4358" ph="{...}" />
+                <marker date="1636370620616" expanded="true" signature="15:81" ph="{...}" />
+                <marker date="1636370620616" expanded="true" signature="41:79" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+              <folding>
+                <marker date="1636453237957" expanded="false" signature="6:91" ph="..." />
+                <marker date="1636453237957" expanded="true" signature="108:1842" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="133:1840" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="202:262" ph="/* List&lt;Corner&gt; ... */" />
+                <marker date="1636453237957" expanded="true" signature="296:1661" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="672:730" ph="/* test ... */" />
+                <marker date="1636453237957" expanded="true" signature="967:1226" ph="/* ... */" />
+                <marker date="1636453237957" expanded="true" signature="1346:1615" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="1471:1547" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="1697:1825" ph="{...}" />
+                <marker date="1636453237957" expanded="true" signature="1720:1815" ph="/* A Corner has connection to 3 tiles ... */" />
               </folding>
             </state>
           </provider>
@@ -68,149 +74,193 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="266">
+              <caret line="236" column="8" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="8" />
               <folding>
-                <marker date="1635686941934" expanded="true" signature="30:22601" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="62:22599" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="172:392" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="450:670" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="677:990" ph="/// Create a new CubicHexCoord given the coordinates x, y and z. ... " />
-                <marker date="1635686941934" expanded="true" signature="1037:1093" ph="{...}" />
-                <marker date="1635686941934" expanded="false" signature="1100:3905" ph="Operator Overloads" />
-                <marker date="1635686941934" expanded="true" signature="1132:1477" ph="/// Add 2 CubicHexCoords together and return the result. ... " />
-                <marker date="1635686941934" expanded="true" signature="1559:1692" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="1699:2059" ph="/// Subtract 1 CubicHexCoord from another and return the result. ... " />
-                <marker date="1635686941934" expanded="true" signature="2141:2274" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="2281:2646" ph="/// Check if 2 CubicHexCoords represent the same hex on the grid. ... " />
-                <marker date="1635686941934" expanded="true" signature="2720:2808" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="2815:3189" ph="/// Check if 2 CubicHexCoords represent the different hexes on the grid. ... " />
-                <marker date="1635686941934" expanded="true" signature="3263:3351" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="3356:3544" ph="/// Check if this CubicHexCoord is equal to an arbitrary object. ... " />
-                <marker date="1635686941934" expanded="true" signature="3593:3891" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="3619:3647" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="3706:3746" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="3910:12642" ph="Instance Methods" />
-                <marker date="1635686941934" expanded="true" signature="3973:4034" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="4040:4476" ph="/// Returns an array of CubicHexCoords within the given range from this hex (including  ... " />
-                <marker date="1635686941934" expanded="true" signature="4531:4584" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="4589:4934" ph="/// Returns a CubicHexCoord representing the diagonal of this hex in the given diagonal  ... " />
-                <marker date="1635686941934" expanded="true" signature="4998:5052" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="5059:5306" ph="/// Returns an array of CubicHexCoords representing this hex's diagonals (in clockwise ... " />
-                <marker date="1635686941934" expanded="true" signature="5349:5684" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="5387:5679" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="5691:5949" ph="/// Returns the minimum number of grid steps to get from this hex to the given hex. ... " />
-                <marker date="1635686941934" expanded="true" signature="6002:6059" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="6066:6584" ph="/// Returns an array of CubicHexCoords that form the straightest path from this hex to the  ... " />
-                <marker date="1635686941934" expanded="true" signature="6645:6698" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="6705:7016" ph="/// Returns a CubicHexCoord representing the neighbor of this hex in the given direction. ... " />
-                <marker date="1635686941934" expanded="true" signature="7081:7136" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="7143:7390" ph="/// Returns an array of CubicHexCoords representing this hex's neighbors (in clockwise ... " />
-                <marker date="1635686941934" expanded="true" signature="7433:7774" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="7471:7769" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="7783:8387" ph="/// Returns an array of CubicHexCoords that appear at the given range around this hex.  ... " />
-                <marker date="1635686941934" expanded="true" signature="8490:8559" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="8566:9203" ph="/// Rotate this CubicHexCoord around the given center by the given rotation (constrained to  ... " />
-                <marker date="1635686941934" expanded="true" signature="9297:9363" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="9370:10008" ph="/// Rotate a CubicHexCoord around this CubicHexCoord by the given rotation (constrained to  ... " />
-                <marker date="1635686941934" expanded="true" signature="10104:10172" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="10178:10490" ph="/// Scale this CubicHexCoord by the given factor, such that the x, y and z values of  ... " />
-                <marker date="1635686941934" expanded="true" signature="10543:10609" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="10621:11410" ph="/// Returns an array of CubicHexCoords of a area centering around ths hex and extending in  ... " />
-                <marker date="1635686941934" expanded="true" signature="11521:11598" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="11605:12438" ph="/// Returns an array of CubicHexCoords of a area centering around this hex and extending in  ... " />
-                <marker date="1635686941934" expanded="true" signature="12550:12628" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="12647:22596" ph="Static Methods" />
-                <marker date="1635686941934" expanded="true" signature="12675:13233" ph="/// Returns an array of CubicHexCoords within the given range from the given center  ... " />
-                <marker date="1635686941934" expanded="true" signature="13311:14026" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="13335:13437" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="13463:13519" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="13579:13613" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="13729:14003" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="13899:13998" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="14033:14409" ph="/// Returns a CubicHexCoord representing the diff between some hex and its diagonal in  ... " />
-                <marker date="1635686941934" expanded="true" signature="14484:14531" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="14538:14887" ph="/// Returns a CubicHexCoord representing the diff between some hex and its neighbor in  ... " />
-                <marker date="1635686941934" expanded="true" signature="14964:15012" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="15021:15286" ph="/// Returns the minimum number of grid steps to get from a to b. ... " />
-                <marker date="1635686941934" expanded="true" signature="15357:15523" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="15530:16144" ph="/// Returns an array of CubicHexCoords that form the straightest path from the given start ... " />
-                <marker date="1635686941934" expanded="true" signature="16229:16710" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="16395:16687" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="16717:17419" ph="/// Returns an array of CubicHexCoords that appear at the given range around the given  ... " />
-                <marker date="1635686941934" expanded="true" signature="17545:18237" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="17570:17668" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="17886:17951" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="18003:18214" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="18103:18209" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="18244:19023" ph="/// Rotate a CubicHexCoord around the given center by the given rotation (constrained to  ... " />
-                <marker date="1635686941934" expanded="true" signature="19137:19214" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="19221:20111" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
-                <marker date="1635686941934" expanded="true" signature="20245:20905" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="20270:20368" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="20394:20450" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="20510:20544" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="20726:20878" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="20912:21819" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
-                <marker date="1635686941934" expanded="true" signature="21954:22582" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="21979:22077" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="22103:22159" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="22219:22253" ph="{...}" />
-                <marker date="1635686941934" expanded="true" signature="22403:22555" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="30:22837" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="62:22835" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="172:392" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="450:670" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="677:990" ph="/// Create a new CubicHexCoord given the coordinates x, y and z. ... " />
+                <marker date="1636355589085" expanded="true" signature="1037:1093" ph="{...}" />
+                <marker date="1636355589085" expanded="false" signature="1100:4141" ph="Operator Overloads" />
+                <marker date="1636355589085" expanded="true" signature="1132:1477" ph="/// Add 2 CubicHexCoords together and return the result. ... " />
+                <marker date="1636355589085" expanded="true" signature="1559:1692" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="1699:2059" ph="/// Subtract 1 CubicHexCoord from another and return the result. ... " />
+                <marker date="1636355589085" expanded="true" signature="2141:2274" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="2281:2646" ph="/// Check if 2 CubicHexCoords represent the same hex on the grid. ... " />
+                <marker date="1636355589085" expanded="true" signature="2720:2808" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="2815:3189" ph="/// Check if 2 CubicHexCoords represent the different hexes on the grid. ... " />
+                <marker date="1636355589085" expanded="true" signature="3263:3351" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="3397:3587" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="3414:3583" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="3592:3780" ph="/// Check if this CubicHexCoord is equal to an arbitrary object. ... " />
+                <marker date="1636355589085" expanded="true" signature="3829:4127" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="3855:3883" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="3942:3982" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="4146:12878" ph="Instance Methods" />
+                <marker date="1636355589085" expanded="true" signature="4209:4270" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="4276:4712" ph="/// Returns an array of CubicHexCoords within the given range from this hex (including  ... " />
+                <marker date="1636355589085" expanded="true" signature="4767:4820" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="4825:5170" ph="/// Returns a CubicHexCoord representing the diagonal of this hex in the given diagonal  ... " />
+                <marker date="1636355589085" expanded="true" signature="5234:5288" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="5295:5542" ph="/// Returns an array of CubicHexCoords representing this hex's diagonals (in clockwise ... " />
+                <marker date="1636355589085" expanded="true" signature="5585:5920" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="5623:5915" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="5927:6185" ph="/// Returns the minimum number of grid steps to get from this hex to the given hex. ... " />
+                <marker date="1636355589085" expanded="true" signature="6238:6295" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="6302:6820" ph="/// Returns an array of CubicHexCoords that form the straightest path from this hex to the  ... " />
+                <marker date="1636355589085" expanded="true" signature="6881:6934" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="6941:7252" ph="/// Returns a CubicHexCoord representing the neighbor of this hex in the given direction. ... " />
+                <marker date="1636355589085" expanded="true" signature="7317:7372" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="7379:7626" ph="/// Returns an array of CubicHexCoords representing this hex's neighbors (in clockwise ... " />
+                <marker date="1636355589085" expanded="true" signature="7669:8010" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="7707:8005" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="8019:8623" ph="/// Returns an array of CubicHexCoords that appear at the given range around this hex.  ... " />
+                <marker date="1636355589085" expanded="true" signature="8726:8795" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="8802:9439" ph="/// Rotate this CubicHexCoord around the given center by the given rotation (constrained to  ... " />
+                <marker date="1636355589085" expanded="true" signature="9533:9599" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="9606:10244" ph="/// Rotate a CubicHexCoord around this CubicHexCoord by the given rotation (constrained to  ... " />
+                <marker date="1636355589085" expanded="true" signature="10340:10408" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="10414:10726" ph="/// Scale this CubicHexCoord by the given factor, such that the x, y and z values of  ... " />
+                <marker date="1636355589085" expanded="true" signature="10779:10845" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="10857:11646" ph="/// Returns an array of CubicHexCoords of a area centering around ths hex and extending in  ... " />
+                <marker date="1636355589085" expanded="true" signature="11757:11834" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="11841:12674" ph="/// Returns an array of CubicHexCoords of a area centering around this hex and extending in  ... " />
+                <marker date="1636355589085" expanded="true" signature="12786:12864" ph="{...}" />
+                <marker date="1636355589085" expanded="false" signature="12883:22832" ph="Static Methods" />
+                <marker date="1636355589085" expanded="true" signature="12911:13469" ph="/// Returns an array of CubicHexCoords within the given range from the given center  ... " />
+                <marker date="1636355589085" expanded="true" signature="13547:14262" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="13571:13673" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="13699:13755" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="13815:13849" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="13965:14239" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="14135:14234" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="14269:14645" ph="/// Returns a CubicHexCoord representing the diff between some hex and its diagonal in  ... " />
+                <marker date="1636355589085" expanded="true" signature="14720:14767" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="14774:15123" ph="/// Returns a CubicHexCoord representing the diff between some hex and its neighbor in  ... " />
+                <marker date="1636355589085" expanded="true" signature="15200:15248" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="15257:15522" ph="/// Returns the minimum number of grid steps to get from a to b. ... " />
+                <marker date="1636355589085" expanded="true" signature="15593:15759" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="15766:16380" ph="/// Returns an array of CubicHexCoords that form the straightest path from the given start ... " />
+                <marker date="1636355589085" expanded="true" signature="16465:16946" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="16631:16923" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="16953:17655" ph="/// Returns an array of CubicHexCoords that appear at the given range around the given  ... " />
+                <marker date="1636355589085" expanded="true" signature="17781:18473" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="17806:17904" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="18122:18187" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="18239:18450" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="18339:18445" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="18480:19259" ph="/// Rotate a CubicHexCoord around the given center by the given rotation (constrained to  ... " />
+                <marker date="1636355589085" expanded="true" signature="19373:19450" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="19457:20347" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
+                <marker date="1636355589085" expanded="true" signature="20481:21141" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="20506:20604" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="20630:20686" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="20746:20780" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="20962:21114" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="21148:22055" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
+                <marker date="1636355589085" expanded="true" signature="22190:22818" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="22215:22313" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="22339:22395" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="22455:22489" ph="{...}" />
+                <marker date="1636355589085" expanded="true" signature="22639:22791" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+              <folding>
+                <marker date="1636372120818" expanded="false" signature="6:58" ph="..." />
+                <marker date="1636372120818" expanded="true" signature="75:1327" ph="{...}" />
+                <marker date="1636372120818" expanded="true" signature="102:1325" ph="{...}" />
+                <marker date="1636372120818" expanded="true" signature="263:1225" ph="{...}" />
+                <marker date="1636372120818" expanded="true" signature="344:413" ph="/* Get Corners --- ... */" />
+                <marker date="1636372120818" expanded="true" signature="1253:1318" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
-                <marker date="1635686467488" expanded="true" signature="6:32" ph="..." />
-                <marker date="1635686467488" expanded="true" signature="49:1131" ph="{...}" />
-                <marker date="1635686467488" expanded="true" signature="53:1089" ph="/// A logical hex-grid implementation based on Amit Patel's examples at  ... " />
-                <marker date="1635686467488" expanded="true" signature="1114:1129" ph="{...}" />
+                <marker date="1636450810298" expanded="false" signature="6:71" ph="..." />
+                <marker date="1636450810298" expanded="true" signature="106:1284" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="273:1279" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="343:1276" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="518:586" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="638:691" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="755:826" ph="{...}" />
+                <marker date="1636450810298" expanded="true" signature="898:952" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="170">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
-                <marker date="1635685879196" expanded="true" signature="15:228" ph="{...}" />
-                <marker date="1635685879196" expanded="true" signature="52:226" ph="{...}" />
+                <marker date="1636378988476" expanded="true" signature="25:172" ph="{...}" />
+                <marker date="1636378988476" expanded="true" signature="61:170" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding>
-                <marker date="1635685666698" expanded="true" signature="15:167" ph="{...}" />
-                <marker date="1635685666698" expanded="true" signature="53:165" ph="{...}" />
+                <marker date="1636378637325" expanded="true" signature="27:200" ph="{...}" />
+                <marker date="1636378637325" expanded="true" signature="63:198" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="51">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
               <folding>
-                <marker date="1635685624053" expanded="true" signature="15:169" ph="{...}" />
-                <marker date="1635685624053" expanded="true" signature="52:167" ph="{...}" />
+                <marker date="1636379191167" expanded="true" signature="27:111" ph="{...}" />
+                <marker date="1636379191167" expanded="true" signature="51:102" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+              <folding>
+                <marker date="1636383666429" expanded="true" signature="6:66" ph="..." />
+                <marker date="1636383666429" expanded="true" signature="95:1122" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="119:1120" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="134:253" ph="/* Deck contains 14 knights, 5 victory points, 2 monopolies, 2 road building and 2 year plenty. ... */" />
+                <marker date="1636383666429" expanded="true" signature="400:636" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="469:626" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="542:612" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="667:873" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="916:1114" ph="{...}" />
+                <marker date="1636383666429" expanded="true" signature="1008:1069" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -226,16 +276,30 @@
       <find>ToString()</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FreeCam.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -250,18 +314,33 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dice.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/development/CardType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="258" />
+    <option name="y" value="184" />
     <option name="width" value="1920" />
     <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
@@ -286,23 +365,42 @@
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
               <item name="logic" type="1045f7f1:UnityExplorerNode" />
             </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="logic" type="1045f7f1:UnityExplorerNode" />
+              <item name="development" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="logic" type="1045f7f1:UnityExplorerNode" />
+              <item name="resources" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Packages" type="4e2708dd:PackagesRoot" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -342,11 +440,13 @@
       <updated>1635670226882</updated>
       <workItem from="1635670231210" duration="1479000" />
       <workItem from="1635683240597" duration="5489000" />
+      <workItem from="1636355726853" duration="7192000" />
+      <workItem from="1636379103140" duration="9374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6968000" />
+    <option name="totallyTimeSpent" value="23534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,8 +459,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25198728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1899841" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -383,7 +484,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Errors In Solution" order="4" visible="true" weight="0.16772655" />
+      <window_info anchor="right" id="Errors In Solution" order="4" visible="true" weight="0.1236089" />
     </layout>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
@@ -400,6 +501,68 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1635686172722" expanded="true" signature="6:85" ph="..." />
+            <marker date="1635686172722" expanded="true" signature="102:2214" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="133:2212" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="139:223" ph="Members" />
+            <marker date="1635686172722" expanded="true" signature="228:980" ph="Constructors" />
+            <marker date="1635686172722" expanded="true" signature="252:407" ph="/// Create a new FloatCubic given a CubicHexIndex. ... " />
+            <marker date="1635686172722" expanded="true" signature="452:547" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="552:862" ph="/// Create a new FloatCubic given the coordinates x, y and z. ... " />
+            <marker date="1635686172722" expanded="true" signature="913:966" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="984:2209" ph="Instance Methods" />
+            <marker date="1635686172722" expanded="true" signature="1012:1219" ph="/// Returns a new CubicHexCoord representing the nearest hex to this FloatCubic. ... " />
+            <marker date="1635686172722" expanded="true" signature="1254:1710" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="1538:1567" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="1596:1625" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="1633:1662" ph="{...}" />
+            <marker date="1635686172722" expanded="true" signature="1715:2047" ph="/// Scale the world space by the given factor, causing q and r to change proportionally ... " />
+            <marker date="1635686172722" expanded="true" signature="2093:2195" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <marker date="1635685879196" expanded="true" signature="15:228" ph="{...}" />
+            <marker date="1635685879196" expanded="true" signature="52:226" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding>
+            <marker date="1635685624053" expanded="true" signature="15:169" ph="{...}" />
+            <marker date="1635685624053" expanded="true" signature="52:167" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <marker date="1636356140878" expanded="true" signature="61:620" ph="{...}" />
+            <marker date="1636356140878" expanded="true" signature="105:618" ph="{...}" />
+            <marker date="1636356140878" expanded="true" signature="142:615" ph="{...}" />
+            <marker date="1636356140878" expanded="true" signature="222:240" ph="{...}" />
+            <marker date="1636356140878" expanded="true" signature="366:611" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/FreeCam.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -436,21 +599,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
-            <marker date="1635685879196" expanded="true" signature="15:228" ph="{...}" />
-            <marker date="1635685879196" expanded="true" signature="52:226" ph="{...}" />
+            <marker date="1636358385299" expanded="true" signature="6:50" ph="..." />
+            <marker date="1636358385299" expanded="true" signature="97:510" ph="{...}" />
+            <marker date="1636358385299" expanded="true" signature="179:253" ph="{...}" />
+            <marker date="1636358385299" expanded="true" signature="291:368" ph="{...}" />
+            <marker date="1636358385299" expanded="true" signature="421:503" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <marker date="1636356613614" expanded="true" signature="36:464" ph="{...}" />
+            <marker date="1636356613614" expanded="true" signature="64:462" ph="{...}" />
+            <marker date="1636356613614" expanded="true" signature="163:218" ph="{...}" />
+            <marker date="1636356613614" expanded="true" signature="271:324" ph="{...}" />
+            <marker date="1636356613614" expanded="true" signature="388:441" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Dice.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1636356855899" expanded="false" signature="6:97" ph="..." />
+            <marker date="1636356855899" expanded="true" signature="132:331" ph="{...}" />
+            <marker date="1636356855899" expanded="true" signature="157:329" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <marker date="1636356705925" expanded="true" signature="21:311" ph="{...}" />
+            <marker date="1636356705925" expanded="true" signature="54:309" ph="{...}" />
+            <marker date="1636356705925" expanded="true" signature="153:294" ph="/* Events.onRollDice.Invoke(12); ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <marker date="1636378637325" expanded="true" signature="27:200" ph="{...}" />
+            <marker date="1636378637325" expanded="true" signature="63:198" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1636378988476" expanded="true" signature="25:172" ph="{...}" />
+            <marker date="1636378988476" expanded="true" signature="61:170" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <marker date="1636371492373" expanded="true" signature="15:186" ph="{...}" />
+            <marker date="1636371492373" expanded="true" signature="59:184" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="136">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding>
             <marker date="1635685666698" expanded="true" signature="15:167" ph="{...}" />
             <marker date="1635685666698" expanded="true" signature="53:165" ph="{...}" />
@@ -458,174 +696,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+          <folding>
+            <marker date="1636383666429" expanded="true" signature="6:66" ph="..." />
+            <marker date="1636383666429" expanded="true" signature="95:1122" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="119:1120" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="134:253" ph="/* Deck contains 14 knights, 5 victory points, 2 monopolies, 2 road building and 2 year plenty. ... */" />
+            <marker date="1636383666429" expanded="true" signature="400:636" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="469:626" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="542:612" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="667:873" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="916:1114" ph="{...}" />
+            <marker date="1636383666429" expanded="true" signature="1008:1069" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <marker date="1636379191167" expanded="true" signature="27:111" ph="{...}" />
+            <marker date="1636379191167" expanded="true" signature="51:102" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
-            <marker date="1635686192344" expanded="true" signature="15:130" ph="{...}" />
-            <marker date="1635686192344" expanded="true" signature="40:128" ph="{...}" />
-            <marker date="1635686192344" expanded="true" signature="81:114" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <marker date="1635685624053" expanded="true" signature="15:169" ph="{...}" />
-            <marker date="1635685624053" expanded="true" signature="52:167" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <marker date="1635686172722" expanded="true" signature="6:85" ph="..." />
-            <marker date="1635686172722" expanded="true" signature="102:2214" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="133:2212" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="139:223" ph="Members" />
-            <marker date="1635686172722" expanded="true" signature="228:980" ph="Constructors" />
-            <marker date="1635686172722" expanded="true" signature="252:407" ph="/// Create a new FloatCubic given a CubicHexIndex. ... " />
-            <marker date="1635686172722" expanded="true" signature="452:547" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="552:862" ph="/// Create a new FloatCubic given the coordinates x, y and z. ... " />
-            <marker date="1635686172722" expanded="true" signature="913:966" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="984:2209" ph="Instance Methods" />
-            <marker date="1635686172722" expanded="true" signature="1012:1219" ph="/// Returns a new CubicHexCoord representing the nearest hex to this FloatCubic. ... " />
-            <marker date="1635686172722" expanded="true" signature="1254:1710" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="1538:1567" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="1596:1625" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="1633:1662" ph="{...}" />
-            <marker date="1635686172722" expanded="true" signature="1715:2047" ph="/// Scale the world space by the given factor, causing q and r to change proportionally ... " />
-            <marker date="1635686172722" expanded="true" signature="2093:2195" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexGrid.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <marker date="1635686467488" expanded="true" signature="6:32" ph="..." />
-            <marker date="1635686467488" expanded="true" signature="49:1131" ph="{...}" />
-            <marker date="1635686467488" expanded="true" signature="53:1089" ph="/// A logical hex-grid implementation based on Amit Patel's examples at  ... " />
-            <marker date="1635686467488" expanded="true" signature="1114:1129" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <marker date="1635686941934" expanded="true" signature="30:22601" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="62:22599" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="172:392" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="450:670" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="677:990" ph="/// Create a new CubicHexCoord given the coordinates x, y and z. ... " />
-            <marker date="1635686941934" expanded="true" signature="1037:1093" ph="{...}" />
-            <marker date="1635686941934" expanded="false" signature="1100:3905" ph="Operator Overloads" />
-            <marker date="1635686941934" expanded="true" signature="1132:1477" ph="/// Add 2 CubicHexCoords together and return the result. ... " />
-            <marker date="1635686941934" expanded="true" signature="1559:1692" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="1699:2059" ph="/// Subtract 1 CubicHexCoord from another and return the result. ... " />
-            <marker date="1635686941934" expanded="true" signature="2141:2274" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="2281:2646" ph="/// Check if 2 CubicHexCoords represent the same hex on the grid. ... " />
-            <marker date="1635686941934" expanded="true" signature="2720:2808" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="2815:3189" ph="/// Check if 2 CubicHexCoords represent the different hexes on the grid. ... " />
-            <marker date="1635686941934" expanded="true" signature="3263:3351" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="3356:3544" ph="/// Check if this CubicHexCoord is equal to an arbitrary object. ... " />
-            <marker date="1635686941934" expanded="true" signature="3593:3891" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="3619:3647" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="3706:3746" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="3910:12642" ph="Instance Methods" />
-            <marker date="1635686941934" expanded="true" signature="3973:4034" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="4040:4476" ph="/// Returns an array of CubicHexCoords within the given range from this hex (including  ... " />
-            <marker date="1635686941934" expanded="true" signature="4531:4584" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="4589:4934" ph="/// Returns a CubicHexCoord representing the diagonal of this hex in the given diagonal  ... " />
-            <marker date="1635686941934" expanded="true" signature="4998:5052" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="5059:5306" ph="/// Returns an array of CubicHexCoords representing this hex's diagonals (in clockwise ... " />
-            <marker date="1635686941934" expanded="true" signature="5349:5684" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="5387:5679" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="5691:5949" ph="/// Returns the minimum number of grid steps to get from this hex to the given hex. ... " />
-            <marker date="1635686941934" expanded="true" signature="6002:6059" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="6066:6584" ph="/// Returns an array of CubicHexCoords that form the straightest path from this hex to the  ... " />
-            <marker date="1635686941934" expanded="true" signature="6645:6698" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="6705:7016" ph="/// Returns a CubicHexCoord representing the neighbor of this hex in the given direction. ... " />
-            <marker date="1635686941934" expanded="true" signature="7081:7136" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="7143:7390" ph="/// Returns an array of CubicHexCoords representing this hex's neighbors (in clockwise ... " />
-            <marker date="1635686941934" expanded="true" signature="7433:7774" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="7471:7769" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="7783:8387" ph="/// Returns an array of CubicHexCoords that appear at the given range around this hex.  ... " />
-            <marker date="1635686941934" expanded="true" signature="8490:8559" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="8566:9203" ph="/// Rotate this CubicHexCoord around the given center by the given rotation (constrained to  ... " />
-            <marker date="1635686941934" expanded="true" signature="9297:9363" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="9370:10008" ph="/// Rotate a CubicHexCoord around this CubicHexCoord by the given rotation (constrained to  ... " />
-            <marker date="1635686941934" expanded="true" signature="10104:10172" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="10178:10490" ph="/// Scale this CubicHexCoord by the given factor, such that the x, y and z values of  ... " />
-            <marker date="1635686941934" expanded="true" signature="10543:10609" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="10621:11410" ph="/// Returns an array of CubicHexCoords of a area centering around ths hex and extending in  ... " />
-            <marker date="1635686941934" expanded="true" signature="11521:11598" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="11605:12438" ph="/// Returns an array of CubicHexCoords of a area centering around this hex and extending in  ... " />
-            <marker date="1635686941934" expanded="true" signature="12550:12628" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="12647:22596" ph="Static Methods" />
-            <marker date="1635686941934" expanded="true" signature="12675:13233" ph="/// Returns an array of CubicHexCoords within the given range from the given center  ... " />
-            <marker date="1635686941934" expanded="true" signature="13311:14026" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="13335:13437" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="13463:13519" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="13579:13613" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="13729:14003" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="13899:13998" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="14033:14409" ph="/// Returns a CubicHexCoord representing the diff between some hex and its diagonal in  ... " />
-            <marker date="1635686941934" expanded="true" signature="14484:14531" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="14538:14887" ph="/// Returns a CubicHexCoord representing the diff between some hex and its neighbor in  ... " />
-            <marker date="1635686941934" expanded="true" signature="14964:15012" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="15021:15286" ph="/// Returns the minimum number of grid steps to get from a to b. ... " />
-            <marker date="1635686941934" expanded="true" signature="15357:15523" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="15530:16144" ph="/// Returns an array of CubicHexCoords that form the straightest path from the given start ... " />
-            <marker date="1635686941934" expanded="true" signature="16229:16710" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="16395:16687" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="16717:17419" ph="/// Returns an array of CubicHexCoords that appear at the given range around the given  ... " />
-            <marker date="1635686941934" expanded="true" signature="17545:18237" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="17570:17668" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="17886:17951" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="18003:18214" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="18103:18209" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="18244:19023" ph="/// Rotate a CubicHexCoord around the given center by the given rotation (constrained to  ... " />
-            <marker date="1635686941934" expanded="true" signature="19137:19214" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="19221:20111" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
-            <marker date="1635686941934" expanded="true" signature="20245:20905" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="20270:20368" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="20394:20450" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="20510:20544" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="20726:20878" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="20912:21819" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
-            <marker date="1635686941934" expanded="true" signature="21954:22582" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="21979:22077" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="22103:22159" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="22219:22253" ph="{...}" />
-            <marker date="1635686941934" expanded="true" signature="22403:22555" ph="{...}" />
+            <marker date="1636370620616" expanded="true" signature="15:81" ph="{...}" />
+            <marker date="1636370620616" expanded="true" signature="41:79" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="204">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
-            <marker date="1635688580879" expanded="true" signature="6:71" ph="..." />
-            <marker date="1635688580879" expanded="true" signature="106:1232" ph="{...}" />
-            <marker date="1635688580879" expanded="true" signature="237:1227" ph="{...}" />
-            <marker date="1635688580879" expanded="true" signature="371:739" ph="{...}" />
-            <marker date="1635688580879" expanded="true" signature="452:482" ph="{...}" />
-            <marker date="1635688580879" expanded="true" signature="772:1223" ph="/* for (int x = 0; x &lt; width; x++) { ... */" />
+            <marker date="1636450810298" expanded="false" signature="6:71" ph="..." />
+            <marker date="1636450810298" expanded="true" signature="106:1284" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="273:1279" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="343:1276" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="518:586" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="638:691" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="755:826" ph="{...}" />
+            <marker date="1636450810298" expanded="true" signature="898:952" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <marker date="1636372120818" expanded="false" signature="6:58" ph="..." />
+            <marker date="1636372120818" expanded="true" signature="75:1327" ph="{...}" />
+            <marker date="1636372120818" expanded="true" signature="102:1325" ph="{...}" />
+            <marker date="1636372120818" expanded="true" signature="263:1225" ph="{...}" />
+            <marker date="1636372120818" expanded="true" signature="344:413" ph="/* Get Corners --- ... */" />
+            <marker date="1636372120818" expanded="true" signature="1253:1318" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="236" column="8" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="8" />
+          <folding>
+            <marker date="1636355589085" expanded="true" signature="30:22837" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="62:22835" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="172:392" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="450:670" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="677:990" ph="/// Create a new CubicHexCoord given the coordinates x, y and z. ... " />
+            <marker date="1636355589085" expanded="true" signature="1037:1093" ph="{...}" />
+            <marker date="1636355589085" expanded="false" signature="1100:4141" ph="Operator Overloads" />
+            <marker date="1636355589085" expanded="true" signature="1132:1477" ph="/// Add 2 CubicHexCoords together and return the result. ... " />
+            <marker date="1636355589085" expanded="true" signature="1559:1692" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="1699:2059" ph="/// Subtract 1 CubicHexCoord from another and return the result. ... " />
+            <marker date="1636355589085" expanded="true" signature="2141:2274" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="2281:2646" ph="/// Check if 2 CubicHexCoords represent the same hex on the grid. ... " />
+            <marker date="1636355589085" expanded="true" signature="2720:2808" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="2815:3189" ph="/// Check if 2 CubicHexCoords represent the different hexes on the grid. ... " />
+            <marker date="1636355589085" expanded="true" signature="3263:3351" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="3397:3587" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="3414:3583" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="3592:3780" ph="/// Check if this CubicHexCoord is equal to an arbitrary object. ... " />
+            <marker date="1636355589085" expanded="true" signature="3829:4127" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="3855:3883" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="3942:3982" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="4146:12878" ph="Instance Methods" />
+            <marker date="1636355589085" expanded="true" signature="4209:4270" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="4276:4712" ph="/// Returns an array of CubicHexCoords within the given range from this hex (including  ... " />
+            <marker date="1636355589085" expanded="true" signature="4767:4820" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="4825:5170" ph="/// Returns a CubicHexCoord representing the diagonal of this hex in the given diagonal  ... " />
+            <marker date="1636355589085" expanded="true" signature="5234:5288" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="5295:5542" ph="/// Returns an array of CubicHexCoords representing this hex's diagonals (in clockwise ... " />
+            <marker date="1636355589085" expanded="true" signature="5585:5920" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="5623:5915" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="5927:6185" ph="/// Returns the minimum number of grid steps to get from this hex to the given hex. ... " />
+            <marker date="1636355589085" expanded="true" signature="6238:6295" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="6302:6820" ph="/// Returns an array of CubicHexCoords that form the straightest path from this hex to the  ... " />
+            <marker date="1636355589085" expanded="true" signature="6881:6934" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="6941:7252" ph="/// Returns a CubicHexCoord representing the neighbor of this hex in the given direction. ... " />
+            <marker date="1636355589085" expanded="true" signature="7317:7372" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="7379:7626" ph="/// Returns an array of CubicHexCoords representing this hex's neighbors (in clockwise ... " />
+            <marker date="1636355589085" expanded="true" signature="7669:8010" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="7707:8005" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="8019:8623" ph="/// Returns an array of CubicHexCoords that appear at the given range around this hex.  ... " />
+            <marker date="1636355589085" expanded="true" signature="8726:8795" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="8802:9439" ph="/// Rotate this CubicHexCoord around the given center by the given rotation (constrained to  ... " />
+            <marker date="1636355589085" expanded="true" signature="9533:9599" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="9606:10244" ph="/// Rotate a CubicHexCoord around this CubicHexCoord by the given rotation (constrained to  ... " />
+            <marker date="1636355589085" expanded="true" signature="10340:10408" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="10414:10726" ph="/// Scale this CubicHexCoord by the given factor, such that the x, y and z values of  ... " />
+            <marker date="1636355589085" expanded="true" signature="10779:10845" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="10857:11646" ph="/// Returns an array of CubicHexCoords of a area centering around ths hex and extending in  ... " />
+            <marker date="1636355589085" expanded="true" signature="11757:11834" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="11841:12674" ph="/// Returns an array of CubicHexCoords of a area centering around this hex and extending in  ... " />
+            <marker date="1636355589085" expanded="true" signature="12786:12864" ph="{...}" />
+            <marker date="1636355589085" expanded="false" signature="12883:22832" ph="Static Methods" />
+            <marker date="1636355589085" expanded="true" signature="12911:13469" ph="/// Returns an array of CubicHexCoords within the given range from the given center  ... " />
+            <marker date="1636355589085" expanded="true" signature="13547:14262" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="13571:13673" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="13699:13755" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="13815:13849" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="13965:14239" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="14135:14234" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="14269:14645" ph="/// Returns a CubicHexCoord representing the diff between some hex and its diagonal in  ... " />
+            <marker date="1636355589085" expanded="true" signature="14720:14767" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="14774:15123" ph="/// Returns a CubicHexCoord representing the diff between some hex and its neighbor in  ... " />
+            <marker date="1636355589085" expanded="true" signature="15200:15248" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="15257:15522" ph="/// Returns the minimum number of grid steps to get from a to b. ... " />
+            <marker date="1636355589085" expanded="true" signature="15593:15759" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="15766:16380" ph="/// Returns an array of CubicHexCoords that form the straightest path from the given start ... " />
+            <marker date="1636355589085" expanded="true" signature="16465:16946" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="16631:16923" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="16953:17655" ph="/// Returns an array of CubicHexCoords that appear at the given range around the given  ... " />
+            <marker date="1636355589085" expanded="true" signature="17781:18473" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="17806:17904" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="18122:18187" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="18239:18450" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="18339:18445" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="18480:19259" ph="/// Rotate a CubicHexCoord around the given center by the given rotation (constrained to  ... " />
+            <marker date="1636355589085" expanded="true" signature="19373:19450" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="19457:20347" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
+            <marker date="1636355589085" expanded="true" signature="20481:21141" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="20506:20604" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="20630:20686" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="20746:20780" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="20962:21114" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="21148:22055" ph="/// Returns an array of CubicHexCoords of a area centering around the given center hex and  ... " />
+            <marker date="1636355589085" expanded="true" signature="22190:22818" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="22215:22313" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="22339:22395" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="22455:22489" ph="{...}" />
+            <marker date="1636355589085" expanded="true" signature="22639:22791" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+          <folding>
+            <marker date="1636453237957" expanded="false" signature="6:91" ph="..." />
+            <marker date="1636453237957" expanded="true" signature="108:1842" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="133:1840" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="202:262" ph="/* List&lt;Corner&gt; ... */" />
+            <marker date="1636453237957" expanded="true" signature="296:1661" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="672:730" ph="/* test ... */" />
+            <marker date="1636453237957" expanded="true" signature="967:1226" ph="/* ... */" />
+            <marker date="1636453237957" expanded="true" signature="1346:1615" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="1471:1547" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="1697:1825" ph="{...}" />
+            <marker date="1636453237957" expanded="true" signature="1720:1815" ph="/* A Corner has connection to 3 tiles ... */" />
           </folding>
         </state>
       </provider>
