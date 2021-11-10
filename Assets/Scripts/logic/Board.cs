@@ -9,8 +9,7 @@ namespace logic
     {
         public readonly List<HexTile> tiles;
         
-        // List<Corner> 
-        
+        // List<Corner>         
         // Class Corner -  tiles[]
 
         public Board(int radius)
@@ -24,8 +23,6 @@ namespace logic
             //  CornerDirectionEnum.SE            
             var east = center.Neighbor(DirectionEnum.E).GetHashCode();
             var southEast = center.Neighbor(DirectionEnum.SE).GetHashCode();
-            Debug.Log(east);
-            Debug.Log(southEast);
             
             /* Find the triangle value between the center points of the tiles.
              that will be be position of the crossroad
@@ -35,18 +32,18 @@ namespace logic
                         
             tiles = new List<HexTile>();
             
-            foreach (var coord in board)
+            foreach (var coordinate in board)
             {                
                 var color = Color.green;
-                if (Array.IndexOf(water, coord) > -1)
+                if (Array.IndexOf(water, coordinate) > -1)
                 {
                     color = Color.blue;
                 }
-                tiles.Add(new HexTile(coord, color));
+                tiles.Add(new HexTile(coordinate, color));
             }                                    
         }
 
-        public void BuildCorners()
+        public void GetTestCorner()
         {
             // A Corner has connection to 3 tiles
             

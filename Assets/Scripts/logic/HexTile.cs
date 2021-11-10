@@ -9,7 +9,11 @@ namespace logic
         public CubicHexCoord coordinate;
         public Color color;
         
-        // 6 corners
+        // Todo: 6 corners 
+        
+        // UI offsets 
+        private const float xOffset = 0.882f;
+        private const float zOffset = 0.764f;
 
         public HexTile(CubicHexCoord coord, Color col)
         {
@@ -18,28 +22,55 @@ namespace logic
 
             // Get Corners ---
             //  CornerDirectionEnum.SE            
-            coord.Neighbor(DirectionEnum.E);
-            coord.Neighbor(DirectionEnum.SE);
+            coordinate.Neighbor(DirectionEnum.E);
+            coordinate.Neighbor(DirectionEnum.SE);
             
             //  CornerDirectionEnum.S
-            coord.Neighbor(DirectionEnum.SE);
-            coord.Neighbor(DirectionEnum.SW);
+            coordinate.Neighbor(DirectionEnum.SE);
+            coordinate.Neighbor(DirectionEnum.SW);
             
             // CornerDirectionEnum.SW
-            coord.Neighbor(DirectionEnum.SW);
-            coord.Neighbor(DirectionEnum.W);
+            coordinate.Neighbor(DirectionEnum.SW);
+            coordinate.Neighbor(DirectionEnum.W);
             
             // CornerDirectionEnum.NW
-            coord.Neighbor(DirectionEnum.W);
-            coord.Neighbor(DirectionEnum.NW);
+            coordinate.Neighbor(DirectionEnum.W);
+            coordinate.Neighbor(DirectionEnum.NW);
             
             // CornerDirectionEnum.N
-            coord.Neighbor(DirectionEnum.NW);
-            coord.Neighbor(DirectionEnum.NE);
+            coordinate.Neighbor(DirectionEnum.NW);
+            coordinate.Neighbor(DirectionEnum.NE);
             
             // CornerDirectionEnum.NE
-            coord.Neighbor(DirectionEnum.NE);
-            coord.Neighbor(DirectionEnum.E);
+            coordinate.Neighbor(DirectionEnum.NE);
+            coordinate.Neighbor(DirectionEnum.E);
+        }
+
+        public Vector3 ToWorldCoordinates()
+        {            
+            var xPos = coordinate._x * xOffset;
+            var zPos = coordinate._z * zOffset;
+			
+            if( coordinate._z > 0 && coordinate._z % 2 == 1)
+            {
+                xPos += xOffset / 2f + xOffset * (coordinate._z / 2);
+            }
+            if( coordinate._z > 0 && coordinate._z % 2 == 0)
+            {
+                xPos += xOffset * (coordinate._z / 2);
+            }
+			
+            if( coordinate._z < 0 &&  (coordinate._z * -1) % 2 == 1)
+            {
+                xPos -= xOffset / 2f + xOffset * (-coordinate._z / 2);
+            }
+			
+            if( coordinate._z < 0 && (coordinate._z * -1) % 2 == 0) // even 
+            {
+                xPos -= xOffset * (-coordinate._z / 2);
+            }
+
+            return new Vector3(xPos, 0, zPos);
         }
 
         public int getId()
