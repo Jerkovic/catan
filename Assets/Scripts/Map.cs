@@ -84,14 +84,18 @@ public class Map : MonoBehaviour {
 		initCorner(207851, 208379, 208357); 
 		initCorner(207851, 208357, 207829);
 		initCorner(207323, 207851, 207829);
-		initCorner(207323, 207829, 207301);		
+		initCorner(207323, 207829, 207301);
+		
+		// Undirected graph with corner vertices and edges
+		// Graph graph = new BoardGraph();
+		// graph.addCornerEdge(0,1); // between two corners
 	}
 
 	private void initCorner(int hex1, int hex2, int hex3)
 	{
-		var tile1 = board.getTileByHashCode(hex1);
-		var tile2 = board.getTileByHashCode(hex2);
-		var tile3 = board.getTileByHashCode(hex3);
+		var tile1 = board.GetTileByHashCode(hex1);
+		var tile2 = board.GetTileByHashCode(hex2);
+		var tile3 = board.GetTileByHashCode(hex3);
 		var t1 = tile1.ToWorldCoordinates();
 		var t2 = tile2.ToWorldCoordinates();
 		var t3 = tile3.ToWorldCoordinates();

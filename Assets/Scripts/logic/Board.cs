@@ -12,21 +12,15 @@ namespace logic
                 
         public Board(int radius)
         {
-            CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius);
-            CubicHexCoord[] island = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius-1);
-            CubicHexCoord center = new CubicHexCoord(0, 0, 0);
+            var center = new CubicHexCoord(0, 0, 0);
+            CubicHexCoord[] board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), radius);                        
             CubicHexCoord[] water = CubicHexCoord.Ring(center, radius);
-            
-            // test
-            //  CornerDirectionEnum.SE            
-            var east = center.Neighbor(DirectionEnum.E).GetHashCode();
-            var southEast = center.Neighbor(DirectionEnum.SE).GetHashCode();
-                                                
+                                                            
             tiles = new List<HexTile>();
             
             foreach (var coordinate in board)
             {                
-                var color = Color.cyan;
+                var color = Color.green;
                 if (Array.IndexOf(water, coordinate) > -1)
                 {
                     color = Color.blue;
@@ -35,7 +29,12 @@ namespace logic
             }                                    
         }
 
-        public HexTile getTileByHashCode(int hashCode)
+        public void GetCorners(int hashCode)
+        {
+            
+        }
+
+        public HexTile GetTileByHashCode(int hashCode)
         {
             return tiles.Single(tile => tile.GetHashCode() == hashCode);
         }

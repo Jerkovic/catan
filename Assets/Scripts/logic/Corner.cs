@@ -2,6 +2,8 @@ namespace logic
 {
     public class Corner
     {
-        // Tiles 3 tiles.
+        // a node in the graph
+        
+        // Tiles connect to 3 tiles.         
     }
 }
