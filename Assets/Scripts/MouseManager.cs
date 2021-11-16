@@ -1,21 +1,29 @@
-﻿using UnityEngine;
+﻿using EventSystem;
+using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
-	public Camera camera;
-	
-	void Update () {
+	[SerializeField]
+	private new Camera camera;
+
+	private void Update () {
 		if (Input.GetMouseButtonDown(0)) {
 			if(UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
 				return;
 			}
-			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hitInfo;
-			if( Physics.Raycast(ray, out hitInfo) ) {
-				GameObject ourHitObject = hitInfo.collider.transform.parent.gameObject;
-				Debug.Log("Clicked On: " + ourHitObject.name);
-				MeshRenderer mr = ourHitObject.GetComponentInChildren<MeshRenderer>();
-				mr.material.color = Color.red; 	
+			var ray = camera.ScreenPointToRay(Input.mousePosition);
+			
+			if (Physics.Raycast(ray, out var hitInfo)) {
+				var ourHitObject = hitInfo.collider.transform.parent.gameObject;
+				if (ourHitObject != null && ourHitObject.CompareTag("Hexagon"))
+				{
+					// Events.OnClickHexagon.Invoke(int.Parse(ourHitObject.name));
+					// move to controller 
+					Debug.Log("Clicked On: " + ourHitObject.name);
+					MeshRenderer mr = ourHitObject.GetComponentInChildren<MeshRenderer>();
+					mr.material.color = Color.red;
+				}
+				 	
 			}
 		}
 	}

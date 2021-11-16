@@ -6,7 +6,7 @@ namespace logic
 {
     public class HexTile
     {
-        public CubicHexCoord coordinate;
+        private CubicHexCoord coordinate;
         public Color color;
         
         // Todo: 6 corners 
@@ -73,7 +73,7 @@ namespace logic
             return new Vector3(xPos, 0, zPos);
         }
 
-        public int getId()
+        public override int GetHashCode()
         {
             return coordinate.GetHashCode();
         }

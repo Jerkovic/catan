@@ -7,12 +7,12 @@ public class HandleDiceResult : MonoBehaviour
     [SerializeField] private TextMeshProUGUI label;
     private void OnEnable()
     {
-        Events.onRollDice.AddListener(DisplayRollDiceResult);
+        Events.OnRollDice.AddListener(DisplayRollDiceResult);
     }
         
     private void OnDisable()
     {
-        Events.onRollDice.RemoveListener(DisplayRollDiceResult);
+        Events.OnRollDice.RemoveListener(DisplayRollDiceResult);
     }
     
     private void DisplayRollDiceResult(int num)
