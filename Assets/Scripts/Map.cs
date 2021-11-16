@@ -25,7 +25,7 @@ public class Map : MonoBehaviour {
 			hexGo.isStatic = true;
 		}		
 		
-		// define test corner placement 
+		// corner placement center tile 
 		initCorner(206839, 207345, 206817);
 		initCorner(206839, 206817, 206311);
 		initCorner(206839, 206311, 206333);
@@ -84,8 +84,7 @@ public class Map : MonoBehaviour {
 		initCorner(207851, 208379, 208357); 
 		initCorner(207851, 208357, 207829);
 		initCorner(207323, 207851, 207829);
-		initCorner(207323, 207829, 207301);
-		
+		initCorner(207323, 207829, 207301);		
 	}
 
 	private void initCorner(int hex1, int hex2, int hex3)
