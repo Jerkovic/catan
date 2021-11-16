@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,36 +45,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+            <state relative-caret-position="408">
+              <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
               <folding>
-                <marker date="1637063220452" expanded="false" signature="6:31" ph="..." />
-                <marker date="1637063220452" expanded="true" signature="66:2260" ph="{...}" />
-                <marker date="1637063220452" expanded="true" signature="190:1630" ph="{...}" />
-                <marker date="1637063220452" expanded="true" signature="256:614" ph="{...}" />
-                <marker date="1637063220452" expanded="true" signature="1686:2254" ph="{...}" />
+                <marker date="1637072504534" expanded="false" signature="6:31" ph="..." />
+                <marker date="1637072504534" expanded="true" signature="66:3519" ph="{...}" />
+                <marker date="1637072504534" expanded="true" signature="190:2889" ph="{...}" />
+                <marker date="1637072504534" expanded="true" signature="220:279" ph="/* ... */" />
+                <marker date="1637072504534" expanded="true" signature="318:676" ph="{...}" />
+                <marker date="1637072504534" expanded="true" signature="1671:1726" ph="/* End 2:nd ring ... */" />
+                <marker date="1637072504534" expanded="true" signature="2945:3513" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+            <state relative-caret-position="884">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <marker date="1637063381579" expanded="true" signature="6:37" ph="..." />
-                <marker date="1637063381579" expanded="true" signature="80:830" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="154:828" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="191:825" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="271:289" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="399:821" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="537:809" ph="{...}" />
-                <marker date="1637063381579" expanded="true" signature="549:639" ph="/* Events.OnClickHexagon.Invoke(int.Parse(ourHitObject.name)); ... */" />
+                <marker date="1637071474043" expanded="true" signature="6:104" ph="..." />
+                <marker date="1637071474043" expanded="true" signature="147:1300" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="245:306" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="332:1296" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="369:1052" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="449:467" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="577:1048" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="715:1036" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="727:872" ph="/* Events.OnClickHexagon.Invoke(int.Parse(ourHitObject.name)); ... */" />
+                <marker date="1637071474043" expanded="true" signature="1089:1293" ph="{...}" />
+                <marker date="1637071474043" expanded="true" signature="1185:1267" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -236,15 +233,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="437" />
-    <option name="y" value="221" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1920" />
     <option name="height" value="1050" />
   </component>
@@ -358,12 +355,12 @@
       <workItem from="1636355726853" duration="7192000" />
       <workItem from="1636379103140" duration="9472000" />
       <workItem from="1636534747404" duration="4596000" />
-      <workItem from="1637057867289" duration="6079000" />
+      <workItem from="1637057867289" duration="9189000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34307000" />
+    <option name="totallyTimeSpent" value="37417000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -375,10 +372,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="437" y="221" width="1920" height="1050" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19354838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14308426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -401,7 +398,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Errors In Solution" order="4" visible="true" weight="0.12311828" />
+      <window_info anchor="right" id="Errors In Solution" order="4" visible="true" weight="0.091017485" />
     </layout>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
@@ -756,20 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding>
-            <marker date="1637063220452" expanded="false" signature="6:31" ph="..." />
-            <marker date="1637063220452" expanded="true" signature="66:2260" ph="{...}" />
-            <marker date="1637063220452" expanded="true" signature="190:1630" ph="{...}" />
-            <marker date="1637063220452" expanded="true" signature="256:614" ph="{...}" />
-            <marker date="1637063220452" expanded="true" signature="1686:2254" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
@@ -793,17 +776,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        <state relative-caret-position="884">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
-            <marker date="1637063381579" expanded="true" signature="6:37" ph="..." />
-            <marker date="1637063381579" expanded="true" signature="80:830" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="154:828" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="191:825" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="271:289" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="399:821" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="537:809" ph="{...}" />
-            <marker date="1637063381579" expanded="true" signature="549:639" ph="/* Events.OnClickHexagon.Invoke(int.Parse(ourHitObject.name)); ... */" />
+            <marker date="1637071474043" expanded="true" signature="6:104" ph="..." />
+            <marker date="1637071474043" expanded="true" signature="147:1300" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="245:306" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="332:1296" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="369:1052" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="449:467" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="577:1048" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="715:1036" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="727:872" ph="/* Events.OnClickHexagon.Invoke(int.Parse(ourHitObject.name)); ... */" />
+            <marker date="1637071474043" expanded="true" signature="1089:1293" ph="{...}" />
+            <marker date="1637071474043" expanded="true" signature="1185:1267" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <folding>
+            <marker date="1637072504534" expanded="false" signature="6:31" ph="..." />
+            <marker date="1637072504534" expanded="true" signature="66:3519" ph="{...}" />
+            <marker date="1637072504534" expanded="true" signature="190:2889" ph="{...}" />
+            <marker date="1637072504534" expanded="true" signature="220:279" ph="/* ... */" />
+            <marker date="1637072504534" expanded="true" signature="318:676" ph="{...}" />
+            <marker date="1637072504534" expanded="true" signature="1671:1726" ph="/* End 2:nd ring ... */" />
+            <marker date="1637072504534" expanded="true" signature="2945:3513" ph="{...}" />
           </folding>
         </state>
       </provider>
