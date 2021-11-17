@@ -9,8 +9,6 @@ namespace logic
         private readonly CubicHexCoord _coordinate;
         public Color color;
         
-        // Todo: 6 corners 
-        
         // UI offsets 
         private const float XOffset = 0.882f;
         private const float ZOffset = 0.764f;
@@ -19,31 +17,6 @@ namespace logic
         {
             _coordinate = coord;
             color = col;
-
-            // Get Corners ---
-            //  CornerDirectionEnum.SE            
-            _coordinate.Neighbor(DirectionEnum.E);
-            _coordinate.Neighbor(DirectionEnum.SE);
-            
-            //  CornerDirectionEnum.S
-            _coordinate.Neighbor(DirectionEnum.SE);
-            _coordinate.Neighbor(DirectionEnum.SW);
-            
-            // CornerDirectionEnum.SW
-            _coordinate.Neighbor(DirectionEnum.SW);
-            _coordinate.Neighbor(DirectionEnum.W);
-            
-            // CornerDirectionEnum.NW
-            _coordinate.Neighbor(DirectionEnum.W);
-            _coordinate.Neighbor(DirectionEnum.NW);
-            
-            // CornerDirectionEnum.N
-            _coordinate.Neighbor(DirectionEnum.NW);
-            _coordinate.Neighbor(DirectionEnum.NE);
-            
-            // CornerDirectionEnum.NE
-            _coordinate.Neighbor(DirectionEnum.NE);
-            _coordinate.Neighbor(DirectionEnum.E);
         }
 
         public Vector3 ToWorldCoordinates()

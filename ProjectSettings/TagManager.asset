@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hexagon
   - Corner
+  - Edge
+  - HexagonMesh
   layers:
   - Default
   - TransparentFX

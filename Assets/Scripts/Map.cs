@@ -5,6 +5,7 @@ public class Map : MonoBehaviour {
 
 	public GameObject hexPrefab;
 	public GameObject cornerPlaceholderPrefab;
+	public GameObject roadPlaceholderPrefab;
 	private Board _board;
 		
 	private void Start ()
@@ -24,9 +25,10 @@ public class Map : MonoBehaviour {
 			InitCorner(corner); // 54 
 		}
 		
-		// Undirected graph with corner vertices and edges
-		// Graph graph = new BoardGraph();
-		// graph.addCornerEdge(0,1); // between two corners
+		foreach (var edge in _board.edges)
+		{			
+			InitEdge(edge); // 72
+		}
 	}
 
 	private void InitHexTile(HexTile tile)
@@ -39,18 +41,43 @@ public class Map : MonoBehaviour {
 		hexGo.transform.SetParent(transform);
 		hexGo.isStatic = true;
 	}
-
-	private void InitCorner(Corner corner)
+	
+	private void InitEdge(Edge edge)
 	{
-		var tile1 = _board.GetTileByHashCode(corner.hex1);
-		var tile2 = _board.GetTileByHashCode(corner.hex2);
-		var tile3 = _board.GetTileByHashCode(corner.hex3);
-		var t1 = tile1.ToWorldCoordinates();
-		var t2 = tile2.ToWorldCoordinates();
-		var t3 = tile3.ToWorldCoordinates();
+		var corner1 = edge.GetLeftCorner();
+		var corner2 = edge.GetRightCorner();
+		var pos1 = GetCornerWorldCoordinates(corner1);
+		var pos2 = GetCornerWorldCoordinates(corner2);
+		var rotation = Quaternion.LookRotation(pos1 - pos2, Vector3.forward);
+		var centerX = (pos1.x + pos2.x) / 2;
+		var centerZ = (pos1.z + pos2.z) / 2;
+		var pos = new Vector3(centerX, .07f, centerZ);
+		var cornerObj = Instantiate(roadPlaceholderPrefab, pos, rotation);
+		cornerObj.name = "road-edge"; // todo name with proper hashcode 
+		cornerObj.tag = "Edge";
+		cornerObj.transform.SetParent(transform);
+		cornerObj.isStatic = true;
+	}
+
+	private Vector3 GetHexTileWordCoordinates(int hashCode)
+	{
+		var tile = _board.GetTileByHashCode(hashCode);
+		return tile.ToWorldCoordinates();
+	}
+
+	private Vector3 GetCornerWorldCoordinates(Corner corner)
+	{
+		var t1 = GetHexTileWordCoordinates(corner.hex1);
+		var t2 = GetHexTileWordCoordinates(corner.hex2);
+		var t3 = GetHexTileWordCoordinates(corner.hex3);
 		var centerX = (t1.x + t2.x + t3.x) / 3;
 		var centerZ = (t1.z + t2.z + t3.z) / 3;
-		var cornerObj = Instantiate(cornerPlaceholderPrefab, new Vector3(centerX, 0, centerZ), Quaternion.identity);
+		return new Vector3(centerX, 0, centerZ);
+	}
+	
+	private void InitCorner(Corner corner)
+	{
+		var cornerObj = Instantiate(cornerPlaceholderPrefab, GetCornerWorldCoordinates(corner), Quaternion.identity);
 		cornerObj.name = corner.GetHashCode().ToString();
 		cornerObj.tag = "Corner";
 		cornerObj.transform.SetParent(transform);

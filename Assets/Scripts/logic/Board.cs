@@ -39,11 +39,78 @@ namespace logic
 	        // // An edge connects to corners. Total edges #72
 	        edges = new List<Edge>();
 	        
-	        // We start by defining the center edges
-	        // Can we render roads for it
-	        AddEdge(621001, 619967); // = \
-	        // AddEdge(0, 1); // = I
-	        // AddEdge(0, 0); // = /
+	        AddEdge(621001, 619967);
+	        AddEdge(621001, 621485);
+	        AddEdge(621001, 621551);
+	        AddEdge(619967, 619417);
+	        AddEdge(619967, 619483);
+	        AddEdge(619483, 618449);
+	        AddEdge(619483, 620033);
+	        AddEdge(620033, 619549);
+	        AddEdge(620033, 621067);
+	        AddEdge(621067, 621617);
+	        AddEdge(621067, 621551);
+	        AddEdge(621551, 622585);
+	        AddEdge(622585, 623135);
+	        AddEdge(622585, 623069);
+	        AddEdge(623069, 624103);
+	        AddEdge(623069, 622519);
+	        AddEdge(622519, 623003);
+	        AddEdge(622519, 621485);
+	        AddEdge(621485, 620935);
+	        AddEdge(620935, 621419);
+	        AddEdge(620935, 619901);
+	        AddEdge(619901, 619351);
+	        AddEdge(619901, 619417);
+	        AddEdge(619417, 618383);
+	        AddEdge(618383, 617833);
+	        AddEdge(618383, 617899);
+	        AddEdge(617899, 616865);
+	        AddEdge(617899, 618449);
+	        AddEdge(618449, 617965);
+	        AddEdge(617965, 616931);
+	        AddEdge(617965, 618515);
+	        AddEdge(618515, 618031);
+	        AddEdge(618515, 619549);
+	        AddEdge(619549, 620099);
+	        AddEdge(620099, 619615);
+	        AddEdge(620099, 621133);
+	        AddEdge(621133, 621683);
+	        AddEdge(621133, 621617);
+	        AddEdge(621617, 622651);
+	        AddEdge(622651, 623201);
+	        AddEdge(622651, 623135);
+	        AddEdge(623135, 624169);
+	        AddEdge(624169, 624719);
+	        AddEdge(624169, 624653);
+	        AddEdge(624653, 624103);
+	        AddEdge(624103, 624587);
+	        AddEdge(624587, 624037);
+	        AddEdge(624037, 623003);
+	        AddEdge(623003, 622453);
+	        AddEdge(622453, 621419);
+	        AddEdge(621419, 620869);
+	        AddEdge(620869, 619835);
+	        AddEdge(619835, 619351);
+	        AddEdge(619351, 618317);
+	        AddEdge(618317, 617833);
+	        AddEdge(617833, 616799);
+	        AddEdge(616799, 616315);
+	        AddEdge(616315, 616865);
+	        AddEdge(616865, 616381);
+	        AddEdge(616381, 616931);
+	        AddEdge(616931, 616447);
+	        AddEdge(616447, 616997);
+	        AddEdge(616997, 618031);
+	        AddEdge(618031, 618581);
+	        AddEdge(618581, 619615);
+	        AddEdge(619615, 620165);
+	        AddEdge(620165, 621199);
+	        AddEdge(621199, 621683);
+	        AddEdge(621683, 622717);
+	        AddEdge(622717, 623201);
+	        AddEdge(623201, 624235);
+	        AddEdge(624235, 624719);
         }
 
         private void GenerateCorners()

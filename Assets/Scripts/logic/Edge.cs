@@ -2,8 +2,8 @@ namespace logic
 {
     public class Edge
     {
-        private Corner _left;
-        private Corner _right;
+        private readonly Corner _left;
+        private readonly Corner _right;
         private readonly bool _road;
         
         public Edge(Corner left, Corner right)
@@ -16,6 +16,16 @@ namespace logic
         public bool HasRoad() 
         {
             return _road;
+        }
+        
+        public Corner GetLeftCorner()
+        {
+            return _left;
+        }
+        
+        public Corner GetRightCorner()
+        {
+            return _right;
         }
     }
 }
