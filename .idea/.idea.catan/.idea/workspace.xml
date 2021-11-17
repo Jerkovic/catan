@@ -2,174 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding>
-                <marker date="1637075484997" expanded="true" signature="15:141" ph="{...}" />
-                <marker date="1637075484997" expanded="true" signature="41:139" ph="{...}" />
-                <marker date="1637075484997" expanded="true" signature="56:133" ph="/* a node in the graph ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-              <folding>
-                <marker date="1637075370201" expanded="false" signature="6:110" ph="..." />
-                <marker date="1637075370201" expanded="true" signature="127:1235" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="152:1233" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="253:999" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="674:953" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="804:880" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="1045:1078" ph="{...}" />
-                <marker date="1637075370201" expanded="true" signature="1134:1227" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-              <folding>
-                <marker date="1637075280004" expanded="false" signature="6:31" ph="..." />
-                <marker date="1637075280004" expanded="true" signature="66:3663" ph="{...}" />
-                <marker date="1637075280004" expanded="true" signature="190:3033" ph="{...}" />
-                <marker date="1637075280004" expanded="true" signature="220:279" ph="/* ... */" />
-                <marker date="1637075280004" expanded="true" signature="318:676" ph="{...}" />
-                <marker date="1637075280004" expanded="true" signature="1671:1726" ph="/* End 2:nd ring ... */" />
-                <marker date="1637075280004" expanded="true" signature="2889:3030" ph="/* Undirected graph with corner vertices and edges ... */" />
-                <marker date="1637075280004" expanded="true" signature="3089:3657" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-              <folding>
-                <marker date="1637075691400" expanded="true" signature="6:104" ph="..." />
-                <marker date="1637075691400" expanded="true" signature="147:828" ph="{...}" />
-                <marker date="1637075691400" expanded="true" signature="222:825" ph="{...}" />
-                <marker date="1637075691400" expanded="true" signature="259:820" ph="{...}" />
-                <marker date="1637075691400" expanded="true" signature="339:357" ph="{...}" />
-                <marker date="1637075691400" expanded="true" signature="467:816" ph="{...}" />
-                <marker date="1637075691400" expanded="true" signature="605:807" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-              <folding>
-                <marker date="1637058356684" expanded="true" signature="35:400" ph="{...}" />
-                <marker date="1637058356684" expanded="true" signature="68:398" ph="{...}" />
-                <marker date="1637058356684" expanded="true" signature="242:383" ph="/* Events.onRollDice.Invoke(12); ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="77" column="44" lean-forward="true" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
-              <folding>
-                <marker date="1637063355584" expanded="false" signature="6:58" ph="..." />
-                <marker date="1637063355584" expanded="true" signature="75:2399" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="102:2397" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="196:247" ph="/* Todo: 6 corners ... */" />
-                <marker date="1637063355584" expanded="true" signature="395:1417" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="476:545" ph="/* Get Corners --- ... */" />
-                <marker date="1637063355584" expanded="true" signature="1462:2282" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="1645:1743" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="1804:1887" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="1960:2059" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="2140:2224" ph="{...}" />
-                <marker date="1637063355584" expanded="true" signature="2325:2390" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-              <folding>
-                <marker date="1636378988476" expanded="true" signature="25:172" ph="{...}" />
-                <marker date="1636378988476" expanded="true" signature="61:170" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding>
-                <marker date="1636379191167" expanded="true" signature="27:111" ph="{...}" />
-                <marker date="1636379191167" expanded="true" signature="51:102" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding>
-                <marker date="1636383666429" expanded="false" signature="6:66" ph="..." />
-                <marker date="1636383666429" expanded="true" signature="95:1122" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="119:1120" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="134:253" ph="/* Deck contains 14 knights, 5 victory points, 2 monopolies, 2 road building and 2 year plenty. ... */" />
-                <marker date="1636383666429" expanded="true" signature="400:636" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="469:626" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="542:612" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="667:873" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="916:1114" ph="{...}" />
-                <marker date="1636383666429" expanded="true" signature="1008:1069" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -186,28 +35,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dice.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/17/02b2ce43/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FreeCam.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FreeCam.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/f8/34ef33ed/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3c9e850c90c548a0af7e388089bbdae93ea98/aa/0f260d3b/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/17/02b2ce43/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/f8/34ef33ed/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -241,12 +91,13 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1920" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectId" id="212djKCCSJ1eqyFa0L7s3lctqVT" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -310,38 +161,40 @@
       <pane id="AssemblyExplorer" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -357,12 +210,13 @@
       <workItem from="1636355726853" duration="7192000" />
       <workItem from="1636379103140" duration="9472000" />
       <workItem from="1636534747404" duration="4596000" />
-      <workItem from="1637057867289" duration="11856000" />
+      <workItem from="1637057867289" duration="12520000" />
+      <workItem from="1637143261523" duration="4526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40084000" />
+    <option name="totallyTimeSpent" value="40748000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,7 +258,10 @@
     </layout>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -796,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        <state relative-caret-position="153">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
             <marker date="1637075691400" expanded="true" signature="6:104" ph="..." />
             <marker date="1637075691400" expanded="true" signature="147:828" ph="{...}" />

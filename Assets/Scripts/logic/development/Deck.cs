@@ -10,7 +10,7 @@ namespace logic.development
          *  Deck contains 14 knights, 5 victory points, 2 monopolies, 2 road building and 2 year plenty.
          */
         private static readonly int[] startingCards = {14, 5, 2, 2, 2};
-        private List<int> cards = new List<int>();
+        private readonly List<int> _cards = new List<int>();
 
 
         public Deck()
@@ -19,7 +19,7 @@ namespace logic.development
             {
                 for (var j = 0; j < startingCards[i]; j++)
                 {
-                    cards.Add(i);
+                    _cards.Add(i);
                 }
             }
         }
@@ -27,16 +27,16 @@ namespace logic.development
         public int TakeCard()
         {
             var random = new Random();
-            int index = random.Next(cards.Count);
-            var card = cards[index];
-            cards.RemoveAt(index);
+            var index = random.Next(_cards.Count);
+            var card = _cards[index];
+            _cards.RemoveAt(index);
             return card;
         }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
-            foreach (var card in cards)
+            foreach (var card in _cards)
             {
                 sb.Append(card);
             }
