@@ -20,7 +20,6 @@ namespace ui
         private void DisplayRollDiceResult(int num)
         {
             label.text = num.ToString();
-            Debug.Log("sum " + num);
         }
     
     }

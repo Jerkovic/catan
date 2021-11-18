@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using logic;
 
-public class Map : MonoBehaviour {
+public class BoardView : MonoBehaviour {
 
+	[Header("Prefabs")]
 	public GameObject hexPrefab;
 	public GameObject cornerPlaceholderPrefab;
 	public GameObject roadPlaceholderPrefab;
@@ -19,12 +19,10 @@ public class Map : MonoBehaviour {
 	
 	private Catan _catan;
 	
-	
-		
 	private void Start ()
 	{
 		/*
-		 * Todo chits 18, ports 9
+		 * Todo chits 18
 		 */
 		_catan = new Catan();
 

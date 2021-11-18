@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EventSystem;
 using UnityEngine;
 
 namespace logic
@@ -11,6 +12,8 @@ namespace logic
         private List<HexTile> _tiles;
         private List<Corner> _corners;
         private List<Edge> _edges;
+
+        private HexTile _robberTile;
                 
         public Board(int radius)
         {
@@ -18,6 +21,9 @@ namespace logic
 	        GenerateTiles();
 	        GenerateCorners();
             GenerateEdges();
+
+            // Init states
+            SetRobberDesert();
         }
 
         private void GenerateTiles()
@@ -39,6 +45,13 @@ namespace logic
 			{
 				_tiles.Add(new HexTile(coordinate, TileTypeEnum.SEA));
 			}
+        }
+
+        private void SetRobberDesert()
+        {
+	        var desertTile =  _tiles.Single(tile => tile.GetTileType() == TileTypeEnum.DESERT);
+	        _robberTile = desertTile;
+	        Events.OnRobberMove.Invoke(desertTile);
         }
         
         public List<HexTile> GetTiles()

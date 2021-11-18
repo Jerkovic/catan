@@ -3,23 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Brown.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Brown.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Grass.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Grass.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Materials/Water.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hex.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hex.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleCornerClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleCornerClick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleEdgeClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleEdgeClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoardView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -187,6 +182,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/BUILDS\catan.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\unity_projects\catan\BUILDS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -225,7 +228,7 @@
       <workItem from="1636379103140" duration="9472000" />
       <workItem from="1636534747404" duration="4596000" />
       <workItem from="1637057867289" duration="12520000" />
-      <workItem from="1637143261523" duration="26696000" />
+      <workItem from="1637143261523" duration="32315000" />
     </task>
     <servers />
   </component>

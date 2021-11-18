@@ -1,26 +1,25 @@
 using EventSystem;
+using logic;
 using UnityEngine;
 
 namespace ui
 {
     public class HandleMoveRobber : MonoBehaviour
     {
-        [SerializeField] private Transform _robber;
-        
         private void OnEnable()
         {
-            Events.OnClickHexagon.AddListener(MoveRobber);
+            Events.OnRobberMove.AddListener(MoveRobberPiece);
         }
         
         private void OnDisable()
         {
-            Events.OnClickHexagon.RemoveListener(MoveRobber);
+            Events.OnRobberMove.RemoveListener(MoveRobberPiece);
         }
     
-        private void MoveRobber(GameObject gameObject)
+        private void MoveRobberPiece(HexTile hexTile)
         {
-            _robber.position = gameObject.transform.position;
-            Debug.Log("Move robber to Tile " + gameObject.name);
+            Debug.Log("move robber to world pos " + hexTile.ToWorldCoordinates());
+            transform.position = hexTile.ToWorldCoordinates();
         }
     }
 }
