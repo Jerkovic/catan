@@ -4,9 +4,9 @@ namespace logic
 {	
 	public struct CubicHexCoord
 	{
-		public int _x;
-		public int _y;
-		public int _z;
+		public readonly int x;
+		public readonly int y;
+		public readonly int z;
 
 		private static readonly CubicHexCoord[] DIAGONALS = {
 			new CubicHexCoord(  1, -2,  1 ),
@@ -34,9 +34,9 @@ namespace logic
 		/// <param name="z">The position on the z-axis in cube-space.</param>
 		public CubicHexCoord( int x, int y, int z ) 
 		{
-			this._x = x;
-			this._y = y;
-			this._z = z;
+			this.x = x;
+			this.y = y;
+			this.z = z;
 		}
 		
 
@@ -50,9 +50,9 @@ namespace logic
 		/// <returns>A new CubicHexCoord representing the sum of the inputs.</returns>
 		public static CubicHexCoord operator +( CubicHexCoord lhs, CubicHexCoord rhs ) 
 		{
-			int x = lhs._x + rhs._x;
-			int y = lhs._y + rhs._y;
-			int z = lhs._z + rhs._z;
+			int x = lhs.x + rhs.x;
+			int y = lhs.y + rhs.y;
+			int z = lhs.z + rhs.z;
 
 			return new CubicHexCoord( x, y, z );
 		}
@@ -66,9 +66,9 @@ namespace logic
 		/// <returns>A new CubicHexCoord representing the difference of the inputs.</returns>
 		public static CubicHexCoord operator -( CubicHexCoord lhs, CubicHexCoord rhs ) 
 		{
-			int x = lhs._x - rhs._x;
-			int y = lhs._y - rhs._y;
-			int z = lhs._z - rhs._z;
+			int x = lhs.x - rhs.x;
+			int y = lhs.y - rhs.y;
+			int z = lhs.z - rhs.z;
 
 			return new CubicHexCoord( x, y, z );
 		}
@@ -82,7 +82,7 @@ namespace logic
 		/// <returns>A bool representing whether or not the CubicHexCoords are equal.</returns>
 		public static bool operator ==( CubicHexCoord lhs, CubicHexCoord rhs ) 
 		{
-			return ( lhs._x == rhs._x ) && ( lhs._y == rhs._y ) && ( lhs._z == rhs._z );
+			return ( lhs.x == rhs.x ) && ( lhs.y == rhs.y ) && ( lhs.z == rhs.z );
 		}
 
 		
@@ -94,7 +94,7 @@ namespace logic
 		/// <returns>A bool representing whether or not the CubicHexCoords are unequal.</returns>
 		public static bool operator !=( CubicHexCoord lhs, CubicHexCoord rhs ) 
 		{
-			return ( lhs._x != rhs._x ) || ( lhs._y != rhs._y ) || ( lhs._z != rhs._z );
+			return ( lhs.x != rhs.x ) || ( lhs.y != rhs.y ) || ( lhs.z != rhs.z );
 		}
 		
 		public override
@@ -104,9 +104,9 @@ namespace logic
 			unchecked
 			{
 				int hash = 17;
-				hash = hash * 23 + _x.GetHashCode();
-				hash = hash * 23 + _y.GetHashCode();
-				hash = hash * 23 + _z.GetHashCode();
+				hash = hash * 23 + x.GetHashCode();
+				hash = hash * 23 + y.GetHashCode();
+				hash = hash * 23 + z.GetHashCode();
 				return hash;
 			}
 		}
@@ -132,7 +132,7 @@ namespace logic
 			
 			CubicHexCoord other = (CubicHexCoord)obj;
 
-			return ( this._x == other._x ) && ( this._y == other._y ) && ( this._z == other._z );
+			return ( this.x == other.x ) && ( this.y == other.y ) && ( this.z == other.z );
 		}
 
 		#endregion
@@ -142,7 +142,7 @@ namespace logic
 		
 		public override string ToString()
 		{
-			return this._x + ", " + this._y + ", " + this._z;
+			return this.x + ", " + this.y + ", " + this.z;
 		}
 		
 		/// <summary>
@@ -463,9 +463,9 @@ namespace logic
 		int 
 		Distance( CubicHexCoord a, CubicHexCoord b )
 		{
-			int dx = Math.Abs( a._x - b._x );
-			int dy = Math.Abs( a._y - b._y );
-			int dz = Math.Abs( a._z - b._z );
+			int dx = Math.Abs( a.x - b.x );
+			int dy = Math.Abs( a.y - b.y );
+			int dz = Math.Abs( a.z - b.z );
 
 			return Math.Max( Math.Max( dx, dy ), dz );
 		}
@@ -490,9 +490,9 @@ namespace logic
 
 			for ( int i = 0; i <= distance; i++ )
 			{
-				float xLerp = start._x + ( end._x - start._x ) * 1f / distance * i;
-				float yLerp = start._y + ( end._y - start._y ) * 1f / distance * i;
-				float zLerp = start._z + ( end._z - start._z ) * 1f / distance * i;
+				float xLerp = start.x + ( end.x - start.x ) * 1f / distance * i;
+				float yLerp = start.y + ( end.y - start.y ) * 1f / distance * i;
+				float zLerp = start.z + ( end.z - start.z ) * 1f / distance * i;
 
 				result[ i ] = new FloatCubic( xLerp, yLerp, zLerp ).Round();
 			}

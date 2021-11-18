@@ -9,15 +9,15 @@ namespace logic.development
         /*
          *  Deck contains 14 knights, 5 victory points, 2 monopolies, 2 road building and 2 year plenty.
          */
-        private static readonly int[] startingCards = {14, 5, 2, 2, 2};
+        private static readonly int[] StartingCards = {14, 5, 2, 2, 2};
         private readonly List<int> _cards = new List<int>();
 
 
         public Deck()
         {
-            for (var i = 0; i < startingCards.Length; i++)
+            for (var i = 0; i < StartingCards.Length; i++)
             {
-                for (var j = 0; j < startingCards[i]; j++)
+                for (var j = 0; j < StartingCards[i]; j++)
                 {
                     _cards.Add(i);
                 }

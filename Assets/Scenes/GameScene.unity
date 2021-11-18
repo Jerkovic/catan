@@ -292,6 +292,13 @@ MonoBehaviour:
   hexPrefab: {fileID: 4824753899875827051, guid: 5166734a8a9b24941a20f1bac4fc1391, type: 3}
   cornerPlaceholderPrefab: {fileID: 7590820146349926874, guid: df3ddee95021a774cac03866365cb800, type: 3}
   roadPlaceholderPrefab: {fileID: 8402168636564452149, guid: 9a358d14ce0a8ed41a484bd7cf40a3d3, type: 3}
+  mountainMaterial: {fileID: 2100000, guid: a4a4dcfc19609454d814ae27af585a6a, type: 2}
+  pastureMaterial: {fileID: 2100000, guid: 7672ce65ed115724489242ea48693af5, type: 2}
+  hillMaterial: {fileID: 2100000, guid: 4a6459bcd613148458cee562d6b1db75, type: 2}
+  fieldMaterial: {fileID: 2100000, guid: 3021abcfd6a614c4486bed7a3a47f825, type: 2}
+  forestMaterial: {fileID: 2100000, guid: 94509c16506ef8146a7b39e33a0d6e37, type: 2}
+  desertMaterial: {fileID: 2100000, guid: 136873d57428e1c4397cf32a303b43f3, type: 2}
+  seaMaterial: {fileID: 2100000, guid: 581a66e6c631b2f4abb94b9f932affec, type: 2}
 --- !u!4 &118414515
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,13 +1024,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.50573784, y: 0.0067702034, z: -0.003969097, w: 0.8626515}
-  m_LocalPosition: {x: -0.020742372, y: 3.4071128, z: -2.7412136}
+  m_LocalRotation: {x: 0, y: -0.8660254, z: 0.5, w: 0}
+  m_LocalPosition: {x: 0, y: 2.8, z: 2.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: -180, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0

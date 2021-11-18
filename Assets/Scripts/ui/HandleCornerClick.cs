@@ -19,7 +19,7 @@ namespace ui
     
         private void ChangeColor(GameObject gameObject)
         {
-            Debug.Log("clicked to place test settlement " + gameObject.name);
+            Debug.Log("clicked to place test settlement on corner " + gameObject.name);
             var position = gameObject.transform.position;
             var offset = new Vector3(position.x, 0.095f, position.z);
             Instantiate(cityPrefab, offset, Quaternion.identity);

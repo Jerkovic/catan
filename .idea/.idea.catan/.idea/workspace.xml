@@ -3,17 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CornerPlaceholder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CornerPlaceholder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HexTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HexTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Brown.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Brown.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Grass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Grass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Materials/Water.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleCornerClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleCornerClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleEdgeClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleEdgeClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
@@ -211,7 +225,7 @@
       <workItem from="1636379103140" duration="9472000" />
       <workItem from="1636534747404" duration="4596000" />
       <workItem from="1637057867289" duration="12520000" />
-      <workItem from="1637143261523" duration="14173000" />
+      <workItem from="1637143261523" duration="26696000" />
     </task>
     <servers />
   </component>
@@ -257,6 +271,7 @@
       <window_info anchor="right" id="Errors In Solution" order="4" visible="true" weight="0.091017485" />
     </layout>
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">

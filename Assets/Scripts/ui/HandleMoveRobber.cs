@@ -19,9 +19,8 @@ namespace ui
     
         private void MoveRobber(GameObject gameObject)
         {
-            // Todo: offset it 
             _robber.position = gameObject.transform.position;
-            Debug.Log("Move robber");
+            Debug.Log("Move robber to Tile " + gameObject.name);
         }
     }
 }

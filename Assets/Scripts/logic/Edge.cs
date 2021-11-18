@@ -27,5 +27,15 @@ namespace logic
         {
             return _right;
         }
+
+        public override int GetHashCode()
+        {
+            return _left.GetHashCode() + _right.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return "edge";
+        }
     }
 }

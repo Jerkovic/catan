@@ -25,9 +25,9 @@ namespace logic
 		public
 		FloatCubic( CubicHexCoord cubic )
 		{
-			this.x = (float)cubic._x;
-			this.y = (float)cubic._y;
-			this.z = (float)cubic._z;
+			this.x = (float)cubic.x;
+			this.y = (float)cubic.y;
+			this.z = (float)cubic.z;
 		}
 
 

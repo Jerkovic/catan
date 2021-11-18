@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using logic;
 
 public class Map : MonoBehaviour {
@@ -6,27 +7,39 @@ public class Map : MonoBehaviour {
 	public GameObject hexPrefab;
 	public GameObject cornerPlaceholderPrefab;
 	public GameObject roadPlaceholderPrefab;
-	private Board _board;
+
+	[Header("HexTile Materials")]
+	[SerializeField] private Material mountainMaterial;
+	[SerializeField] private Material pastureMaterial;
+	[SerializeField] private Material hillMaterial;
+	[SerializeField] private Material fieldMaterial;
+	[SerializeField] private Material forestMaterial;
+	[SerializeField] private Material desertMaterial;
+	[SerializeField] private Material seaMaterial;
+	
+	private Catan _catan;
+	
+	
 		
 	private void Start ()
 	{
 		/*
-		 * corners 54, edges 72, tiles 19, chits 18, ports 9
+		 * Todo chits 18, ports 9
 		 */
-		_board = new Board(3);
+		_catan = new Catan();
 
-		foreach (var tile in _board.tiles)
+		foreach (var tile in _catan.GetBoard().GetTiles())
 		{
 			InitHexTile(tile); // 19
 		}
 		
-		foreach (var corner in _board.corners)
+		foreach (var corner in _catan.GetBoard().GetCorners())
 		{			
 			InitCorner(corner); // 54 
 		}
 		
-		foreach (var edge in _board.edges)
-		{			
+		foreach (var edge in _catan.GetBoard().GetEdges())
+		{
 			InitEdge(edge); // 72
 		}
 	}
@@ -36,7 +49,36 @@ public class Map : MonoBehaviour {
 		var hexGo = Instantiate(hexPrefab, tile.ToWorldCoordinates(), Quaternion.identity);						 
 		hexGo.name = tile.GetHashCode().ToString();
 		var meshRenderer = hexGo.GetComponentInChildren<MeshRenderer>();
-		meshRenderer.material.color = tile.color;
+
+		if (tile.GetTileType() == TileTypeEnum.MOUNTAIN)
+		{
+			meshRenderer.material = mountainMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.PASTURE)
+		{
+			meshRenderer.material = pastureMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.HILL)
+		{
+			meshRenderer.material = hillMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.FIELD)
+		{
+			meshRenderer.material = fieldMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.FOREST)
+		{
+			meshRenderer.material = forestMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.DESERT)
+		{
+			meshRenderer.material = desertMaterial;
+		}
+		if (tile.GetTileType() == TileTypeEnum.SEA)
+		{
+			meshRenderer.material = seaMaterial;
+		}
+		
 		hexGo.tag = "Hexagon";
 		hexGo.transform.SetParent(transform);
 		hexGo.isStatic = true;
@@ -52,16 +94,16 @@ public class Map : MonoBehaviour {
 		var centerX = (pos1.x + pos2.x) / 2;
 		var centerZ = (pos1.z + pos2.z) / 2;
 		var pos = new Vector3(centerX, .07f, centerZ);
-		var cornerObj = Instantiate(roadPlaceholderPrefab, pos, rotation);
-		cornerObj.name = "road-edge"; // todo name with proper hashcode 
-		cornerObj.tag = "Edge";
-		cornerObj.transform.SetParent(transform);
-		cornerObj.isStatic = true;
+		var edgeObj = Instantiate(roadPlaceholderPrefab, pos, rotation);
+		edgeObj.name = edge.GetHashCode().ToString(); 
+		edgeObj.tag = "Edge";
+		edgeObj.transform.SetParent(transform);
+		edgeObj.isStatic = true;
 	}
 
 	private Vector3 GetHexTileWordCoordinates(int hashCode)
 	{
-		var tile = _board.GetTileByHashCode(hashCode);
+		var tile = _catan.GetBoard().GetTileByHashCode(hashCode);
 		return tile.ToWorldCoordinates();
 	}
 
