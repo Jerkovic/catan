@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using EventSystem;
-using UnityEngine;
 
-namespace logic
+namespace Catan
 {
     public class Board
     {
@@ -21,11 +19,9 @@ namespace logic
 	        GenerateTiles();
 	        GenerateCorners();
             GenerateEdges();
-
-            // Init states
-            SetRobberDesert();
+            
         }
-
+        
         private void GenerateTiles()
         {
 			var center = new CubicHexCoord(0, 0, 0);
@@ -47,7 +43,7 @@ namespace logic
 			}
         }
 
-        private void SetRobberDesert()
+        public void SetRobberDesert()
         {
 	        var desertTile =  _tiles.Single(tile => tile.GetTileType() == TileTypeEnum.DESERT);
 	        _robberTile = desertTile;

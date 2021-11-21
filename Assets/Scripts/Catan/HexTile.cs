@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace logic
+namespace Catan
 {
     public class HexTile
     {

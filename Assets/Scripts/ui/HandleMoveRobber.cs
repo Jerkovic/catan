@@ -1,5 +1,5 @@
 using EventSystem;
-using logic;
+using Catan;
 using UnityEngine;
 
 namespace ui

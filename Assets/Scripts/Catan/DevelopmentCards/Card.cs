@@ -1,4 +1,4 @@
-namespace logic.development
+namespace Catan.DevelopmentCards
 {
     public class Card
     {

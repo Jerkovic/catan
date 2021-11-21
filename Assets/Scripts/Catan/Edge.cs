@@ -1,4 +1,4 @@
-namespace logic
+namespace Catan
 {
     public class Edge
     {

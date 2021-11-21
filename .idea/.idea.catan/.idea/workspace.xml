@@ -4,17 +4,46 @@
     <list default="true" id="e7f233a0-8e2f-4c25-9134-20140d064f91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catan/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hex.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hex.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Board.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Board.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Catan.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Game.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Corner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Corner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/CornerDirectionEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/CornerDirectionEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/CubicHexCoord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/CubicHexCoord.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DiagonalEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DiagonalEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DirectionEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DirectionEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Edge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/Edge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Edge.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/FloatCubic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/FloatCubic.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/HexTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/HexTile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/RotationEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/RotationEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/TileTypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/TileTypeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/TileTypeEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/TileTypeEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/TileTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/TileTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/TileTypes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/TileTypes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Card.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/CardTypeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/CardTypeEnum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Deck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Deck.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Resources/ResourceEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Catan/Resources/ResourceEnum.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ui/HandleMoveRobber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +63,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -44,29 +74,29 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/CornerDirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FreeCam.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Corner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/CardTypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/Corner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/CardTypeEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Event.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/Board.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/Board.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ui/HandleDiceResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoardView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Events.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/resources/ResourceEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Card.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/development/Deck.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/CubicHexCoord.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/HexTile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/Resources/ResourceEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Card.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/DevelopmentCards/Deck.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/CubicHexCoord.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3c9e850c90c548a0af7e388089bbdae93ea98/aa/0f260d3b/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/17/02b2ce43/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DiagonalEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/FloatCubic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/DiagonalEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/FloatCubic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/RotationEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/f8/34ef33ed/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/logic/DirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Catan/DirectionEnum.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -108,6 +138,7 @@
   </component>
   <component name="ProjectId" id="212djKCCSJ1eqyFa0L7s3lctqVT" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
@@ -228,7 +259,8 @@
       <workItem from="1636379103140" duration="9472000" />
       <workItem from="1636534747404" duration="4596000" />
       <workItem from="1637057867289" duration="12520000" />
-      <workItem from="1637143261523" duration="32315000" />
+      <workItem from="1637143261523" duration="35514000" />
+      <workItem from="1637490914222" duration="8586000" />
     </task>
     <servers />
   </component>

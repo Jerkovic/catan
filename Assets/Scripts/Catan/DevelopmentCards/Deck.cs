@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace logic.development
+namespace Catan.DevelopmentCards
 {
     public class Deck
     {

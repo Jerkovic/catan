@@ -1,4 +1,4 @@
-namespace logic.resources
+namespace Catan.Resources
 {
     public enum ResourceEnum: int
     {    

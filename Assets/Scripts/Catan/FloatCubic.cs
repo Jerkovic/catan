@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace logic
+namespace Catan
 {
     public struct FloatCubic
 	{

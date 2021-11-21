@@ -1,4 +1,4 @@
-namespace logic.development
+namespace Catan.DevelopmentCards
 {
     public enum CardTypeEnum: int
     {

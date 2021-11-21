@@ -1,4 +1,4 @@
-using logic;
+using Catan;
 using UnityEngine;
 
 namespace EventSystem
@@ -10,7 +10,7 @@ namespace EventSystem
         public static readonly Event<GameObject> OnClickEdge = new Event<GameObject>();
         public static readonly Event<GameObject> OnClickCorner = new Event<GameObject>();
 
-        // Events Invoked in the Catan Game
+        // Events Invoked in the Game Game
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
         public static readonly Event<int> OnRollDice = new Event<int>();
 

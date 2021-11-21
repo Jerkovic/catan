@@ -1,4 +1,4 @@
-namespace logic
+namespace Catan
 {
     public enum DirectionEnum : int
     {

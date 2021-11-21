@@ -1,6 +1,6 @@
 using System;
 
-namespace logic
+namespace Catan
 {	
 	public struct CubicHexCoord
 	{

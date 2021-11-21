@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using logic;
+using Catan;
+using Managers;
 
 public class BoardView : MonoBehaviour {
 
@@ -17,29 +18,27 @@ public class BoardView : MonoBehaviour {
 	[SerializeField] private Material desertMaterial;
 	[SerializeField] private Material seaMaterial;
 	
-	private Catan _catan;
-	
 	private void Start ()
 	{
-		/*
-		 * Todo chits 18
-		 */
-		_catan = new Catan();
+		var game = GameManager.Instance.GetGame();
+		var board = game.GetBoard();
 
-		foreach (var tile in _catan.GetBoard().GetTiles())
+		foreach (var tile in board.GetTiles())
 		{
 			InitHexTile(tile); // 19
 		}
 		
-		foreach (var corner in _catan.GetBoard().GetCorners())
+		foreach (var corner in board.GetCorners())
 		{			
 			InitCorner(corner); // 54 
 		}
 		
-		foreach (var edge in _catan.GetBoard().GetEdges())
+		foreach (var edge in board.GetEdges())
 		{
 			InitEdge(edge); // 72
 		}
+		
+		board.SetRobberDesert();
 	}
 
 	private void InitHexTile(HexTile tile)
@@ -101,7 +100,7 @@ public class BoardView : MonoBehaviour {
 
 	private Vector3 GetHexTileWordCoordinates(int hashCode)
 	{
-		var tile = _catan.GetBoard().GetTileByHashCode(hashCode);
+		var tile = GameManager.Instance.GetGame().GetBoard().GetTileByHashCode(hashCode);
 		return tile.ToWorldCoordinates();
 	}
 
