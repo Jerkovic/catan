@@ -9,19 +9,22 @@ namespace Catan
 {
     public class Game
     {
+        private readonly string _gameId;
         private readonly Board _board;
         private readonly List<Player> _players;
+
+        // Snake order
+        private IEnumerable<string> _placementTurn;
+        private int _turnCounter = 0; 
 
         public Game()
         {
             _board = new Board(3);
             _players = new List<Player>();
+            
+            _gameId = GenerateGuid();
 
-
-            var gameId = GenerateGuid();
-            Debug.Log("Game id: " + gameId);
-
-            // set some players to the game
+            // set some mocked players to the game
             var player1 = new Player(Color.blue, "Robert");
             var player2 = new Player(Color.red, "Sarah");
             var player3 = new Player(Color.yellow, "Vincent");
@@ -30,31 +33,49 @@ namespace Catan
             _players.Add(player2);
             _players.Add(player3);
             _players.Add(player4);
+        }
 
-
-            // The logic of the placement round
-            // take random player to start 
-            // if player 2 starts with 3 players the order is: 2,3,1,1,3,2
-            // 1 placement round is 1 village and 1 adjacent road.
+        public string GetGameId()
+        {
+            return _gameId;
         }
 
         public void Start()
         {
             // Make up the placing turn order. Snake style
-            Debug.Log("Initializing...");
-            InitPlacementTurn();
-            // could raise event with player turn here?
+            Debug.Log("Initializing Game " + _gameId);
+            _placementTurn = InitPlacementTurn();
+            NextTurn();
+
         }
 
-        private void InitPlacementTurn()
+        private IEnumerable<string> InitPlacementTurn()
         {
             Debug.Log("InitPlacementTurn");
             var ids = _players.Select(p => p.Guid).ToArray();
-            var pIdsOrder = ids.ToList();
+            var placementOrder = ids.ToList();
             Array.Reverse(ids);
-            pIdsOrder.AddRange(ids);
+            placementOrder.AddRange(ids);
+            return placementOrder.ToList();
+        }
 
-            Debug.Log(pIdsOrder.Count);
+        private Player GetPlayerByGuid(string guid)
+        {
+            return _players.Single(p => p.Guid == guid);
+        }
+
+        public void NextTurn()
+        {
+            // do validation
+            Debug.Log(_turnCounter + " of " +_placementTurn.Count());
+            if (_turnCounter >= _placementTurn.Count())
+            {
+                Debug.Log("First phase is over!");
+                return;
+            }
+            var guid = _placementTurn.ElementAt(_turnCounter++);
+            Debug.Log("Turn changed to " + guid);
+            Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
         }
 
         public static string GenerateGuid()

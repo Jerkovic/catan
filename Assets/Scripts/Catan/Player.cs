@@ -9,8 +9,8 @@ namespace Catan
         public string Name { get; set; }
         public string Guid { get; set; }
         public Color Color { get; set; }
-        public int knights;
-        public int victoryPoints;
+        public int knights; // knight cards
+        public int victoryPoints; // cards
 
         private Dictionary<ResourceEnum, int> _resources;
 

@@ -40,6 +40,7 @@ namespace Catan
                 {
                     chit = chits.RandomNextChit();
                 }
+
                 _tiles.Add(new HexTile(coordinate, type, chit));
             }
 
@@ -232,7 +233,7 @@ namespace Catan
             return _edges.Single(edge => edge.GetHashCode() == hashCode);
         }
 
-        private Corner GetCornerByHashCode(int hashCode)
+        public Corner GetCornerByHashCode(int hashCode)
         {
             return _corners.Single(corner => corner.GetHashCode() == hashCode);
         }
@@ -240,6 +241,12 @@ namespace Catan
         public HexTile GetTileByHashCode(int hashCode)
         {
             return _tiles.Single(tile => tile.GetHashCode() == hashCode);
+        }
+        
+        public List<Corner> GetCornersByTile(int hashCode)
+        {
+            return _corners.Select((corner) => corner).Where(corner =>
+                corner.hex1 == hashCode || corner.hex2 == hashCode || corner.hex3 == hashCode).ToList();
         }
     }
 }

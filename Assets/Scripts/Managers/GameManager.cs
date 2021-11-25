@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Utils;
 
@@ -13,8 +14,9 @@ namespace Managers
             _game = new Catan.Game();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            yield return new WaitForSeconds(2.5f);
             Debug.Log("Start Game manager...");
             _game.Start();
             _game.GetBoard().SetRobberDesert();

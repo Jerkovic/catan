@@ -16,6 +16,7 @@ namespace EventSystem
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
         public static readonly Event<int> OnRollDice = new Event<int>();
         public static readonly Event<Dictionary<ResourceEnum, int>> OnResourcesUpdate = new Event<Dictionary<ResourceEnum, int>>();
+        public static readonly Event<Player> OnPlayerTurnChanged = new Event<Player>();
         
         // Events.OnRollDice.Invoke(12);
         // Events.OnRollDice.AddListener(SomeMethod)

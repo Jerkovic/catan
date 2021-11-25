@@ -87,11 +87,13 @@ public class BoardView : MonoBehaviour
         hexGo.transform.SetParent(transform);
         hexGo.isStatic = true;
 
-        // create chit 
-        // 2,3,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12
-        var chit = Instantiate(chitPrefab, hexGo.transform, false);
-        var textComponent = chit.GetComponentInChildren<TMP_Text>();
-        textComponent.text = tile.GetChit().ToString();
+        // create chit
+        if (tile.GetTileType() != TileTypeEnum.SEA && tile.GetTileType() != TileTypeEnum.DESERT)
+        {
+            var chit = Instantiate(chitPrefab, hexGo.transform, false);
+            var textComponent = chit.GetComponentInChildren<TMP_Text>();
+            textComponent.text = tile.GetChit().ToString();
+        }
     }
 
     private void InitEdge(Edge edge)

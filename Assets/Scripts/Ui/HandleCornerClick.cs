@@ -1,4 +1,6 @@
+using System;
 using EventSystem;
+using Managers;
 using UnityEngine;
 
 namespace Ui
@@ -9,18 +11,21 @@ namespace Ui
         public GameObject cityPrefab;
         private void OnEnable()
         {
-            Events.OnClickCorner.AddListener(ChangeColor);
+            Events.OnClickCorner.AddListener(BuildCity);
         }
         
         private void OnDisable()
         {
-            Events.OnClickCorner.RemoveListener(ChangeColor);
+            Events.OnClickCorner.RemoveListener(BuildCity);
         }
     
-        private void ChangeColor(GameObject gameObject)
+        private void BuildCity(GameObject go)
         {
-            Debug.Log("clicked to place test settlement on corner " + gameObject.name);
-            var position = gameObject.transform.position;
+            Debug.Log("clicked to place test settlement on corner " + go.name);
+            var hexCode = int.Parse(go.name);
+            var corner = GameManager.Instance.GetGame().GetBoard().GetCornerByHashCode(hexCode);
+            Debug.Log(corner.IsPort().ToString());
+            var position = go.transform.position;
             var offset = new Vector3(position.x, 0.095f, position.z);
             Instantiate(cityPrefab, offset, Quaternion.identity);
         }

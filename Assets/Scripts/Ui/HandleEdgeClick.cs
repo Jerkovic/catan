@@ -16,10 +16,10 @@ namespace Ui
             Events.OnClickEdge.RemoveListener(ChangeColor);
         }
     
-        private void ChangeColor(GameObject gameObject)
+        private void ChangeColor(GameObject go)
         {
-            Debug.Log("Clicked edge to place road " + gameObject.name);
-            var mr = gameObject.GetComponentInChildren<MeshRenderer>();
+            Debug.Log("Clicked edge to place road " + go.name);
+            var mr = go.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
             mr.material.color = Color.blue;
             // GameManager.Instance.PlaceRoad()
