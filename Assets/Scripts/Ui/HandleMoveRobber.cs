@@ -1,8 +1,8 @@
-using EventSystem;
 using Catan;
+using EventSystem;
 using UnityEngine;
 
-namespace ui
+namespace Ui
 {
     public class HandleMoveRobber : MonoBehaviour
     {

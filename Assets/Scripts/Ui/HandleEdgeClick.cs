@@ -1,7 +1,8 @@
 using EventSystem;
+using Managers;
 using UnityEngine;
 
-namespace ui
+namespace Ui
 {
     public class HandleEdgeClick : MonoBehaviour
     {
@@ -17,10 +18,11 @@ namespace ui
     
         private void ChangeColor(GameObject gameObject)
         {
-            Debug.Log("clicked to place road " + gameObject.name);
+            Debug.Log("Clicked edge to place road " + gameObject.name);
             var mr = gameObject.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
-            mr.material.color = Color.black;
+            mr.material.color = Color.blue;
+            // GameManager.Instance.PlaceRoad()
         }
     
     }

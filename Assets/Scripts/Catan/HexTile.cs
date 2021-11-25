@@ -8,15 +8,17 @@ namespace Catan
     {
         private readonly CubicHexCoord _coordinate;
         private readonly TileTypeEnum _type;
-        
+        private readonly int _chit;
+
         // UI offsets 
         private const float XOffset = 0.882f;
         private const float ZOffset = 0.764f;
 
-        public HexTile(CubicHexCoord coord, TileTypeEnum type)
+        public HexTile(CubicHexCoord coord, TileTypeEnum type, int chit)
         {
             _coordinate = coord;
             _type = type;
+            _chit = chit;
         }
 
         public TileTypeEnum GetTileType()
@@ -24,26 +26,32 @@ namespace Catan
             return _type;
         }
 
+        public int GetChit()
+        {
+            return _chit;
+        }
+
         public Vector3 ToWorldCoordinates()
-        {            
+        {
             var xPos = _coordinate.x * XOffset;
             var zPos = _coordinate.z * ZOffset;
-			
-            if( _coordinate.z > 0 && _coordinate.z % 2 == 1)
+
+            if (_coordinate.z > 0 && _coordinate.z % 2 == 1)
             {
                 xPos += XOffset / 2f + XOffset * (_coordinate.z / 2);
             }
-            if( _coordinate.z > 0 && _coordinate.z % 2 == 0)
+
+            if (_coordinate.z > 0 && _coordinate.z % 2 == 0)
             {
                 xPos += XOffset * (_coordinate.z / 2);
             }
-			
-            if( _coordinate.z < 0 &&  (_coordinate.z * -1) % 2 == 1)
+
+            if (_coordinate.z < 0 && (_coordinate.z * -1) % 2 == 1)
             {
                 xPos -= XOffset / 2f + XOffset * (-_coordinate.z / 2);
             }
-			
-            if( _coordinate.z < 0 && (_coordinate.z * -1) % 2 == 0) // even 
+
+            if (_coordinate.z < 0 && (_coordinate.z * -1) % 2 == 0) // even 
             {
                 xPos -= XOffset * (-_coordinate.z / 2);
             }
@@ -55,6 +63,5 @@ namespace Catan
         {
             return _coordinate.GetHashCode();
         }
-
     }
 }

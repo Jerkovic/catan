@@ -2,7 +2,7 @@ using EventSystem;
 using TMPro;
 using UnityEngine;
 
-namespace ui
+namespace Ui
 {
     public class HandleDiceResult : MonoBehaviour
     {
