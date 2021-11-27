@@ -15,10 +15,10 @@ namespace EventSystem
         {
             _action += listener;
         }
-        
+
         public void RemoveListener(Action<T> listener)
         {
             _action -= listener;
-        }               
+        }
     }
 }

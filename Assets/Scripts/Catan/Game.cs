@@ -112,28 +112,40 @@ namespace Catan
         public void BuildSettlementAtCorner(int hashCode)
         {
             var corner = GetBoard().GetCornerByHashCode(hashCode);
-            
+
+            // validate that we are not close to other settlement/city
+            var edges = GetBoard().GetEdgesByCorner(corner.GetHashCode());
+            var corners = edges.Select((e) => e.GetAdjacentCorner(corner));
+            var adjacentOccupiedCorners = corners.Where((c) => c != null && c.GetState() != CornerStateEnum.EMPTY);
+            if (adjacentOccupiedCorners.Any())
+            {
+                Debug.Log("Too close to other building");
+                return;
+            }
+
             if (corner.PlaceSettlement(_turnPlayerGuid))
             {
                 var player = GetPlayerByGuid(_turnPlayerGuid);
                 Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
                 return;
             }
-            
+
             Debug.Log("Cannot build settlement at this corner");
         }
 
         public void BuildRoadAtEdge(int hashCode)
         {
+            // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
+
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
-            
+
             if (edge.PlaceRoad(_turnPlayerGuid))
             {
                 var player = GetPlayerByGuid(_turnPlayerGuid);
                 Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
                 return;
             }
-            
+
             Debug.Log("Cannot build road at this edge");
         }
     }

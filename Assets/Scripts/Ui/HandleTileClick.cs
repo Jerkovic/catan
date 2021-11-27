@@ -1,3 +1,4 @@
+using System.Linq;
 using EventSystem;
 using Managers;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace Ui
             Debug.Log("Clicked tile " + go.name);
             var hashCode = int.Parse(go.name);
             var corners = GameManager.Instance.GetGame().GetBoard().GetCornersByTile(hashCode);
-            Debug.Log(corners.Count);
+            Debug.Log(corners.Count());
         }
     }
 }

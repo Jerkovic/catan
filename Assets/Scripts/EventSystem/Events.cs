@@ -41,7 +41,7 @@ namespace EventSystem
             this.Corner = corner;
         }
     }
-    
+
     public class RoadBuilt
     {
         public Player Player { get; set; }

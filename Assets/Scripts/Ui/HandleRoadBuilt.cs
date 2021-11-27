@@ -7,8 +7,6 @@ namespace Ui
 {
     public class HandleRoadBuilt : MonoBehaviour
     {
-        public GameObject roadPrefab;
-
         private void OnEnable()
         {
             Events.OnRoadBuilt.AddListener(PlaceRoad);

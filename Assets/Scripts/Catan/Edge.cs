@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+
 namespace Catan
 {
     public class Edge
@@ -14,6 +16,14 @@ namespace Catan
             this._right = right;
             this._road = false;
             _edgePlayerId = null;
+        }
+
+        [CanBeNull]
+        public Corner GetAdjacentCorner(Corner corner)
+        {
+            if (corner.GetHashCode() == _left.GetHashCode()) return _right;
+            if (corner.GetHashCode() == _right.GetHashCode()) return _left;
+            return null;
         }
 
         public bool HasRoad() 

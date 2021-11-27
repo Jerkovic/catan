@@ -11,18 +11,17 @@ namespace Ui
         {
             Events.OnClickCorner.AddListener(RequestBuildSettlement);
         }
-        
+
         private void OnDisable()
         {
             Events.OnClickCorner.RemoveListener(RequestBuildSettlement);
         }
-    
+
         private void RequestBuildSettlement(GameObject go)
         {
             Debug.Log("Clicked to place test settlement on corner " + go.name);
             var hashCode = int.Parse(go.name);
             GameManager.Instance.GetGame().BuildSettlementAtCorner(hashCode);
         }
-    
     }
 }
