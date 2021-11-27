@@ -23,6 +23,11 @@ namespace Catan
             _cornerPlayerId = null;
         }
 
+        public bool OwnedByPlayerGuid(string guid)
+        {
+            return _cornerPlayerId != null && _cornerPlayerId.Equals(guid);
+        }
+
         public bool PlaceSettlement(string playerId)
         {
             if (!string.IsNullOrEmpty(_cornerPlayerId)) return false;

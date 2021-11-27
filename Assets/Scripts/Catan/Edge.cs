@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
 
 namespace Catan
@@ -7,9 +8,9 @@ namespace Catan
         private readonly Corner _left;
         private readonly Corner _right;
         private bool _road;
-        
+
         private string _edgePlayerId;
-        
+
         public Edge(Corner left, Corner right)
         {
             this._left = left;
@@ -26,16 +27,25 @@ namespace Catan
             return null;
         }
 
-        public bool HasRoad() 
+        public IEnumerable<Corner> GetCorners()
+        {
+            return new List<Corner>
+            {
+                _left,
+                _right
+            };
+        }
+
+        public bool HasRoad()
         {
             return _road;
         }
-        
+
         public Corner GetLeftCorner()
         {
             return _left;
         }
-        
+
         public Corner GetRightCorner()
         {
             return _right;

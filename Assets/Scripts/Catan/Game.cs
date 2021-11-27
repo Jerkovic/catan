@@ -12,6 +12,8 @@ namespace Catan
         private readonly string _gameId;
         private readonly Board _board;
         private readonly List<Player> _players;
+        
+        // State PLACEMENT_PHASE, ORDINARY_PHASE
 
         // Snake order
         private IEnumerable<string> _placementTurn;
@@ -136,14 +138,16 @@ namespace Catan
         public void BuildRoadAtEdge(int hashCode)
         {
             // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
-
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
-
-            if (edge.PlaceRoad(_turnPlayerGuid))
+            var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
+            if (ownedAdjacentCorners.Any())
             {
-                var player = GetPlayerByGuid(_turnPlayerGuid);
-                Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
-                return;
+                if (edge.PlaceRoad(_turnPlayerGuid))
+                {
+                    var player = GetPlayerByGuid(_turnPlayerGuid);
+                    Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
+                    return;
+                }
             }
 
             Debug.Log("Cannot build road at this edge");
