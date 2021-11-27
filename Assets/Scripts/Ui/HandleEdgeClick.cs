@@ -8,21 +8,19 @@ namespace Ui
     {
         private void OnEnable()
         {
-            Events.OnClickEdge.AddListener(ChangeColor);
+            Events.OnClickEdge.AddListener(RequestBuildRoad);
         }
         
         private void OnDisable()
         {
-            Events.OnClickEdge.RemoveListener(ChangeColor);
+            Events.OnClickEdge.RemoveListener(RequestBuildRoad);
         }
     
-        private void ChangeColor(GameObject go)
+        private void RequestBuildRoad(Object go)
         {
-            Debug.Log("Clicked edge to place road " + go.name);
-            var mr = go.GetComponentInChildren<MeshRenderer>();
-            mr.enabled = true;
-            mr.material.color = Color.blue;
-            // GameManager.Instance.PlaceRoad()
+            Debug.Log("Clicked edge to place road at " + go.name);
+            var hexCode = int.Parse(go.name);
+            // GameManager.Instance.GetGame().BuildRoadAtEdge(hexCode);
         }
     
     }

@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 118414516}
   - component: {fileID: 118414517}
   - component: {fileID: 118414518}
+  - component: {fileID: 118414519}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -610,8 +611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16686a4a85b24ab78c0de84be5d9d8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villagePrefab: {fileID: 6972678883234245359, guid: e4e41bac6ca2cfa44b2873668ceeea95, type: 3}
-  cityPrefab: {fileID: 8056220819168401236, guid: 070651e71d05466408d211aea7f6062d, type: 3}
 --- !u!114 &118414517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,6 +635,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb49884cceb64a03a7167cd5f40b5400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &118414519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118414513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3985cc5a5f154e579eaa41705a56f09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  villagePrefab: {fileID: 6972678883234245359, guid: e4e41bac6ca2cfa44b2873668ceeea95, type: 3}
 --- !u!1 &141087505
 GameObject:
   m_ObjectHideFlags: 0

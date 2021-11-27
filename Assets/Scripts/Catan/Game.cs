@@ -15,7 +15,8 @@ namespace Catan
 
         // Snake order
         private IEnumerable<string> _placementTurn;
-        private int _turnCounter = 0; 
+        private int _turnCounter = 0;
+        private string _turnPlayerGuid;
 
         public Game()
         {
@@ -44,9 +45,9 @@ namespace Catan
         {
             // Make up the placing turn order. Snake style
             Debug.Log("Initializing Game " + _gameId);
+            GetBoard().SetRobberDesert();
             _placementTurn = InitPlacementTurn();
             NextTurn();
-
         }
 
         private IEnumerable<string> InitPlacementTurn()
@@ -66,7 +67,6 @@ namespace Catan
 
         public void NextTurn()
         {
-            // do validation
             Debug.Log(_turnCounter + " of " +_placementTurn.Count());
             if (_turnCounter >= _placementTurn.Count())
             {
@@ -75,7 +75,13 @@ namespace Catan
             }
             var guid = _placementTurn.ElementAt(_turnCounter++);
             Debug.Log("Turn changed to " + guid);
+            _turnPlayerGuid = guid;
             Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
+        }
+
+        public string GetTurnPlayerGuid()
+        {
+            return _turnPlayerGuid;
         }
 
         public static string GenerateGuid()
@@ -101,5 +107,27 @@ namespace Catan
             Events.OnRollDice.Invoke(sum);
             return sum;
         }
+
+        public void BuildSettlementAtCorner(int hexCode)
+        {
+            var corner = GetBoard().GetCornerByHashCode(hexCode);            
+            if (corner.PlaceSettlement(_turnPlayerGuid))
+            {
+                var player = GetPlayerByGuid(_turnPlayerGuid);
+                Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
+            }
+            else
+            {
+                Debug.Log("Cannot build settlement at this corner");
+                // Dispatch Error Event?
+            }
+        }
+        
+        public void BuildRoadAtEdge(int hexCode)
+        {
+            // var edge = GetBoard().getEdgeBy
+            // Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
+            Debug.Log("Cannot build road at this edge");
+        }        
     }
 }

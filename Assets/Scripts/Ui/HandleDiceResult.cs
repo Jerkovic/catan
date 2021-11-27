@@ -6,7 +6,7 @@ namespace Ui
 {
     public class HandleDiceResult : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI label;
+        [SerializeField] private TMP_Text label;
         private void OnEnable()
         {
             Events.OnRollDice.AddListener(DisplayRollDiceResult);
