@@ -20,8 +20,8 @@ namespace Ui
         private void RequestBuildSettlement(GameObject go)
         {
             Debug.Log("Clicked to place test settlement on corner " + go.name);
-            var hexCode = int.Parse(go.name);
-            GameManager.Instance.GetGame().BuildSettlementAtCorner(hexCode);
+            var hashCode = int.Parse(go.name);
+            GameManager.Instance.GetGame().BuildSettlementAtCorner(hashCode);
         }
     
     }

@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 118414517}
   - component: {fileID: 118414518}
   - component: {fileID: 118414519}
+  - component: {fileID: 118414520}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -648,6 +649,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagePrefab: {fileID: 6972678883234245359, guid: e4e41bac6ca2cfa44b2873668ceeea95, type: 3}
+--- !u!114 &118414520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118414513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf2e4dba3074d538c73be1fa070a97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadPrefab: {fileID: 0}
 --- !u!1 &141087505
 GameObject:
   m_ObjectHideFlags: 0

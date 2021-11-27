@@ -19,8 +19,8 @@ namespace Ui
         private void RequestBuildRoad(Object go)
         {
             Debug.Log("Clicked edge to place road at " + go.name);
-            var hexCode = int.Parse(go.name);
-            // GameManager.Instance.GetGame().BuildRoadAtEdge(hexCode);
+            var hashCode = int.Parse(go.name);
+            GameManager.Instance.GetGame().BuildRoadAtEdge(hashCode);
         }
     
     }

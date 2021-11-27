@@ -228,7 +228,7 @@ namespace Catan
             _edges.Add(new Edge(corner1, corner2));
         }
 
-        private Edge GetEdgeByHashCode(int hashCode)
+        public Edge GetEdgeByHashCode(int hashCode)
         {
             return _edges.Single(edge => edge.GetHashCode() == hashCode);
         }
@@ -236,7 +236,7 @@ namespace Catan
         public Corner GetCornerByHashCode(int hashCode)
         {
             return _corners.Single(corner => corner.GetHashCode() == hashCode);
-        }
+        }        
 
         public HexTile GetTileByHashCode(int hashCode)
         {

@@ -8,14 +8,10 @@ namespace Catan
         private readonly bool _port;
         private CornerStateEnum _state;
         private string _cornerPlayerId;
-
-        // Tiles connect to 3 HexTiles
-        // TODO: fix correct Corner references
+        
         public readonly int hex1;
         public readonly int hex2;
         public readonly int hex3;
-
-        // a node in the graph
 
         public Corner(int hex1, int hex2, int hex3, bool port = false)
         {

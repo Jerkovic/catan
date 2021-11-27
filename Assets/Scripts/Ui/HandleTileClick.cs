@@ -19,8 +19,8 @@ namespace Ui
         private void Test(GameObject go)
         {
             Debug.Log("Clicked tile " + go.name);
-            var hexCode = int.Parse(go.name);
-            var corners = GameManager.Instance.GetGame().GetBoard().GetCornersByTile(hexCode);
+            var hashCode = int.Parse(go.name);
+            var corners = GameManager.Instance.GetGame().GetBoard().GetCornersByTile(hashCode);
             Debug.Log(corners.Count);
         }
     }

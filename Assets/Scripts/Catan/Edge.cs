@@ -4,13 +4,16 @@ namespace Catan
     {
         private readonly Corner _left;
         private readonly Corner _right;
-        private readonly bool _road;
+        private bool _road;
+        
+        private string _edgePlayerId;
         
         public Edge(Corner left, Corner right)
         {
             this._left = left;
             this._right = right;
             this._road = false;
+            _edgePlayerId = null;
         }
 
         public bool HasRoad() 
@@ -36,6 +39,14 @@ namespace Catan
         public override string ToString()
         {
             return "edge";
+        }
+
+        public bool PlaceRoad(string playerId)
+        {
+            if (!string.IsNullOrEmpty(_edgePlayerId) || _road) return false;
+            _road = true;
+            _edgePlayerId = playerId;
+            return true;
         }
     }
 }
