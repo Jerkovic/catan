@@ -57,6 +57,11 @@ namespace Catan
             Events.OnRobberMove.Invoke(desertTile);
         }
 
+        public HexTile GetRobberTile()
+        {
+            return _robberTile;
+        }
+
         public List<HexTile> GetTiles()
         {
             return _tiles;

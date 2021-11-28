@@ -1,7 +1,7 @@
 ﻿using EventSystem;
 using UnityEngine;
 
-public class MouseManager : MonoBehaviour
+public class MouseManager : MonoBehaviour // change name to 
 {
     [SerializeField] private new Camera camera;
 

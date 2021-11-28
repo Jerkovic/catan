@@ -108,6 +108,10 @@ namespace Catan
             var dice2 = Random.Range(1, 6);
             var sum = dice1 + dice2;
             Events.OnRollDice.Invoke(sum);
+            // if sum != ROBBER - invoke the produce tile resources 
+            // 1. Get tiles that matches the chit (exclude robber tile board->GetRobberTile())
+            // 2. Get tile->GetChit  
+            // get corners via board->GetCornersByTile
             return sum;
         }
 
@@ -132,6 +136,7 @@ namespace Catan
                 return;
             }
 
+            // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build settlement at this corner");
         }
 
@@ -149,7 +154,7 @@ namespace Catan
                     return;
                 }
             }
-
+            // // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build road at this edge");
         }
     }
