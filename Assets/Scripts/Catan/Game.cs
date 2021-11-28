@@ -102,7 +102,7 @@ namespace Catan
             return _players;
         }
 
-        private int RollDices()
+        public int RollDices()
         {
             var dice1 = Random.Range(1, 6);
             var dice2 = Random.Range(1, 6);

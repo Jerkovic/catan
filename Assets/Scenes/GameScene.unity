@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43700203, g: 0.48468924, b: 0.56495005, a: 1}
+  m_IndirectSpecularColor: {r: 0.43700266, g: 0.48468983, b: 0.5649511, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,11 +551,9 @@ GameObject:
   m_Component:
   - component: {fileID: 118414515}
   - component: {fileID: 118414514}
-  - component: {fileID: 118414516}
-  - component: {fileID: 118414517}
-  - component: {fileID: 118414518}
   - component: {fileID: 118414519}
   - component: {fileID: 118414520}
+  - component: {fileID: 118414516}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -609,31 +607,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 118414513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16686a4a85b24ab78c0de84be5d9d8f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &118414517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118414513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4761ea33da7649788ab42ee1993387e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &118414518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118414513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb49884cceb64a03a7167cd5f40b5400, type: 3}
+  m_Script: {fileID: 11500000, guid: cb65d0e5761044f88530c5d8c80f1171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &118414519
@@ -661,7 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf2e4dba3074d538c73be1fa070a97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadPrefab: {fileID: 0}
 --- !u!1 &141087505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1111,6 @@ GameObject:
   - component: {fileID: 606095974}
   - component: {fileID: 606095973}
   - component: {fileID: 606095972}
-  - component: {fileID: 606095975}
   m_Layer: 5
   m_Name: NexTurnButton
   m_TagString: Untagged
@@ -1210,9 +1182,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 606095975}
-        m_TargetAssemblyTypeName: Ui.HandleNextTurnClick, Assembly-CSharp
-        m_MethodName: Click
+      - m_Target: {fileID: 118414516}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: NextTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1260,18 +1232,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606095970}
   m_CullTransparentMesh: 1
---- !u!114 &606095975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606095970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd2128dbade84a3898d380a694596fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &704642777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2067,6 @@ GameObject:
   - component: {fileID: 1032670112}
   - component: {fileID: 1032670111}
   - component: {fileID: 1032670110}
-  - component: {fileID: 1032670113}
   m_Layer: 5
   m_Name: RollDiceButton
   m_TagString: Untagged
@@ -2178,7 +2137,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032670111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118414516}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: RollDices
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1032670111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,18 +2188,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032670108}
   m_CullTransparentMesh: 1
---- !u!114 &1032670113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032670108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd9ec5181f5f1c4992974f0d45ad2a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1059850962
 GameObject:
   m_ObjectHideFlags: 0
