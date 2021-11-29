@@ -10,15 +10,16 @@ namespace Ui
         {
             Events.OnRobberMove.AddListener(MoveRobberPiece);
         }
-        
+
         private void OnDisable()
         {
             Events.OnRobberMove.RemoveListener(MoveRobberPiece);
         }
-    
+
         private void MoveRobberPiece(HexTile hexTile)
         {
             Debug.Log("move robber to world pos " + hexTile.ToWorldCoordinates());
+            // todo offset -x  
             transform.position = hexTile.ToWorldCoordinates();
         }
     }

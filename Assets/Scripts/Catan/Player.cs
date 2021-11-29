@@ -12,7 +12,7 @@ namespace Catan
         public int knights; // knight cards
         public int victoryPoints; // cards
 
-        private Dictionary<ResourceEnum, int> _resources;
+        private readonly Dictionary<ResourceEnum, int> _resources;
 
         public Player(Color color, string name)
         {
@@ -27,6 +27,16 @@ namespace Catan
                 {ResourceEnum.WHEAT, 0},
                 {ResourceEnum.ORE, 0}
             };
+        }
+
+        public Dictionary<ResourceEnum, int> GetResources()
+        {
+            return _resources;
+        }
+
+        public void AddResource(ResourceEnum resource, int amount)
+        {
+            _resources[resource] += amount;
         }
     }
 }

@@ -6,6 +6,7 @@ namespace Catan.Resources
         BRICK = 1,
         SHEEP = 2,
         WHEAT  = 3,
-        ORE = 4
+        ORE = 4,
+        NONE = 5
     }
 }

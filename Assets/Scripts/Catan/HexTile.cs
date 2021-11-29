@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Catan.Resources;
 
 namespace Catan
 {
@@ -29,6 +30,21 @@ namespace Catan
         public int GetChit()
         {
             return _chit;
+        }
+
+        public ResourceEnum GetResourceType()
+        {
+            return GetTileType() switch
+            {
+                TileTypeEnum.HILL => ResourceEnum.BRICK,
+                TileTypeEnum.FIELD => ResourceEnum.WHEAT,
+                TileTypeEnum.FOREST => ResourceEnum.WOOD,
+                TileTypeEnum.PASTURE => ResourceEnum.SHEEP,
+                TileTypeEnum.MOUNTAIN => ResourceEnum.ORE,
+                TileTypeEnum.DESERT => ResourceEnum.NONE,
+                TileTypeEnum.SEA => ResourceEnum.NONE,
+                _ => ResourceEnum.NONE
+            };
         }
 
         public Vector3 ToWorldCoordinates()

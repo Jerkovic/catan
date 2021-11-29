@@ -7,7 +7,7 @@ namespace Catan
         // owner, settlement status
         private readonly bool _port;
         private CornerStateEnum _state;
-        private string _cornerPlayerId;
+        private string _cornerPlayerGuid;
         
         public readonly int hex1;
         public readonly int hex2;
@@ -20,27 +20,32 @@ namespace Catan
             this.hex2 = hex2;
             this.hex3 = hex3;
             _port = port;
-            _cornerPlayerId = null;
+            _cornerPlayerGuid = null;
         }
 
         public bool OwnedByPlayerGuid(string guid)
         {
-            return _cornerPlayerId != null && _cornerPlayerId.Equals(guid);
+            return _cornerPlayerGuid != null && _cornerPlayerGuid.Equals(guid);
+        }
+
+        public string GetPlayerGuid()
+        {
+            return _cornerPlayerGuid;
         }
 
         public bool PlaceSettlement(string playerId)
         {
-            if (!string.IsNullOrEmpty(_cornerPlayerId)) return false;
+            if (!string.IsNullOrEmpty(_cornerPlayerGuid)) return false;
             _state = CornerStateEnum.SETTLEMENT;
-            _cornerPlayerId = playerId;
+            _cornerPlayerGuid = playerId;
             return true;
         }
 
         public bool PlaceCity(string playerId)
         {
-            if (!_cornerPlayerId.Equals(playerId)) return false;
+            if (!_cornerPlayerGuid.Equals(playerId)) return false;
             _state = CornerStateEnum.CITY;
-            _cornerPlayerId = playerId;
+            _cornerPlayerGuid = playerId;
             return true;
         }
 

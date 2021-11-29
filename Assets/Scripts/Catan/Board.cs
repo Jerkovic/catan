@@ -52,7 +52,7 @@ namespace Catan
 
         public void SetRobberDesert()
         {
-            var desertTile = _tiles.Single(tile => tile.GetTileType() == TileTypeEnum.DESERT);
+            var desertTile = _tiles.First(tile => tile.GetTileType() == TileTypeEnum.DESERT);
             _robberTile = desertTile;
             Events.OnRobberMove.Invoke(desertTile);
         }

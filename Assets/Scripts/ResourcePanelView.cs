@@ -1,33 +1,43 @@
 using System;
+using System.Collections.Generic;
+using Catan.Resources;
+using EventSystem;
 using TMPro;
 using UnityEngine;
 
 public class ResourcePanelView : MonoBehaviour
 {
-    // should be listening on ResourceUpdateEvent
-    private TextMeshProUGUI _woodText;
-    private TextMeshProUGUI _brickText;
-    private TextMeshProUGUI _sheepText;
-    private TextMeshProUGUI _wheatText;
-    private TextMeshProUGUI _oreText;
-    
+    private TMP_Text _woodText;
+    private TMP_Text _brickText;
+    private TMP_Text _sheepText;
+    private TMP_Text _wheatText;
+    private TMP_Text _oreText;
+
     private void Start()
     {
-        _woodText = transform.GetChild(0).GetComponentsInChildren<TextMeshProUGUI>()[0];
-        _brickText = transform.GetChild(1).GetComponentsInChildren<TextMeshProUGUI>()[0];
-        _sheepText = transform.GetChild(2).GetComponentsInChildren<TextMeshProUGUI>()[0];
-        _wheatText = transform.GetChild(3).GetComponentsInChildren<TextMeshProUGUI>()[0];
-        _oreText = transform.GetChild(4).GetComponentsInChildren<TextMeshProUGUI>()[0];
-
-        UpdateUI();
+        _woodText = transform.GetChild(0).GetComponentsInChildren<TMP_Text>()[0];
+        _brickText = transform.GetChild(1).GetComponentsInChildren<TMP_Text>()[0];
+        _sheepText = transform.GetChild(2).GetComponentsInChildren<TMP_Text>()[0];
+        _wheatText = transform.GetChild(3).GetComponentsInChildren<TMP_Text>()[0];
+        _oreText = transform.GetChild(4).GetComponentsInChildren<TMP_Text>()[0];
     }
 
-    private void UpdateUI()
+    private void OnEnable()
     {
-        _woodText.SetText("1");
-        _brickText.SetText("2");
-        _sheepText.SetText("4");
-        _wheatText.SetText("5");
-        _oreText.SetText("8");
+        Events.OnResourcesUpdate.AddListener(UpdateResources);
+    }
+
+    private void OnDisable()
+    {
+        Events.OnResourcesUpdate.RemoveListener(UpdateResources);
+    }
+
+    private void UpdateResources(Dictionary<ResourceEnum, int> resources)
+    {
+        _woodText.SetText(resources[ResourceEnum.WOOD].ToString());
+        _brickText.SetText(resources[ResourceEnum.BRICK].ToString());
+        _sheepText.SetText(resources[ResourceEnum.SHEEP].ToString());
+        _wheatText.SetText(resources[ResourceEnum.WHEAT].ToString());
+        _oreText.SetText(resources[ResourceEnum.ORE].ToString());
     }
 }

@@ -12,8 +12,6 @@ namespace Catan
         private readonly string _gameId;
         private readonly Board _board;
         private readonly List<Player> _players;
-        
-        // State PLACEMENT_PHASE, ORDINARY_PHASE
 
         // Snake order
         private IEnumerable<string> _placementTurn;
@@ -106,13 +104,33 @@ namespace Catan
         {
             var dice1 = Random.Range(1, 6);
             var dice2 = Random.Range(1, 6);
-            var sum = dice1 + dice2;
-            Events.OnRollDice.Invoke(sum);
-            // if sum != ROBBER - invoke the produce tile resources 
-            // 1. Get tiles that matches the chit (exclude robber tile board->GetRobberTile())
-            // 2. Get tile->GetChit  
-            // get corners via board->GetCornersByTile
-            return sum;
+            var diceSum = dice1 + dice2;
+            Events.OnRollDice.Invoke(diceSum);
+
+            // Fetch corners that has matching Chit and are not empty. 
+            var producingTiles = _board.GetTiles().Where((tile) => tile.GetChit() == diceSum).ToList();
+            var producingTileCorners = producingTiles.Select((tile) =>
+                new
+                {
+                    Tile = tile,
+                    Corners = GetBoard().GetCornersByTile(tile.GetHashCode())
+                        .Where(c => c.GetState() != CornerStateEnum.EMPTY)
+                });
+
+            foreach (var item in producingTileCorners)
+            {
+                foreach (var corner in item.Corners)
+                {
+                    var player = GetPlayerByGuid(corner.GetPlayerGuid());
+                    player.AddResource(item.Tile.GetResourceType(), 1);
+                    Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
+                              ((int) corner.GetState()).ToString());
+                    Events.OnResourcesUpdate.Invoke(player.GetResources());
+                }
+            }
+            // end corner produce
+
+            return diceSum;
         }
 
         public void BuildSettlementAtCorner(int hashCode)
@@ -154,6 +172,7 @@ namespace Catan
                     return;
                 }
             }
+
             // // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build road at this edge");
         }
