@@ -107,6 +107,13 @@ namespace Catan
             var diceSum = dice1 + dice2;
             Events.OnRollDice.Invoke(diceSum);
 
+            ProduceResources(diceSum);
+
+            return diceSum;
+        }
+
+        private void ProduceResources(int diceSum)
+        {
             // Fetch corners that has matching Chit and are not empty. 
             var producingTiles = _board.GetTiles().Where((tile) => tile.GetChit() == diceSum).ToList();
             var producingTileCorners = producingTiles.Select((tile) =>
@@ -122,15 +129,13 @@ namespace Catan
                 foreach (var corner in item.Corners)
                 {
                     var player = GetPlayerByGuid(corner.GetPlayerGuid());
-                    player.AddResource(item.Tile.GetResourceType(), 1);
+                    // amount should be int value CornerStateEnum.SETTLEMENT or CornerStateEnum.CITY
+                    player.AddResource(item.Tile.GetResourceType(), (int) corner.GetState()); 
                     Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
                               ((int) corner.GetState()).ToString());
-                    Events.OnResourcesUpdate.Invoke(player.GetResources());
+                    Events.OnResourcesUpdate.Invoke(player);
                 }
             }
-            // end corner produce
-
-            return diceSum;
         }
 
         public void BuildSettlementAtCorner(int hashCode)

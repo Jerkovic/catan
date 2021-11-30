@@ -16,13 +16,11 @@ namespace EventSystem
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
         public static readonly Event<int> OnRollDice = new Event<int>();
 
-        public static readonly Event<Dictionary<ResourceEnum, int>> OnResourcesUpdate =
-            new Event<Dictionary<ResourceEnum, int>>();
+        public static readonly Event<Player> OnResourcesUpdate = new Event<Player>();
 
         public static readonly Event<Player> OnPlayerTurnChanged = new Event<Player>();
         public static readonly Event<SettlementBuilt> OnSettlementBuilt = new Event<SettlementBuilt>();
         public static readonly Event<RoadBuilt> OnRoadBuilt = new Event<RoadBuilt>();
-        
     }
 
     // Event Params Models

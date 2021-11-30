@@ -32,6 +32,7 @@ public class PlayersPanelView : MonoBehaviour
             image[1].color = player.Color;
             var text = go.GetComponentsInChildren<TMP_Text>();
             text[0].SetText(player.Name);
+            text[1].SetText(player.Guid);
         }
         Debug.Log("Players Panel ready!");
     }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Catan;
 using Catan.Resources;
 using EventSystem;
+using Managers;
 using TMPro;
 using UnityEngine;
 
@@ -24,16 +26,27 @@ public class ResourcePanelView : MonoBehaviour
 
     private void OnEnable()
     {
-        Events.OnResourcesUpdate.AddListener(UpdateResources);
+        Events.OnResourcesUpdate.AddListener(UpdateUI);
+        Events.OnPlayerTurnChanged.AddListener(UpdateUI);
     }
 
     private void OnDisable()
     {
-        Events.OnResourcesUpdate.RemoveListener(UpdateResources);
+        Events.OnResourcesUpdate.RemoveListener(UpdateUI);
+        Events.OnPlayerTurnChanged.AddListener(UpdateUI);
     }
 
-    private void UpdateResources(Dictionary<ResourceEnum, int> resources)
+    private void UpdateUI(Player player)
     {
+        if (GameManager.Instance.GetGame().GetTurnPlayerGuid() == player.Guid)
+        {
+            UpdateResources(player);    
+        }
+    } 
+
+    private void UpdateResources(Player player)
+    {
+        var resources = player.GetResources();
         _woodText.SetText(resources[ResourceEnum.WOOD].ToString());
         _brickText.SetText(resources[ResourceEnum.BRICK].ToString());
         _sheepText.SetText(resources[ResourceEnum.SHEEP].ToString());
