@@ -13,6 +13,7 @@ namespace EventSystem
         public static readonly Event<GameObject> OnClickCorner = new Event<GameObject>();
 
         // Events Invoked in the Game Game
+        public static readonly Event<List<Player>> OnGameStarted = new Event<List<Player>>();
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
         public static readonly Event<int> OnRollDice = new Event<int>();
 

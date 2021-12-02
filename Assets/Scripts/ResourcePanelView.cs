@@ -38,9 +38,10 @@ public class ResourcePanelView : MonoBehaviour
 
     private void UpdateUI(Player player)
     {
+        // temporary code until we find a better way to GetTurnPlayerGuid
         if (GameManager.Instance.GetGame().GetTurnPlayerGuid() == player.Guid)
         {
-            UpdateResources(player);    
+            UpdateResources(player);
         }
     } 
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Catan;
 using EventSystem;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class PlayersPanelView : MonoBehaviour
     private void OnEnable()
     {
         Events.OnPlayerTurnChanged.AddListener(ActivatePlayerInPanel);
+        Events.OnGameStarted.AddListener(CreatePlayerPanels);
     }
         
     private void OnDisable()
@@ -23,18 +25,26 @@ public class PlayersPanelView : MonoBehaviour
 
     private void Start()
     {
-        var game = GameManager.Instance.GetGame();
-        foreach (var player in game.GetPlayers())
+
+    }
+
+    private void CreatePlayerPanels(List<Player> players)
+    {
+        foreach (var player in players)
         {
-            var go  = Instantiate(playerPanelPrefab, transform, true);
-            go.name = player.Guid;
-            var image = go.GetComponentsInChildren<Image>();
-            image[1].color = player.Color;
-            var text = go.GetComponentsInChildren<TMP_Text>();
-            text[0].SetText(player.Name);
-            text[1].SetText(player.Guid);
+            CreatePlayerPanel(player);
         }
-        Debug.Log("Players Panel ready!");
+    }
+
+    private void CreatePlayerPanel(Player player)
+    {
+        var go  = Instantiate(playerPanelPrefab, transform, true);
+        go.name = player.Guid;
+        var image = go.GetComponentsInChildren<Image>();
+        image[1].color = player.Color;
+        var text = go.GetComponentsInChildren<TMP_Text>();
+        text[0].SetText(player.Name);
+        text[1].SetText(player.Guid);
     }
 
     private void ActivatePlayerInPanel(Player player)

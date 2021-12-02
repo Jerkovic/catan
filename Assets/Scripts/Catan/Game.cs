@@ -43,7 +43,8 @@ namespace Catan
 
         public void Start()
         {
-            // Make up the placing turn order. Snake style
+            Events.OnGameStarted.Invoke(GetPlayers());
+            
             Debug.Log("Initializing Game " + _gameId);
             GetBoard().SetRobberDesert();
             _placementTurn = InitPlacementTurn();
