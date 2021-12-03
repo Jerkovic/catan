@@ -1,4 +1,6 @@
+using System;
 using Catan;
+using DG.Tweening;
 using EventSystem;
 using UnityEngine;
 
@@ -18,9 +20,13 @@ namespace Ui
 
         private void MoveRobberPiece(HexTile hexTile)
         {
-            Debug.Log("move robber to world pos " + hexTile.ToWorldCoordinates());
-            // todo offset -x  
-            transform.position = hexTile.ToWorldCoordinates();
+            var newPos = hexTile.ToWorldCoordinates();
+            transform.DOMove(newPos, 4f)
+                .SetEase(Ease.OutExpo)
+                .OnComplete(() =>
+                {
+                    Debug.Log("Robber is home");
+                });
         }
     }
 }
