@@ -26,6 +26,12 @@ public class MouseManager : MonoBehaviour // change name to
             if (Physics.Raycast(ray, out var hitInfo))
             {
                 var ourHitObject = hitInfo.collider.transform;
+                
+                if (ourHitObject != null && ourHitObject.CompareTag("Village"))
+                {
+                    Debug.Log("Click settlement");
+                    Events.OnClickSettlement.Invoke(ourHitObject.gameObject);
+                }
 
                 if (ourHitObject != null && ourHitObject.CompareTag("HexagonMesh"))
                 {

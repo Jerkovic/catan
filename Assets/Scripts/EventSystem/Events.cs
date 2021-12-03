@@ -11,6 +11,7 @@ namespace EventSystem
         public static readonly Event<GameObject> OnClickHexagon = new Event<GameObject>();
         public static readonly Event<GameObject> OnClickEdge = new Event<GameObject>();
         public static readonly Event<GameObject> OnClickCorner = new Event<GameObject>();
+        public static readonly Event<GameObject> OnClickSettlement = new Event<GameObject>();
 
         // Events Invoked in the Game Game
         public static readonly Event<List<Player>> OnGameStarted = new Event<List<Player>>();
@@ -22,6 +23,8 @@ namespace EventSystem
         public static readonly Event<Player> OnPlayerTurnChanged = new Event<Player>();
         public static readonly Event<SettlementBuilt> OnSettlementBuilt = new Event<SettlementBuilt>();
         public static readonly Event<RoadBuilt> OnRoadBuilt = new Event<RoadBuilt>();
+        
+        public static readonly Event<SettlementBuilt> OnSettlementUpgradeToCity = new Event<SettlementBuilt>();
     }
 
     // Event Params Models

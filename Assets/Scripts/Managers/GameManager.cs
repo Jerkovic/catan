@@ -1,5 +1,6 @@
 using System.Collections;
 using EventSystem;
+using Ui;
 using UnityEngine;
 using Utils;
 
@@ -20,12 +21,14 @@ namespace Managers
             Events.OnClickHexagon.AddListener(RequestMoveRobber);
             Events.OnClickCorner.AddListener(RequestBuildSettlement);
             Events.OnClickEdge.AddListener(RequestBuildRoad);
+            Events.OnClickSettlement.AddListener(RequestUpgradeSettlementToCityAtCorner);
         }
 
         private void OnDisable()
         {
             Events.OnClickHexagon.RemoveListener(RequestMoveRobber);
             Events.OnClickCorner.RemoveListener(RequestBuildSettlement);
+            Events.OnClickSettlement.RemoveListener(RequestUpgradeSettlementToCityAtCorner);
             Events.OnClickEdge.RemoveListener(RequestBuildRoad);
         }
         
@@ -40,6 +43,12 @@ namespace Managers
         {
             var hashCode = int.Parse(go.name);
             GetGame().BuildSettlementAtCorner(hashCode);
+        }
+        
+        private void RequestUpgradeSettlementToCityAtCorner(GameObject go)
+        {
+            var hashCode = go.GetComponent<Settlement>().cornerHash;
+            GetGame().UpgradeSettlementToCityAtCorner(hashCode);
         }
     
         private void RequestBuildRoad(Object go)

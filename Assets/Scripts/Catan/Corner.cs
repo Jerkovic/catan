@@ -43,7 +43,9 @@ namespace Catan
 
         public bool PlaceCity(string playerId)
         {
+            if (_state != CornerStateEnum.SETTLEMENT) return false;
             if (!_cornerPlayerGuid.Equals(playerId)) return false;
+            
             _state = CornerStateEnum.CITY;
             _cornerPlayerGuid = playerId;
             return true;

@@ -8,6 +8,7 @@ TagManager:
   - Corner
   - Edge
   - HexagonMesh
+  - Village
   layers:
   - Default
   - TransparentFX

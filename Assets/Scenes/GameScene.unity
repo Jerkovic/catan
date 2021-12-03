@@ -551,8 +551,9 @@ GameObject:
   m_Component:
   - component: {fileID: 118414515}
   - component: {fileID: 118414514}
-  - component: {fileID: 118414519}
   - component: {fileID: 118414520}
+  - component: {fileID: 118414519}
+  - component: {fileID: 118414516}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -597,6 +598,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &118414516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118414513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca2044b0431434b9dc83fb145358163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cityPrefab: {fileID: 8056220819168401236, guid: 070651e71d05466408d211aea7f6062d, type: 3}
 --- !u!114 &118414519
 MonoBehaviour:
   m_ObjectHideFlags: 0

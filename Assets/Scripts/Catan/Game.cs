@@ -162,6 +162,23 @@ namespace Catan
 
             // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build settlement at this corner");
+            
+        }
+
+        public void UpgradeSettlementToCityAtCorner(int hashCode)
+        {
+            var corner = GetBoard().GetCornerByHashCode(hashCode);
+            
+            if (corner.PlaceCity(_turnPlayerGuid))
+            {
+                var player = GetPlayerByGuid(_turnPlayerGuid);
+                Events.OnSettlementUpgradeToCity.Invoke(new SettlementBuilt(player, corner));
+                return;
+            }
+            else
+            {
+                Debug.Log("Cannot upgrade settlement to city!");
+            }
         }
 
         public void BuildRoadAtEdge(int hashCode)
