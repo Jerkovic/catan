@@ -36,6 +36,7 @@ namespace Catan
 
         public void AddResource(ResourceEnum resource, int amount)
         {
+            if (resource == ResourceEnum.NONE) return;
             _resources[resource] += amount;
         }
     }
