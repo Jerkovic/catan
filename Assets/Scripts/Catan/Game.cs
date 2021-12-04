@@ -193,7 +193,13 @@ namespace Catan
                 {
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
                     var tiles = GetBoard().GetTilesByCorner(corner);
-                    TilesProduce(tiles);
+                    foreach (var tile in tiles)
+                    {
+                        player.AddResource(tile.GetResourceType(), (int)corner.GetState());
+                        Debug.Log(corner.GetPlayerGuid() + " got " + tile.GetResourceType() + " amount: " +
+                                  corner.GetState());
+                        Events.OnResourcesUpdate.Invoke(player);    
+                    }
                 }
                 Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
                 return;
