@@ -47,7 +47,7 @@ namespace Managers
         
         private void RequestUpgradeSettlementToCityAtCorner(GameObject go)
         {
-            var hashCode = go.GetComponent<Settlement>().cornerHash;
+            var hashCode = go.GetComponent<Settlement>().CornerHash;
             GetGame().UpgradeSettlementToCityAtCorner(hashCode);
         }
     

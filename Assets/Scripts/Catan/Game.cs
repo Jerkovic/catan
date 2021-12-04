@@ -18,12 +18,14 @@ namespace Catan
         private int _turnCounter;
         private string _turnPlayerGuid;
 
+        private GamePhaseStateEnum _gamePhaseState;
+
         public Game()
         {
             _board = new Board(3);
             _players = new List<Player>();
-
             _gameId = GenerateGuid();
+            _gamePhaseState = GamePhaseStateEnum.PLACE_FIRST_SETTLEMENT_ROAD;
 
             // set some mocked players to the game
             var player1 = new Player(Color.blue, "Robert");
@@ -44,7 +46,7 @@ namespace Catan
         public void Start()
         {
             Events.OnGameStarted.Invoke(GetPlayers());
-            
+
             Debug.Log("Initializing Game " + _gameId);
             GetBoard().SetRobberDesert();
             _placementTurn = InitPlacementTurn();
@@ -53,7 +55,6 @@ namespace Catan
 
         private IEnumerable<string> InitPlacementTurn()
         {
-            Debug.Log("InitPlacementTurn");
             var ids = _players.Select(p => p.Guid).ToArray();
             var placementOrder = ids.ToList();
             Array.Reverse(ids);
@@ -69,14 +70,21 @@ namespace Catan
         public void NextTurn()
         {
             Debug.Log(_turnCounter + " of " + _placementTurn.Count());
+            if (_turnCounter == _placementTurn.Count() / 2)
+            {
+                Debug.Log("First phase is over! Place second settlement and road");
+                _gamePhaseState = GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD;
+            }
+
             if (_turnCounter >= _placementTurn.Count())
             {
-                Debug.Log("First phase is over!");
+                Debug.Log("Second phase is over! Enter roll/build/trade phase");
+                _gamePhaseState = GamePhaseStateEnum.ROLL_BUILD_TRADE;
                 return;
             }
 
             var guid = _placementTurn.ElementAt(_turnCounter++);
-            Debug.Log("Turn changed to " + guid);
+            Debug.Log("Turn changed to " + guid + " Phase" + _gamePhaseState);
             _turnPlayerGuid = guid;
             Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
         }
@@ -96,7 +104,7 @@ namespace Catan
             return _board;
         }
 
-        public List<Player> GetPlayers()
+        private List<Player> GetPlayers()
         {
             return _players;
         }
@@ -115,8 +123,12 @@ namespace Catan
 
         private void ProduceResources(int diceSum)
         {
-            // Fetch corners that has matching Chit and are not empty. 
             var producingTiles = _board.GetTiles().Where((tile) => tile.GetChit() == diceSum).ToList();
+            TilesProduce(producingTiles);
+        }
+
+        private void TilesProduce(IEnumerable<HexTile> producingTiles)
+        {
             var producingTileCorners = producingTiles.Select((tile) =>
                 new
                 {
@@ -130,10 +142,9 @@ namespace Catan
                 foreach (var corner in item.Corners)
                 {
                     var player = GetPlayerByGuid(corner.GetPlayerGuid());
-                    // amount should be int value CornerStateEnum.SETTLEMENT or CornerStateEnum.CITY
-                    player.AddResource(item.Tile.GetResourceType(), (int) corner.GetState()); 
+                    player.AddResource(item.Tile.GetResourceType(), (int)corner.GetState());
                     Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
-                              ((int) corner.GetState()).ToString());
+                              corner.GetState());
                     Events.OnResourcesUpdate.Invoke(player);
                 }
             }
@@ -141,12 +152,12 @@ namespace Catan
 
         public void BuildSettlementAtCorner(int hashCode)
         {
+            var player = GetPlayerByGuid(_turnPlayerGuid);
             var corner = GetBoard().GetCornerByHashCode(hashCode);
-
-            // validate that we are not close to other settlement/city
             var edges = GetBoard().GetEdgesByCorner(corner.GetHashCode());
             var corners = edges.Select((e) => e.GetAdjacentCorner(corner));
             var adjacentOccupiedCorners = corners.Where((c) => c != null && c.GetState() != CornerStateEnum.EMPTY);
+            
             if (adjacentOccupiedCorners.Any())
             {
                 Debug.Log("Too close to other building");
@@ -155,25 +166,28 @@ namespace Catan
 
             if (corner.PlaceSettlement(_turnPlayerGuid))
             {
-                var player = GetPlayerByGuid(_turnPlayerGuid);
+                if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
+                {
+                    // Second placement turn, will produce stuff for built settlement adjacent tiles
+                    var tiles = GetBoard().GetTilesByCorner(corner);
+                    TilesProduce(tiles);
+                }
                 Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
                 return;
             }
-
+            
             // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build settlement at this corner");
-            
         }
 
         public void UpgradeSettlementToCityAtCorner(int hashCode)
         {
             var corner = GetBoard().GetCornerByHashCode(hashCode);
-            
+
             if (corner.PlaceCity(_turnPlayerGuid))
             {
                 var player = GetPlayerByGuid(_turnPlayerGuid);
                 Events.OnSettlementUpgradeToCity.Invoke(new SettlementBuilt(player, corner));
-                return;
             }
             else
             {
@@ -183,6 +197,14 @@ namespace Catan
 
         public void BuildRoadAtEdge(int hashCode)
         {
+            if (_gamePhaseState == GamePhaseStateEnum.PLACE_FIRST_SETTLEMENT_ROAD)
+            {
+                // Has to be connected to the building existing
+            }
+            if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
+            {
+                // Has to be connected to the settlement built in this turn
+            }
             // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));

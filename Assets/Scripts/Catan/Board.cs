@@ -34,7 +34,7 @@ namespace Catan
 
             foreach (var coordinate in board)
             {
-                var type = (TileTypeEnum) tp.RandomNextTile();
+                var type = (TileTypeEnum)tp.RandomNextTile();
                 var chit = 0;
                 if (type != TileTypeEnum.DESERT)
                 {
@@ -250,14 +250,24 @@ namespace Catan
 
         public IEnumerable<Corner> GetCornersByTile(int hashCode)
         {
-            return _corners.Select((corner) => corner).Where(corner =>
-                corner.hex1 == hashCode || corner.hex2 == hashCode || corner.hex3 == hashCode).ToList();
+            return _corners.Select((corner) => corner)
+                .Where(corner => corner.hex1 == hashCode || corner.hex2 == hashCode || corner.hex3 == hashCode)
+                .ToList();
+        }
+
+        public IEnumerable<HexTile> GetTilesByCorner(Corner corner)
+        {
+            return _tiles.Select((tile) => tile)
+                .Where(tile => corner.hex1 == tile.GetHashCode() || corner.hex2 == tile.GetHashCode() ||
+                               corner.hex3 == tile.GetHashCode())
+                .ToList();
         }
 
         public IEnumerable<Edge> GetEdgesByCorner(int hashCode)
         {
             return _edges.Where(e =>
-                e.GetLeftCorner().GetHashCode() == hashCode || e.GetRightCorner().GetHashCode() == hashCode).ToList();
+                    e.GetLeftCorner().GetHashCode() == hashCode || e.GetRightCorner().GetHashCode() == hashCode)
+                .ToList();
         }
     }
 }
