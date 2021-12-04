@@ -27,7 +27,7 @@ namespace Ui
             var position = go.transform.position;
             var offset = new Vector3(position.x, 0.095f, position.z);
             var village = Instantiate(villagePrefab, offset, Quaternion.identity);
-            village.GetComponent<Settlement>().cornerHash = corner.GetHashCode();
+            village.GetComponent<Settlement>().CornerHash = corner.GetHashCode();
             var mr = village.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
             mr.material.color = player.Color;

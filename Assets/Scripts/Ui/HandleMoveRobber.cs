@@ -21,7 +21,7 @@ namespace Ui
         private void MoveRobberPiece(HexTile hexTile)
         {
             var newPos = hexTile.ToWorldCoordinates();
-            transform.DOMove(newPos, 4f)
+            transform.DOMove(newPos, 3f)
                 .SetEase(Ease.OutExpo)
                 .OnComplete(() =>
                 {

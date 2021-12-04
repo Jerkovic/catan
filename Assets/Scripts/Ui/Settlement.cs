@@ -4,7 +4,6 @@ namespace Ui
 {
     public class Settlement : MonoBehaviour
     {
-        public int cornerHash; 
-
+        public int CornerHash { get; set; }
     }
 }

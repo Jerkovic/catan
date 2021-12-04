@@ -25,7 +25,7 @@ namespace Ui
             var corner = settlementBuild.Corner;
             var player = settlementBuild.Player;
             var settlements = FindObjectsOfType<Settlement>();
-            var oldSettlement = settlements.FirstOrDefault((s) => s.cornerHash == corner.GetHashCode());
+            var oldSettlement = settlements.FirstOrDefault((s) => s.CornerHash == corner.GetHashCode());
 
             if (oldSettlement != null)
             {
