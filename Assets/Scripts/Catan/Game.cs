@@ -19,6 +19,7 @@ namespace Catan
         private string _turnPlayerGuid;
 
         private GamePhaseStateEnum _gamePhaseState;
+        private Corner _lastSettlementCorner;
 
         public Game()
         {
@@ -67,8 +68,15 @@ namespace Catan
             return _players.Single(p => p.Guid == guid);
         }
 
+        // Move these to top
+        private int _currentTurnSettlementCount = 0;
+        private int _currentTurnRoadCount = 0;
+
         public void NextTurn()
         {
+            _currentTurnRoadCount = 0;
+            _currentTurnSettlementCount = 0;
+            
             Debug.Log(_turnCounter + " of " + _placementTurn.Count());
             if (_turnCounter == _placementTurn.Count() / 2)
             {
@@ -84,8 +92,10 @@ namespace Catan
             }
 
             var guid = _placementTurn.ElementAt(_turnCounter++);
-            Debug.Log("Turn changed to " + guid + " Phase" + _gamePhaseState);
             _turnPlayerGuid = guid;
+            
+            // Todo handle _gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE;
+            
             Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
         }
 
@@ -152,6 +162,11 @@ namespace Catan
 
         public void BuildSettlementAtCorner(int hashCode)
         {
+            if (_currentTurnSettlementCount > 0 && _gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE)
+            {
+                Debug.Log("Only one settlement allowed in this turn");
+                return;
+            }
             var player = GetPlayerByGuid(_turnPlayerGuid);
             var corner = GetBoard().GetCornerByHashCode(hashCode);
             var edges = GetBoard().GetEdgesByCorner(corner.GetHashCode());
@@ -164,8 +179,16 @@ namespace Catan
                 return;
             }
 
+            if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE)
+            {
+                // Keep track of last settlement corner if not normal phase
+                _lastSettlementCorner = corner;
+            }
+
             if (corner.PlaceSettlement(_turnPlayerGuid))
             {
+                _currentTurnSettlementCount += 1;
+                _lastSettlementCorner = corner;
                 if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
                 {
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
@@ -197,14 +220,19 @@ namespace Catan
 
         public void BuildRoadAtEdge(int hashCode)
         {
-            if (_gamePhaseState == GamePhaseStateEnum.PLACE_FIRST_SETTLEMENT_ROAD)
+            // we need to validate _lastSettlementCorner is set
+            if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnRoadCount > 0)
             {
-                // Has to be connected to the building existing
+                Debug.Log("Too many roads in this turn");
+                return;
             }
-            if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
+            
+            if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnSettlementCount != 1)
             {
-                // Has to be connected to the settlement built in this turn
+                Debug.Log("Settlement must be placed first in this phase");
+                return;
             }
+            
             // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
@@ -212,6 +240,7 @@ namespace Catan
             {
                 if (edge.PlaceRoad(_turnPlayerGuid))
                 {
+                    _currentTurnRoadCount += 1;
                     var player = GetPlayerByGuid(_turnPlayerGuid);
                     Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
                     return;
