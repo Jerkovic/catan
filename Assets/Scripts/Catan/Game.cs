@@ -135,6 +135,7 @@ namespace Catan
         {
             var producingTiles = _board.GetTiles().Where((tile) => tile.GetChit() == diceSum).ToList();
             TilesProduce(producingTiles);
+            Events.OnTilesProducing.Invoke(producingTiles);
         }
 
         private void TilesProduce(IEnumerable<HexTile> producingTiles)

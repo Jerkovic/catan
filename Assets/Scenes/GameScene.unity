@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 118414520}
   - component: {fileID: 118414519}
   - component: {fileID: 118414516}
+  - component: {fileID: 118414517}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -611,6 +612,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityPrefab: {fileID: 8056220819168401236, guid: 070651e71d05466408d211aea7f6062d, type: 3}
+--- !u!114 &118414517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118414513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffdff5c7df74599a87e003e145ee4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &118414519
 MonoBehaviour:
   m_ObjectHideFlags: 0
