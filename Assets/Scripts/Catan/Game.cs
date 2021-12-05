@@ -30,7 +30,7 @@ namespace Catan
 
             // set some mocked players to the game
             var player1 = new Player(Color.blue, "Robert");
-            var player2 = new Player(Color.red, "Sarah");
+            var player2 = new Player(Color.red, "Edvin");
             var player3 = new Player(Color.yellow, "Vincent");
             var player4 = new Player(Color.magenta, "Victoria");
             _players.Add(player1);
