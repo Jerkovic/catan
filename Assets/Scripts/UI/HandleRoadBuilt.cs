@@ -1,12 +1,14 @@
-using Catan;
 using EventSystem;
-using Managers;
+using Sound;
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class HandleRoadBuilt : MonoBehaviour
     {
+        public AudioSource audioSource;
+        public AudioEvent audioClip;
+        
         private void OnEnable()
         {
             Events.OnRoadBuilt.AddListener(PlaceRoad);
@@ -19,6 +21,9 @@ namespace Ui
 
         private void PlaceRoad(RoadBuilt roadBuilt)
         {
+            // sound test
+            audioClip.Play(audioSource);
+            
             var edge = roadBuilt.Edge;
             var player = roadBuilt.Player;
             var go = GameObject.Find(edge.GetHashCode().ToString());

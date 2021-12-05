@@ -4,7 +4,7 @@ using DG.Tweening;
 using EventSystem;
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class HandleTileProducing : MonoBehaviour
     {

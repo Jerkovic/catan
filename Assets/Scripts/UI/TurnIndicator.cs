@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class TurnIndicator : MonoBehaviour
     {

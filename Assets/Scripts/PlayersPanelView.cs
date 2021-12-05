@@ -4,7 +4,7 @@ using EventSystem;
 using UnityEngine;
 using Managers;
 using TMPro;
-using Ui;
+using UI;
 using UnityEngine.UI;
 
 public class PlayersPanelView : MonoBehaviour

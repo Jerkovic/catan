@@ -1,6 +1,6 @@
 using System.Collections;
 using EventSystem;
-using Ui;
+using UI;
 using UnityEngine;
 using Utils;
 

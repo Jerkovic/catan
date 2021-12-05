@@ -1,12 +1,13 @@
-using Catan;
 using EventSystem;
-using Managers;
+using Sound;
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class HandleSettlementBuilt : MonoBehaviour
     {
+        public AudioSource audioSource;
+        public AudioEvent audioClip;
         public GameObject villagePrefab;
 
         private void OnEnable()
@@ -21,6 +22,9 @@ namespace Ui
 
         private void PlaceSettlement(SettlementBuilt settlementBuild)
         {
+            // sound test
+            audioClip.Play(audioSource);
+            
             var corner = settlementBuild.Corner;
             var player = settlementBuild.Player;
             var go = GameObject.Find(corner.GetHashCode().ToString());

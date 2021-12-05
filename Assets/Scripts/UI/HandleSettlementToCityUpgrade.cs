@@ -1,10 +1,8 @@
 using System.Linq;
-using Catan;
 using EventSystem;
-using Managers;
 using UnityEngine;
 
-namespace Ui
+namespace UI
 {
     public class HandleSettlementToCityUpgrade : MonoBehaviour
     {
