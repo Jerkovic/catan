@@ -93,6 +93,10 @@ public class BoardView : MonoBehaviour
             var chit = Instantiate(chitPrefab, hexGo.transform, false);
             var textComponent = chit.GetComponentInChildren<TMP_Text>();
             textComponent.text = tile.GetChit().ToString();
+            if (tile.IsRedChit())
+            {
+                textComponent.color = Color.red;    
+            }
         }
     }
 
