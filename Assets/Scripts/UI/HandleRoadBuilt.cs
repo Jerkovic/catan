@@ -6,8 +6,6 @@ namespace UI
 {
     public class HandleRoadBuilt : MonoBehaviour
     {
-        // now they all have the same audioSource
-        public AudioSource audioSource;
         public AudioEvent audioClip;
         
         private void OnEnable()
@@ -22,12 +20,13 @@ namespace UI
 
         private void PlaceRoad(RoadBuilt roadBuilt)
         {
-            // sound test
-            audioClip.Play(audioSource);
-            
             var edge = roadBuilt.Edge;
             var player = roadBuilt.Player;
             var go = GameObject.Find(edge.GetHashCode().ToString());
+            
+            var audioSource = go.AddComponent<AudioSource>();
+            audioClip.Play(audioSource);
+            
             var mr = go.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
             mr.material.color = player.Color;

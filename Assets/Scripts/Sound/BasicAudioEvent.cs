@@ -19,7 +19,7 @@ namespace Sound
             source.clip = clips[Random.Range(0, clips.Length)];
             source.volume = Random.Range(volume.minValue, volume.maxValue);
             source.pitch = Random.Range(pitch.minValue, pitch.maxValue);
-            source.Play();
+            source.PlayOneShot(source.clip);
         }
     }
 }

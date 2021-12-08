@@ -6,7 +6,6 @@ namespace UI
 {
     public class HandleSettlementBuilt : MonoBehaviour
     {
-        public AudioSource audioSource;
         public AudioEvent audioClip;
         public GameObject villagePrefab;
 
@@ -22,9 +21,6 @@ namespace UI
 
         private void PlaceSettlement(SettlementBuilt settlementBuild)
         {
-            // sound test
-            audioClip.Play(audioSource);
-            
             var corner = settlementBuild.Corner;
             var player = settlementBuild.Player;
             var go = GameObject.Find(corner.GetHashCode().ToString());
@@ -35,6 +31,10 @@ namespace UI
             var mr = village.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
             mr.material.color = player.Color;
+            
+            var audioSource = go.AddComponent<AudioSource>();
+            audioClip.Play(audioSource);
+
         }
     }
 }

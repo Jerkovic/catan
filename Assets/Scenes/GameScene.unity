@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca2044b0431434b9dc83fb145358163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 11400000, guid: 8e054e4ab1af02c458bbd5f8eb4dd7e1, type: 2}
   cityPrefab: {fileID: 8056220819168401236, guid: 070651e71d05466408d211aea7f6062d, type: 3}
 --- !u!114 &118414517
 MonoBehaviour:
@@ -733,8 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3985cc5a5f154e579eaa41705a56f09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 118414518}
-  audioClip: {fileID: 11400000, guid: 8e054e4ab1af02c458bbd5f8eb4dd7e1, type: 2}
+  audioClip: {fileID: 11400000, guid: 2e509ae9f604ea043ba3b48231e5e1f7, type: 2}
   villagePrefab: {fileID: 6972678883234245359, guid: e4e41bac6ca2cfa44b2873668ceeea95, type: 3}
 --- !u!114 &118414520
 MonoBehaviour:
@@ -748,7 +748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf2e4dba3074d538c73be1fa070a97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 118414518}
   audioClip: {fileID: 11400000, guid: 51493eb23e654464c9e8a730a9f50d64, type: 2}
 --- !u!1 &141087505
 GameObject:

@@ -1,11 +1,13 @@
 using System.Linq;
 using EventSystem;
+using Sound;
 using UnityEngine;
 
 namespace UI
 {
     public class HandleSettlementToCityUpgrade : MonoBehaviour
     {
+        public AudioEvent audioClip;
         public GameObject cityPrefab;
 
         private void OnEnable()
@@ -37,6 +39,9 @@ namespace UI
             var mr = city.GetComponentInChildren<MeshRenderer>();
             mr.enabled = true;
             mr.material.color = player.Color;
+            
+            var audioSource = go.AddComponent<AudioSource>();
+            audioClip.Play(audioSource);
         }
     }
 }
