@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Catan.Resources;
 using EventSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -148,17 +149,25 @@ namespace Catan
                         .Where(c => c.GetState() != CornerStateEnum.EMPTY)
                 });
 
+            var resourcesGained = new Dictionary<HexTile, int>();
+
             foreach (var item in producingTileCorners)
             {
                 foreach (var corner in item.Corners)
                 {
                     var player = GetPlayerByGuid(corner.GetPlayerGuid());
-                    player.AddResource(item.Tile.GetResourceType(), (int)corner.GetState());
+                    var amount = (int) corner.GetState();
+                    var resourceType = item.Tile.GetResourceType();
+                    // TODO: wont work Key already exists here
+                    // group by player instead?
+                    // resourcesGained.Add(item.Tile, amount);
+                    player.AddResource(resourceType, amount);
                     Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
                               corner.GetState());
-                    Events.OnResourcesUpdate.Invoke(player);
+                    Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));        
                 }
             }
+            
         }
 
         public void BuildSettlementAtCorner(int hashCode)
@@ -193,14 +202,19 @@ namespace Catan
                 if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
                 {
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
+                    var resourcesGained = new Dictionary<HexTile, int>();
+
                     var tiles = GetBoard().GetTilesByCorner(corner);
+                    
                     foreach (var tile in tiles)
                     {
-                        player.AddResource(tile.GetResourceType(), (int)corner.GetState());
-                        Debug.Log(corner.GetPlayerGuid() + " got " + tile.GetResourceType() + " amount: " +
-                                  corner.GetState());
-                        Events.OnResourcesUpdate.Invoke(player);    
+                        var amount = (int) corner.GetState();
+                        var resourceType = tile.GetResourceType();
+                        resourcesGained.Add(tile, amount);
+                        player.AddResource(resourceType, amount);
                     }
+                    
+                    Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));
                 }
                 Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
                 return;

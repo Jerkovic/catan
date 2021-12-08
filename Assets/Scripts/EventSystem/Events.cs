@@ -19,7 +19,7 @@ namespace EventSystem
         public static readonly Event<int> OnRollDice = new Event<int>();
         public static readonly Event<List<HexTile>> OnTilesProducing = new Event<List<HexTile>>();
 
-        public static readonly Event<Player> OnResourcesUpdate = new Event<Player>();
+        public static readonly Event<ResourcesGained> OnResourcesUpdate = new Event<ResourcesGained>();
 
         public static readonly Event<Player> OnPlayerTurnChanged = new Event<Player>();
         public static readonly Event<SettlementBuilt> OnSettlementBuilt = new Event<SettlementBuilt>();
@@ -29,6 +29,18 @@ namespace EventSystem
     }
 
     // Event Params Models
+    public class ResourcesGained
+    {
+        public Player Player { get; set; }
+
+        public Dictionary<HexTile, int> Resources { get; set; }
+
+        public ResourcesGained(Player player, Dictionary<HexTile, int> resources)
+        {
+            this.Player = player;
+            this.Resources = resources;
+        }
+    }
     public class SettlementBuilt
     {
         public Player Player { get; set; }

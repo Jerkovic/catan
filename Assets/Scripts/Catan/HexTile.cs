@@ -89,5 +89,10 @@ namespace Catan
         {
             return _coordinate.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return _type.ToString();
+        }
     }
 }

@@ -26,14 +26,30 @@ public class ResourcePanelView : MonoBehaviour
 
     private void OnEnable()
     {
-        Events.OnResourcesUpdate.AddListener(UpdateUI);
+        Events.OnResourcesUpdate.AddListener(TestAnim);
         Events.OnPlayerTurnChanged.AddListener(UpdateUI);
     }
 
     private void OnDisable()
     {
-        Events.OnResourcesUpdate.RemoveListener(UpdateUI);
+        Events.OnResourcesUpdate.RemoveListener(TestAnim);
         Events.OnPlayerTurnChanged.AddListener(UpdateUI);
+    }
+    
+    private void TestAnim(ResourcesGained resourcesGained)
+    {
+        var player = resourcesGained.Player;
+        var resources = resourcesGained.Resources;
+        
+        if (GameManager.Instance.GetGame().GetTurnPlayerGuid() == player.Guid)
+        {
+            foreach (var kvp in resources)
+            {
+                var dbg = $"Tile = {kvp.Key.ToString()}, Amount = {kvp.Value}";
+                Debug.Log(dbg);
+            }
+        }
+        UpdateUI(player);
     }
 
     private void UpdateUI(Player player)
