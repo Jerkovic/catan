@@ -45,7 +45,7 @@ public class ResourcePanelView : MonoBehaviour
         {
             foreach (var kvp in resources)
             {
-                var dbg = $"Tile = {kvp.Key.ToString()}, Amount = {kvp.Value}";
+                var dbg = $"Tile = {kvp.Key.GetResourceType().ToString()}, Amount = {kvp.Value}";
                 Debug.Log(dbg);
             }
         }
