@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Catan;
 using Catan.Resources;
+using DG.Tweening;
 using EventSystem;
 using Managers;
 using TMPro;
@@ -14,6 +15,11 @@ public class ResourcePanelView : MonoBehaviour
     private TMP_Text _sheepText;
     private TMP_Text _wheatText;
     private TMP_Text _oreText;
+    
+    [SerializeField] private new Camera camera;
+    [SerializeField] private GameObject resourceUiPrefab;
+    [SerializeField] private Transform uiCanvas;
+    [SerializeField] private Transform targetTransform;
 
     private void Start()
     {
@@ -43,12 +49,23 @@ public class ResourcePanelView : MonoBehaviour
         
         if (GameManager.Instance.GetGame().GetTurnPlayerGuid() == player.Guid)
         {
-            foreach (var kvp in resources)
+            foreach (var item in resources)
             {
-                var dbg = $"Tile = {kvp.Key.GetResourceType().ToString()}, Amount = {kvp.Value}";
+                var tile = item.Key;
+                var dbg = $"Tile = {tile.GetResourceType().ToString()}, Amount = {item.Value}";
                 Debug.Log(dbg);
+                var screenPos = camera.WorldToScreenPoint(tile.ToWorldCoordinates());
+                var res = Instantiate(resourceUiPrefab, screenPos, Quaternion.identity);
+                res.transform.SetParent(uiCanvas);
+                res.transform.DOMove(targetTransform.position, .6f)
+                    .SetEase(Ease.InExpo)
+                    .OnComplete(() =>
+                    {
+                        Destroy(res);
+                    });
             }
         }
+        
         UpdateUI(player);
     }
 
