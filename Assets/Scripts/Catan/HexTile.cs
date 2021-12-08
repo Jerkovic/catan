@@ -32,6 +32,11 @@ namespace Catan
             return _chit;
         }
 
+        public bool IsRedChit()
+        {
+            return _chit == 8 || _chit == 6;
+        }
+
         public ResourceEnum GetResourceType()
         {
             return GetTileType() switch
@@ -46,6 +51,11 @@ namespace Catan
                 _ => ResourceEnum.NONE
             };
         }
+
+        public CubicHexCoord GetCubicHexCoord()
+        {
+            return _coordinate;
+        } 
 
         public Vector3 ToWorldCoordinates()
         {

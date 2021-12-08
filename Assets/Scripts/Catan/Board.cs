@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using EventSystem;
+using UnityEditor;
+using UnityEngine;
 
 namespace Catan
 {
@@ -27,14 +29,51 @@ namespace Catan
             var board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), _radius - 1);
             var water = CubicHexCoord.Ring(center, _radius);
 
+
+            var cnt = 0;
+            while (true)
+            {
+                RandomizeBoard(board);
+                cnt++;
+                if (!ValidateBoard()) continue;
+                Debug.Log("Board valid!");
+                break;
+            }
+            
+            Debug.Log("Had to randomize " + cnt + " times");
+            
+            foreach (var coordinate in water)
+            {
+                _tiles.Add(new HexTile(coordinate, TileTypeEnum.SEA, 0));
+            }
+        }
+
+        private bool ValidateBoard()
+        {
+            var tiles = _tiles.Where((t) => t.IsRedChit());
+            foreach (var tile in tiles)
+            {
+                var neighbors = tile.GetCubicHexCoord().Neighbors();
+                foreach (var neighbor in neighbors)
+                {
+                    var hashCode = neighbor.GetHashCode();
+                    var test = _tiles.Any(t => t.GetHashCode() == hashCode && t.IsRedChit());
+                    if (test) return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void RandomizeBoard(IEnumerable<CubicHexCoord> board)
+        {
             var tp = new TileTypes();
             var chits = new Chits();
-
             _tiles = new List<HexTile>();
 
             foreach (var coordinate in board)
             {
-                var type = (TileTypeEnum)tp.RandomNextTile();
+                var type = (TileTypeEnum) tp.RandomNextTile();
                 var chit = 0;
                 if (type != TileTypeEnum.DESERT)
                 {
@@ -42,11 +81,6 @@ namespace Catan
                 }
 
                 _tiles.Add(new HexTile(coordinate, type, chit));
-            }
-
-            foreach (var coordinate in water)
-            {
-                _tiles.Add(new HexTile(coordinate, TileTypeEnum.SEA, 0));
             }
         }
 
