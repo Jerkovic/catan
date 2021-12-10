@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Catan;
 using Catan.Resources;
 using DG.Tweening;
@@ -55,12 +53,14 @@ public class ResourcePanelView : MonoBehaviour
                 var screenPos = camera.WorldToScreenPoint(tile.ToWorldCoordinates());
                 var res = Instantiate(resourceUiPrefab, screenPos, Quaternion.identity);
                 res.transform.SetParent(uiCanvas);
-                res.transform.DOMove(targetTransform.position, .6f)
-                    .SetEase(Ease.InExpo)
-                    .OnComplete(() =>
-                    {
-                        Destroy(res);
-                    });
+                res.transform.localScale = Vector3.zero;
+                var sequence = DOTween.Sequence();
+                sequence.Join(res.transform.DOScale(new Vector3(1f, 1f, 1f), 1.5f));
+                sequence.Join(res.transform.DOMove(targetTransform.position, 2f).SetEase(Ease.InOutExpo));
+                sequence.OnComplete(() =>
+                {
+                    Destroy(res);
+                });
             }
         }
         

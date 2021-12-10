@@ -125,7 +125,7 @@ namespace Catan
             var dice1 = Random.Range(1, 6);
             var dice2 = Random.Range(1, 6);
             var diceSum = dice1 + dice2;
-            Events.OnRollDice.Invoke(diceSum);
+            Events.OnRollDice.Invoke(diceSum); // todo send both 
 
             ProduceResources(diceSum);
 
