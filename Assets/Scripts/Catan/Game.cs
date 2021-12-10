@@ -77,7 +77,7 @@ namespace Catan
         {
             _currentTurnRoadCount = 0;
             _currentTurnSettlementCount = 0;
-            
+
             Debug.Log(_turnCounter + " of " + _placementTurn.Count());
             if (_turnCounter == _placementTurn.Count() / 2)
             {
@@ -94,9 +94,9 @@ namespace Catan
 
             var guid = _placementTurn.ElementAt(_turnCounter++);
             _turnPlayerGuid = guid;
-            
+
             // Todo handle _gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE;
-            
+
             Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
         }
 
@@ -164,10 +164,9 @@ namespace Catan
                     player.AddResource(resourceType, amount);
                     Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
                               corner.GetState());
-                    Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));        
+                    Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));
                 }
             }
-            
         }
 
         public void BuildSettlementAtCorner(int hashCode)
@@ -177,12 +176,13 @@ namespace Catan
                 Debug.Log("Only one settlement allowed in this turn");
                 return;
             }
+
             var player = GetPlayerByGuid(_turnPlayerGuid);
             var corner = GetBoard().GetCornerByHashCode(hashCode);
             var edges = GetBoard().GetEdgesByCorner(corner.GetHashCode());
             var corners = edges.Select((e) => e.GetAdjacentCorner(corner));
             var adjacentOccupiedCorners = corners.Where((c) => c != null && c.GetState() != CornerStateEnum.EMPTY);
-            
+
             if (adjacentOccupiedCorners.Any())
             {
                 Debug.Log("Too close to other building");
@@ -204,8 +204,9 @@ namespace Catan
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
                     var resourcesGained = new Dictionary<HexTile, int>();
 
-                    var tiles = GetBoard().GetTilesByCorner(corner);
-                    
+                    var tiles = GetBoard().GetTilesByCorner(corner)
+                        .Where((t) => t.GetResourceType() != ResourceEnum.NONE);
+
                     foreach (var tile in tiles)
                     {
                         var amount = (int) corner.GetState();
@@ -213,13 +214,14 @@ namespace Catan
                         resourcesGained.Add(tile, amount);
                         player.AddResource(resourceType, amount);
                     }
-                    
+
                     Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));
                 }
+
                 Events.OnSettlementBuilt.Invoke(new SettlementBuilt(player, corner));
                 return;
             }
-            
+
             // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build settlement at this corner");
         }
@@ -247,13 +249,13 @@ namespace Catan
                 Debug.Log("Too many roads in this turn");
                 return;
             }
-            
+
             if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnSettlementCount != 1)
             {
                 Debug.Log("Settlement must be placed first in this phase");
                 return;
             }
-            
+
             // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));

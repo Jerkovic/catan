@@ -51,9 +51,7 @@ public class ResourcePanelView : MonoBehaviour
         {
             foreach (var item in resources)
             {
-                var tile = item.Key;
-                var dbg = $"Tile = {tile.GetResourceType().ToString()}, Amount = {item.Value}";
-                Debug.Log(dbg);
+                var tile = item.Key;                
                 var screenPos = camera.WorldToScreenPoint(tile.ToWorldCoordinates());
                 var res = Instantiate(resourceUiPrefab, screenPos, Quaternion.identity);
                 res.transform.SetParent(uiCanvas);
