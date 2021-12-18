@@ -49,8 +49,7 @@ public class PlayersPanelView : MonoBehaviour
 
     private void ActivatePlayerInPanel(Player player)
     {
-        // test panel
-        PanelManager.Instance.ShowMessage(player.Name);
+        PanelManager.Instance.ShowMessage($"It's {player.Name}'s turn!");
         
         ResetIndicators();
         var panel = transform.Find(player.Guid);
