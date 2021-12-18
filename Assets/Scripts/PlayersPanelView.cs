@@ -49,9 +49,10 @@ public class PlayersPanelView : MonoBehaviour
 
     private void ActivatePlayerInPanel(Player player)
     {
+        // test panel
+        PanelManager.Instance.ShowMessage(player.Name);
+        
         ResetIndicators();
-        // remember to reset all first
-        Debug.Log("It is " + player.Name + " turn!");
         var panel = transform.Find(player.Guid);
         var indicator = panel.Find("TurnIndicator");
         var image = indicator.GetComponent<Image>();
