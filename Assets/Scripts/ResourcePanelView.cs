@@ -4,6 +4,7 @@ using DG.Tweening;
 using EventSystem;
 using Managers;
 using TMPro;
+using UI.Resource;
 using UnityEngine;
 
 public class ResourcePanelView : MonoBehaviour
@@ -52,6 +53,7 @@ public class ResourcePanelView : MonoBehaviour
                 var tile = item.Key;                
                 var screenPos = camera.WorldToScreenPoint(tile.ToWorldCoordinates());
                 var res = Instantiate(resourceUiPrefab, screenPos, Quaternion.identity);
+                res.GetComponent<ResourceCard>().resource = tile.GetResourceType();
                 res.transform.SetParent(uiCanvas);
                 res.transform.localScale = Vector3.zero;
                 var sequence = DOTween.Sequence();
@@ -60,11 +62,10 @@ public class ResourcePanelView : MonoBehaviour
                 sequence.OnComplete(() =>
                 {
                     Destroy(res);
+                    UpdateUI(player);
                 });
             }
         }
-        
-        UpdateUI(player);
     }
 
     private void UpdateUI(Player player)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4755872202438259360}
   - component: {fileID: 3224452214656067814}
   m_Layer: 5
-  m_Name: _ui_sheep
+  m_Name: card_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 7818395869849204396}
   - component: {fileID: 2796466863831706032}
   - component: {fileID: 3752109551548063929}
+  - component: {fileID: 494593265517115747}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -151,3 +152,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &494593265517115747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718104843519933863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a098cb9a7743c9b0164bc10c69b751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardImage: {fileID: 3224452214656067814}
+  wood: {fileID: 21300000, guid: d75a67d4bc1b06b4a9a3ae2d279332f9, type: 3}
+  brick: {fileID: 21300000, guid: 9c5abace9e3c36c47b8106cdc236f336, type: 3}
+  sheep: {fileID: 21300000, guid: d0d59454644fec04ea08bbf8b578f00c, type: 3}
+  wheat: {fileID: 21300000, guid: 63c144faf28ae9a48ab4ac1fb3218b70, type: 3}
+  ore: {fileID: 21300000, guid: 233d74c64d288a14291b7a025a5df061, type: 3}
+  resource: 0
