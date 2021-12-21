@@ -18,7 +18,7 @@ namespace Catan
         {
             Color = color;
             Name = name;
-            Guid = Catan.Game.GenerateGuid();
+            Guid = Game.GenerateGuid();
             _resources = new Dictionary<ResourceEnum, int>()
             {
                 {ResourceEnum.WOOD, 0},
