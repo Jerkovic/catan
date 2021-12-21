@@ -10,9 +10,8 @@ public class BoardView : MonoBehaviour
     public GameObject cornerPlaceholderPrefab;
     public GameObject roadPlaceholderPrefab;
 
-    [Header("HexTile Materials")] [SerializeField]
-    private Material mountainMaterial;
-
+    [Header("HexTile Materials")] 
+    [SerializeField] private Material mountainMaterial;
     [SerializeField] private Material pastureMaterial;
     [SerializeField] private Material hillMaterial;
     [SerializeField] private Material fieldMaterial;
@@ -26,20 +25,11 @@ public class BoardView : MonoBehaviour
         var game = GameManager.Instance.GetGame();
         var board = game.GetBoard();
 
-        foreach (var tile in board.GetTiles())
-        {
-            InitHexTile(tile); // 19
-        }
+        foreach (var tile in board.GetTiles()) InitHexTile(tile); // 19
 
-        foreach (var corner in board.GetCorners())
-        {
-            InitCorner(corner); // 54 
-        }
+        foreach (var corner in board.GetCorners()) InitCorner(corner); // 54 
 
-        foreach (var edge in board.GetEdges())
-        {
-            InitEdge(edge); // 72
-        }
+        foreach (var edge in board.GetEdges()) InitEdge(edge); // 72
     }
 
     private void InitHexTile(HexTile tile)
@@ -48,40 +38,19 @@ public class BoardView : MonoBehaviour
         hexGo.name = tile.GetHashCode().ToString();
         var meshRenderer = hexGo.GetComponentInChildren<MeshRenderer>();
 
-        if (tile.GetTileType() == TileTypeEnum.MOUNTAIN)
-        {
-            meshRenderer.material = mountainMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.MOUNTAIN) meshRenderer.material = mountainMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.PASTURE)
-        {
-            meshRenderer.material = pastureMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.PASTURE) meshRenderer.material = pastureMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.HILL)
-        {
-            meshRenderer.material = hillMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.HILL) meshRenderer.material = hillMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.FIELD)
-        {
-            meshRenderer.material = fieldMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.FIELD) meshRenderer.material = fieldMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.FOREST)
-        {
-            meshRenderer.material = forestMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.FOREST) meshRenderer.material = forestMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.DESERT)
-        {
-            meshRenderer.material = desertMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.DESERT) meshRenderer.material = desertMaterial;
 
-        if (tile.GetTileType() == TileTypeEnum.SEA)
-        {
-            meshRenderer.material = seaMaterial;
-        }
+        if (tile.GetTileType() == TileTypeEnum.SEA) meshRenderer.material = seaMaterial;
 
         hexGo.tag = "Hexagon";
         hexGo.transform.SetParent(transform);
@@ -93,10 +62,7 @@ public class BoardView : MonoBehaviour
             var chit = Instantiate(chitPrefab, hexGo.transform, false);
             var textComponent = chit.GetComponentInChildren<TMP_Text>();
             textComponent.text = tile.GetChit().ToString();
-            if (tile.IsRedChit())
-            {
-                textComponent.color = Color.red;    
-            }
+            if (tile.IsRedChit()) textComponent.color = Color.red;
         }
     }
 
