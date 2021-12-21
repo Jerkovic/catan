@@ -5,7 +5,8 @@ using TMPro;
 
 public class BoardView : MonoBehaviour
 {
-    [Header("Prefabs")] public GameObject hexPrefab;
+    [Header("Prefabs")] 
+    public GameObject hexPrefab;
     public GameObject chitPrefab;
     public GameObject cornerPlaceholderPrefab;
     public GameObject roadPlaceholderPrefab;
