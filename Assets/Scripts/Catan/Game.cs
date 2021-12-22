@@ -273,5 +273,30 @@ namespace Catan
             // // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build road at this edge");
         }
+        
+        public void FindLongestPath() 
+        {
+            // We have edges / roads
+            var edges = GetBoard().GetEdges();
+            var edge = edges[0]; // starting edge
+            var corner1 = edge.GetLeftCorner();
+            var corner2 = edge.GetLeftCorner();
+            var test = GetBoard().GetEdgesByCorner(corner1.GetHashCode());
+            // filter by
+            // edge.HasRoad()
+            // edge.GetPlayerGuid()
+            
+            // edge.GetCorners()
+            
+            // Pick a random road segment, add it to a set, and mark it
+            // Branch out from this segment, ie. follow connected segments in both directions that aren't marked (if they're marked, we've already been here)
+            // If found road segment is not already in the set, add it, and mark it
+            // Keep going from new segments until you cannot find any more unmarked segments that are connected to those currently in the set
+            // If there's unmarked segments left, they're part of a new set, pick a random one and start back at 1 with another set
+            // Note: A road can be broken if another play builds a settlement on a joint between two segments.
+            // You need to detect this and not branch past the settlement.
+
+        }
     }
+    
 }

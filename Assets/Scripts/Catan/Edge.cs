@@ -41,6 +41,11 @@ namespace Catan
             return _road;
         }
 
+        public string GetPlayerGuid()
+        {
+            return _edgePlayerId;
+        }
+
         public Corner GetLeftCorner()
         {
             return _left;
