@@ -1,4 +1,5 @@
 using System.Collections;
+using Catan;
 using EventSystem;
 using UI;
 using UnityEngine;
@@ -59,7 +60,10 @@ namespace Managers
 
         public void NextTurn()
         {
-            GetGame().NextTurn();
+            if (GetGame().GetGameState() == GamePhaseStateEnum.ROLL_BUILD_TRADE)
+            {
+                GetGame().NextTurn();    
+            }
         }
     
         public void RollDices()

@@ -40,6 +40,11 @@ namespace Catan
             _players.Add(player4);
         }
 
+        public GamePhaseStateEnum GetGameState()
+        {
+            return _gamePhaseState;
+        }
+
         public string GetGameId()
         {
             return _gameId;
@@ -243,7 +248,6 @@ namespace Catan
 
         public void BuildRoadAtEdge(int hashCode)
         {
-            // we need to validate _lastSettlementCorner is set
             if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnRoadCount > 0)
             {
                 Debug.Log("Too many roads in this turn");
@@ -261,11 +265,24 @@ namespace Catan
             var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
             if (ownedAdjacentCorners.Any())
             {
+                if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE)
+                {
+                    var currentCorner = edge.GetCorners()
+                        .Where((c) => c.GetHashCode() == _lastSettlementCorner.GetHashCode());
+                    if (!currentCorner.Any())
+                    {
+                        Debug.Log("Edge be connected to settlement build in this turn!");
+                        return;
+                    }
+                }
+
                 if (edge.PlaceRoad(_turnPlayerGuid))
                 {
                     _currentTurnRoadCount += 1;
                     var player = GetPlayerByGuid(_turnPlayerGuid);
                     Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
+                    if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE) return;
+                    NextTurn(); // Auto change turn 
                     return;
                 }
             }
@@ -273,8 +290,8 @@ namespace Catan
             // // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build road at this edge");
         }
-        
-        public void FindLongestPath() 
+
+        public void FindLongestPath()
         {
             // We have edges / roads
             var edges = GetBoard().GetEdges();
@@ -285,9 +302,9 @@ namespace Catan
             // filter by
             // edge.HasRoad()
             // edge.GetPlayerGuid()
-            
+
             // edge.GetCorners()
-            
+
             // Pick a random road segment, add it to a set, and mark it
             // Branch out from this segment, ie. follow connected segments in both directions that aren't marked (if they're marked, we've already been here)
             // If found road segment is not already in the set, add it, and mark it
@@ -295,8 +312,6 @@ namespace Catan
             // If there's unmarked segments left, they're part of a new set, pick a random one and start back at 1 with another set
             // Note: A road can be broken if another play builds a settlement on a joint between two segments.
             // You need to detect this and not branch past the settlement.
-
         }
     }
-    
 }
