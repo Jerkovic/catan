@@ -12,8 +12,8 @@ namespace Catan
         private readonly int _chit;
 
         // UI offsets 
-        private const float XOffset = 0.882f;
-        private const float ZOffset = 0.764f;
+        private const float XOffset = 0.870f;
+        private const float ZOffset = 0.754f;
 
         public HexTile(CubicHexCoord coord, TileTypeEnum type, int chit)
         {
