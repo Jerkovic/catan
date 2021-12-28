@@ -9,10 +9,9 @@ namespace UI.Panel
     [RequireComponent(typeof(CanvasGroup))]
     public class MsgPanel : MonoBehaviour
     {
-
         [SerializeField] private TMP_Text text;
-
         private CanvasGroup _canvasGroup;
+        
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
@@ -39,7 +38,7 @@ namespace UI.Panel
             s.Append(_canvasGroup.DOFade(0, 0.7f));
             s.Append(_canvasGroup.transform.DOScale(0,0.25f));
             s.Play();
-            s.OnComplete(() => Debug.Log("done"));
+            s.OnComplete(() => Debug.Log("hiding Msg alerter callback"));
         }
     }
 }
