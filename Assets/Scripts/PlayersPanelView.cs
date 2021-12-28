@@ -53,7 +53,6 @@ public class PlayersPanelView : MonoBehaviour
         var image = indicator.GetComponent<Image>();
         image.color = Color.yellow;
         var text = panel.GetComponentsInChildren<TMP_Text>();
-        text[2].SetText(player.GetResourcesCount().ToString());
     }
 
     private void ResetIndicators()
@@ -70,7 +69,7 @@ public class PlayersPanelView : MonoBehaviour
         var player = resourcesGained.Player;
         var panel = transform.Find(player.Guid);
         var text = panel.GetComponentsInChildren<TMP_Text>();
-        text[2].SetText("Resources:" + player.GetResourcesCount().ToString());
+        text[2].SetText("Resources: " + player.GetResourcesCount().ToString());
     }
 }
     
