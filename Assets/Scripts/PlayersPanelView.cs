@@ -22,12 +22,7 @@ public class PlayersPanelView : MonoBehaviour
     {
         Events.OnPlayerTurnChanged.RemoveListener(ActivatePlayerInPanel);
     }
-
-    private void Start()
-    {
-
-    }
-
+    
     private void CreatePlayerPanels(List<Player> players)
     {
         foreach (var player in players)

@@ -32,17 +32,17 @@ public class ResourcePanelView : MonoBehaviour
 
     private void OnEnable()
     {
-        Events.OnResourcesUpdate.AddListener(TestAnim);
+        Events.OnResourcesUpdate.AddListener(AnimateResources);
         Events.OnPlayerTurnChanged.AddListener(UpdateUI);
     }
 
     private void OnDisable()
     {
-        Events.OnResourcesUpdate.RemoveListener(TestAnim);
+        Events.OnResourcesUpdate.RemoveListener(AnimateResources);
         Events.OnPlayerTurnChanged.AddListener(UpdateUI);
     }
     
-    private void TestAnim(ResourcesGained resourcesGained)
+    private void AnimateResources(ResourcesGained resourcesGained)
     {
         var player = resourcesGained.Player;
         var resources = resourcesGained.Resources;
@@ -51,14 +51,15 @@ public class ResourcePanelView : MonoBehaviour
         {
             foreach (var item in resources)
             {
-                SpawnResource(item, player);
+                var tile = item.Key;
+                var amount = item.Value;
+                SpawnResource(tile, amount, player);
             }
         }
     }
 
-    private void SpawnResource(KeyValuePair<HexTile, int> item, Player player)
+    private void SpawnResource(HexTile tile, int amount, Player player)
     {
-        var tile = item.Key;
         var screenPos = camera.WorldToScreenPoint(tile.ToWorldCoordinates());
         var res = Instantiate(resourceUiPrefab, screenPos, Quaternion.identity);
         res.GetComponent<ResourceCard>().resource = tile.GetResourceType();

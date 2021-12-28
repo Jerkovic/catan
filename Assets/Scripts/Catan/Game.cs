@@ -83,26 +83,33 @@ namespace Catan
             _currentTurnRoadCount = 0;
             _currentTurnSettlementCount = 0;
 
-            Debug.Log(_turnCounter + " of " + _placementTurn.Count());
-            if (_turnCounter == _placementTurn.Count() / 2)
+            if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE)
             {
-                Debug.Log("First phase is over! Place second settlement and road");
-                _gamePhaseState = GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD;
+                if (_turnCounter == _placementTurn.Count() / 2)
+                {
+                    Debug.Log("First phase is over! Place second settlement and road");
+                    _gamePhaseState = GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD;
+                }
+
+                if (_turnCounter >= _placementTurn.Count())
+                {
+                    Debug.Log("Second phase is over! Enter roll/build/trade phase");
+                    _gamePhaseState = GamePhaseStateEnum.ROLL_BUILD_TRADE;
+                }    
             }
 
-            if (_turnCounter >= _placementTurn.Count())
+            if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
             {
-                Debug.Log("Second phase is over! Enter roll/build/trade phase");
-                _gamePhaseState = GamePhaseStateEnum.ROLL_BUILD_TRADE;
-                return;
+                var index = _turnCounter % 4;
+                _turnPlayerGuid = _players.ElementAt(index).Guid;
+                _turnCounter++;
+            }
+            else // placement phase
+            {
+                _turnPlayerGuid = _placementTurn.ElementAt(_turnCounter++);
             }
 
-            var guid = _placementTurn.ElementAt(_turnCounter++);
-            _turnPlayerGuid = guid;
-
-            // Todo handle _gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE;
-
-            Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(guid));
+            Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(_turnPlayerGuid));
         }
 
         public string GetTurnPlayerGuid()
