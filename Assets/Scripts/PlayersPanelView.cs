@@ -41,6 +41,7 @@ public class PlayersPanelView : MonoBehaviour
         var text = go.GetComponentsInChildren<TMP_Text>();
         text[0].SetText(player.Name);
         text[1].SetText(player.Guid);
+        text[2].SetText("Resources: " + player.GetResourcesCount().ToString());
     }
 
     private void ActivatePlayerInPanel(Player player)

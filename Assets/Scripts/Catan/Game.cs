@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Catan.DevelopmentCards;
 using Catan.Resources;
 using EventSystem;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Catan
         private readonly string _gameId;
         private readonly Board _board;
         private readonly List<Player> _players;
+        private readonly Deck _devCardDeck;
 
         // Snake order
         private IEnumerable<string> _placementTurn;
@@ -27,6 +29,7 @@ namespace Catan
             _board = new Board(3);
             _players = new List<Player>();
             _gameId = GenerateGuid();
+            _devCardDeck = new Deck();
             _gamePhaseState = GamePhaseStateEnum.PLACE_FIRST_SETTLEMENT_ROAD;
 
             // set some mocked players to the game
@@ -319,6 +322,18 @@ namespace Catan
             // If there's unmarked segments left, they're part of a new set, pick a random one and start back at 1 with another set
             // Note: A road can be broken if another play builds a settlement on a joint between two segments.
             // You need to detect this and not branch past the settlement.
+        }
+
+        public void BuyDevelopmentCard()
+        {
+            var player = GetPlayerByGuid(_turnPlayerGuid);
+            // Debug.Log(Costs.DevCard);
+            // Can player afford it?
+            // Deduct costs from player resources
+            var card = _devCardDeck.TakeCard();
+            Debug.Log("Bought Card: " +  card.ToString());
+            Events.OnDevCardBought.Invoke(card.ToString());
+            // TODO: add the card to players inventory _turnPlayerGuid
         }
     }
 }

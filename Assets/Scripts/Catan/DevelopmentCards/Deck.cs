@@ -24,13 +24,14 @@ namespace Catan.DevelopmentCards
             }
         }
 
-        public int TakeCard()
+        public CardTypeEnum TakeCard()
         {
+            // todo handle empty deck
             var random = new Random();
             var index = random.Next(_cards.Count);
             var card = _cards[index];
             _cards.RemoveAt(index);
-            return card;
+            return (CardTypeEnum) card;
         }
 
         public override string ToString()

@@ -57,6 +57,11 @@ namespace Managers
             var hashCode = int.Parse(go.name);
             GetGame().BuildRoadAtEdge(hashCode);
         }
+        
+        public void RequestBuyDevelopmentCard()
+        {
+            GetGame().BuyDevelopmentCard();
+        }
 
         public void NextTurn()
         {
