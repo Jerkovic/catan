@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Catan.Resources;
 using UnityEngine;
 
@@ -32,6 +33,11 @@ namespace Catan
         public Dictionary<ResourceEnum, int> GetResources()
         {
             return _resources;
+        }
+
+        public int GetResourcesCount()
+        {
+            return _resources.Values.Sum();
         }
 
         public void AddResource(ResourceEnum resource, int amount)

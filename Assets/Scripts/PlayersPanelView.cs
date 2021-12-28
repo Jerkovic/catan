@@ -16,6 +16,7 @@ public class PlayersPanelView : MonoBehaviour
     {
         Events.OnPlayerTurnChanged.AddListener(ActivatePlayerInPanel);
         Events.OnGameStarted.AddListener(CreatePlayerPanels);
+        Events.OnResourcesUpdate.AddListener(UpdateResourceCards);
     }
         
     private void OnDisable()
@@ -30,7 +31,7 @@ public class PlayersPanelView : MonoBehaviour
             CreatePlayerPanel(player);
         }
     }
-
+    
     private void CreatePlayerPanel(Player player)
     {
         var go  = Instantiate(playerPanelPrefab, transform, true);
@@ -51,6 +52,8 @@ public class PlayersPanelView : MonoBehaviour
         var indicator = panel.Find("TurnIndicator");
         var image = indicator.GetComponent<Image>();
         image.color = Color.yellow;
+        var text = panel.GetComponentsInChildren<TMP_Text>();
+        text[2].SetText(player.GetResourcesCount().ToString());
     }
 
     private void ResetIndicators()
@@ -60,7 +63,14 @@ public class PlayersPanelView : MonoBehaviour
         {
             indicator.GetComponent<Image>().color = Color.white;
         }
-        
+    }
+    
+    private void UpdateResourceCards(ResourcesGained resourcesGained)
+    {
+        var player = resourcesGained.Player;
+        var panel = transform.Find(player.Guid);
+        var text = panel.GetComponentsInChildren<TMP_Text>();
+        text[2].SetText("Resources:" + player.GetResourcesCount().ToString());
     }
 }
     
