@@ -56,6 +56,7 @@ public class PlayersPanelView : MonoBehaviour
         ResetIndicators();
         var panel = transform.Find(player.Guid);
         var indicator = panel.Find("TurnIndicator");
+        indicator.gameObject.SetActive(true);
         var image = indicator.GetComponent<Image>();
         image.color = Color.yellow;
     }
@@ -65,7 +66,8 @@ public class PlayersPanelView : MonoBehaviour
         var indicators = transform.GetComponentsInChildren<TurnIndicator>();
         foreach (var indicator in indicators)
         {
-            indicator.GetComponent<Image>().color = Color.white;
+            indicator.gameObject.SetActive(false);
+            indicator.GetComponent<Image>().color = Color.black;
         }
     }
     
