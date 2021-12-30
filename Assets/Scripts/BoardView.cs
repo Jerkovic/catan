@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
 using Catan;
 using Managers;
 using TMPro;
@@ -62,7 +63,10 @@ public class BoardView : MonoBehaviour
         {
             var chit = Instantiate(chitPrefab, hexGo.transform, false);
             var textComponent = chit.GetComponentInChildren<TMP_Text>();
-            textComponent.text = tile.GetChit().ToString();
+            var sb = new StringBuilder();
+            sb.AppendLine(tile.GetChit().ToString());
+            sb.AppendLine(tile.GetOddsDots());
+            textComponent.text = sb.ToString();
             if (tile.IsRedChit()) textComponent.color = Color.red;
         }
     }

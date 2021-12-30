@@ -335,8 +335,7 @@ namespace Catan
             // Deduct costs from player resources
             Debug.Log("Bought Card: " +  card.ToString());
             Events.OnDevCardBought.Invoke(card.ToString());
-            
-            
+            Events.OnPlayerDataChanged.Invoke(player);
         }
     }
 }

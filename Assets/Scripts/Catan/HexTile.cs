@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Catan.Resources;
 
 namespace Catan
@@ -14,6 +15,21 @@ namespace Catan
         // UI offsets 
         private const float XOffset = 0.870f;
         private const float ZOffset = 0.754f;
+        
+        private static readonly Dictionary<int, string> OddsDots = new Dictionary<int, string>
+        {
+            {2, "."},
+            {3, ".."},
+            {4, "..."},
+            {5, "...."},
+            {6, "....."},
+            {8, "....."},
+            {9, "...."},
+            {10, "..."},
+            {11, ".."},
+            {12, "."}
+        };
+
 
         public HexTile(CubicHexCoord coord, TileTypeEnum type, int chit)
         {
@@ -37,6 +53,11 @@ namespace Catan
             return _chit == 8 || _chit == 6;
         }
 
+        public string GetOddsDots()
+        {
+            return OddsDots[GetChit()];
+        }
+
         public ResourceEnum GetResourceType()
         {
             return GetTileType() switch
@@ -55,7 +76,7 @@ namespace Catan
         public CubicHexCoord GetCubicHexCoord()
         {
             return _coordinate;
-        } 
+        }
 
         public Vector3 ToWorldCoordinates()
         {
