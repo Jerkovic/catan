@@ -1,5 +1,3 @@
-using System;
-
 namespace Catan
 {
     public class Corner
