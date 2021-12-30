@@ -212,6 +212,8 @@ namespace Catan
 
             if (corner.PlaceSettlement(_turnPlayerGuid))
             {
+                player.AddPoints(1);
+                Events.OnPlayerDataChanged.Invoke(player);
                 _currentTurnSettlementCount += 1;
                 _lastSettlementCorner = corner;
                 if (_gamePhaseState == GamePhaseStateEnum.PLACE_SECOND_SETTLEMENT_ROAD)
@@ -248,6 +250,8 @@ namespace Catan
             if (corner.PlaceCity(_turnPlayerGuid))
             {
                 var player = GetPlayerByGuid(_turnPlayerGuid);
+                player.AddPoints(1);
+                Events.OnPlayerDataChanged.Invoke(player);
                 Events.OnSettlementUpgradeToCity.Invoke(new SettlementBuilt(player, corner));
             }
             else

@@ -11,6 +11,7 @@ namespace Catan
         public string Name { get; set; }
         public string Guid { get; set; }
         public Color Color { get; set; }
+        private int _points = 0;
         public int knights; // knight cards
         public int victoryPoints; // hidden cards of type victory_Point
 
@@ -37,6 +38,16 @@ namespace Catan
         public Dictionary<ResourceEnum, int> GetResources()
         {
             return _resources;
+        }
+        
+        public void AddPoints(int points)
+        {
+            _points += points;
+        }
+        
+        public int GetPoints()
+        {
+            return _points;
         }
 
         public int GetResourcesCount()

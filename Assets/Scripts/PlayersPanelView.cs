@@ -17,7 +17,7 @@ public class PlayersPanelView : MonoBehaviour
         Events.OnPlayerTurnChanged.AddListener(ActivatePlayerInPanel);
         Events.OnGameStarted.AddListener(CreatePlayerPanels);
         Events.OnResourcesUpdate.AddListener(UpdateResourceCards);
-        Events.OnPlayerDataChanged.AddListener(UpdateDevCards);
+        Events.OnPlayerDataChanged.AddListener(UpdatePlayerData);
     }
         
     private void OnDisable()
@@ -25,7 +25,7 @@ public class PlayersPanelView : MonoBehaviour
         Events.OnPlayerTurnChanged.RemoveListener(ActivatePlayerInPanel);
         Events.OnGameStarted.RemoveListener(CreatePlayerPanels);
         Events.OnResourcesUpdate.RemoveListener(UpdateResourceCards);
-        Events.OnPlayerDataChanged.RemoveListener(UpdateDevCards);
+        Events.OnPlayerDataChanged.RemoveListener(UpdatePlayerData);
     }
     
     private void CreatePlayerPanels(List<Player> players)
@@ -44,7 +44,7 @@ public class PlayersPanelView : MonoBehaviour
         image[1].color = player.Color;
         var text = go.GetComponentsInChildren<TMP_Text>();
         text[0].SetText(player.Name);
-        text[1].SetText(player.Guid);
+        text[1].SetText("Points: 0");
         text[2].SetText("Resources: " + player.GetResourcesCount().ToString());
         text[3].SetText("Cards: " + player.GetDevelopmentCardsCount().ToString());
     }
@@ -74,15 +74,15 @@ public class PlayersPanelView : MonoBehaviour
     private void UpdateResourceCards(ResourcesGained resourcesGained)
     {
         var player = resourcesGained.Player;
-        var panel = transform.Find(player.Guid);
-        var text = panel.GetComponentsInChildren<TMP_Text>();
-        text[2].SetText("Resources: " + player.GetResourcesCount().ToString());
+        UpdatePlayerData(player);
     }
     
-    private void UpdateDevCards(Player player)
+    private void UpdatePlayerData(Player player)
     {
         var panel = transform.Find(player.Guid);
         var text = panel.GetComponentsInChildren<TMP_Text>();
+        text[1].SetText("Points: " + player.GetPoints().ToString());
+        text[2].SetText("Resources: " + player.GetResourcesCount().ToString());
         text[3].SetText("Cards: " + player.GetDevelopmentCardsCount().ToString());
     }
 }
