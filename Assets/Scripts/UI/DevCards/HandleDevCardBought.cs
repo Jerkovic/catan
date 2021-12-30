@@ -21,7 +21,7 @@ namespace UI.DevCards
 
         private void DevCard(string cardName)
         {
-            PanelManager.Instance.ShowMessage(cardName);
+            PanelManager.Instance.ShowMessage(cardName.Replace("_", " "));
             audioClip.Play(audioSource);
         }
 

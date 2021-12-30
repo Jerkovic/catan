@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 using UI.Panel;
@@ -9,9 +11,31 @@ namespace UI
     {
         [SerializeField] private MsgPanel msgPanel;
         
+        private readonly Queue<string> _messageQueue = new Queue<string>();
+        private bool _isDisplayingMessage = false;
+
+        private void Awake()
+        {
+            StartCoroutine(_handleMessageQueue());
+        }
+
         public void ShowMessage(string message)
         {
-            msgPanel.Show(message);
+            _messageQueue.Enqueue(message);
+        }
+        
+        private IEnumerator _handleMessageQueue() 
+        {
+            while (true) 
+            {
+                yield return new WaitForSeconds(.5f);
+                if (_messageQueue.Count <= 0 || _isDisplayingMessage) continue;
+
+                _isDisplayingMessage = true;
+                var queuedMsg = _messageQueue.Dequeue();
+                msgPanel.Show(queuedMsg, () => _isDisplayingMessage = false);
+            }
+            // ReSharper disable once IteratorNeverReturns
         }
 
     }

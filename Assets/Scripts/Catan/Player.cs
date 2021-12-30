@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Catan.DevelopmentCards;
 using Catan.Resources;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ namespace Catan
         public string Guid { get; set; }
         public Color Color { get; set; }
         public int knights; // knight cards
-        public int victoryPoints; // cards
+        public int victoryPoints; // hidden cards of type victory_Point
 
+        private readonly List<CardTypeEnum> _developmentCards;
         private readonly Dictionary<ResourceEnum, int> _resources;
 
         public Player(Color color, string name)
@@ -20,6 +22,8 @@ namespace Catan
             Color = color;
             Name = name;
             Guid = Game.GenerateGuid();
+            _developmentCards = new List<CardTypeEnum>();
+            
             _resources = new Dictionary<ResourceEnum, int>()
             {
                 {ResourceEnum.WOOD, 0},
@@ -39,11 +43,21 @@ namespace Catan
         {
             return _resources.Values.Sum();
         }
+        
+        public int GetDevelopmentCardsCount()
+        {
+            return _developmentCards.Count;
+        }
 
         public void AddResource(ResourceEnum resource, int amount)
         {
             if (resource == ResourceEnum.NONE) return;
             _resources[resource] += amount;
+        }
+        
+        public void AddDevelopmentCard(CardTypeEnum cardType)
+        {
+            _developmentCards.Add(cardType);
         }
     }
 }

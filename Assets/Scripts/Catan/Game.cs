@@ -327,13 +327,16 @@ namespace Catan
         public void BuyDevelopmentCard()
         {
             var player = GetPlayerByGuid(_turnPlayerGuid);
+            var card = _devCardDeck.TakeCard();
+            player.AddDevelopmentCard(card);
+            Debug.Log("Player got total cards: of " + player.GetDevelopmentCardsCount());
             // Debug.Log(Costs.DevCard);
             // Can player afford it?
             // Deduct costs from player resources
-            var card = _devCardDeck.TakeCard();
             Debug.Log("Bought Card: " +  card.ToString());
             Events.OnDevCardBought.Invoke(card.ToString());
-            // TODO: add the card to players inventory _turnPlayerGuid
+            
+            
         }
     }
 }

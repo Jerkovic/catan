@@ -15,8 +15,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 142ed4fd14adc8349866c3b465947998, type: 3}
   volume:
-    minValue: 1
-    maxValue: 1
+    minValue: 0.6
+    maxValue: 0.6
   pitch:
-    minValue: 0.9
+    minValue: 1
     maxValue: 1

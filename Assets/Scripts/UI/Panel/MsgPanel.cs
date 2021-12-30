@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using TMPro;
@@ -20,25 +21,25 @@ namespace UI.Panel
             
         }
 
-        public void Show(string message)
+        public void Show(string message, Action callback)
         {
             text.SetText(message);
             var s = DOTween.Sequence();
             s.Append(_canvasGroup.DOFade(1, 0.7f));
             s.Append(_canvasGroup.transform.DOScale(1,0.25f));
-            s.AppendInterval(3f);
+            s.AppendInterval(2f);
             s.Play();
-            s.OnComplete(Hide);
+            s.OnComplete(() => Hide(callback));
             
         }
 
-        private void Hide()
+        private void Hide(Action callback)
         {
             var s = DOTween.Sequence();
             s.Append(_canvasGroup.DOFade(0, 0.7f));
             s.Append(_canvasGroup.transform.DOScale(0,0.25f));
             s.Play();
-            s.OnComplete(() => Debug.Log("hiding Msg alerter callback"));
+            s.OnComplete(() => callback());
         }
     }
 }
