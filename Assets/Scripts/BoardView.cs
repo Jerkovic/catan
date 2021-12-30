@@ -20,6 +20,7 @@ public class BoardView : MonoBehaviour
     [SerializeField] private Material forestMaterial;
     [SerializeField] private Material desertMaterial;
     [SerializeField] private Material seaMaterial;
+    
 
     private void Start()
     {
@@ -69,6 +70,18 @@ public class BoardView : MonoBehaviour
             textComponent.text = sb.ToString();
             if (tile.IsRedChit()) textComponent.color = Color.red;
         }
+        
+        // Harbors
+        var board = GameManager.Instance.GetGame().GetBoard();
+        
+        if (tile.GetTileType() == TileTypeEnum.SEA && board.HasTilePort(tile))
+        {
+            var chit = Instantiate(chitPrefab, hexGo.transform, false);
+            var textComponent = chit.GetComponentInChildren<TMP_Text>();
+            var sb = new StringBuilder();
+            sb.AppendLine("?");
+            textComponent.text = sb.ToString();
+        }
     }
 
     private void InitEdge(Edge edge)
@@ -111,5 +124,11 @@ public class BoardView : MonoBehaviour
         cornerObj.tag = "Corner";
         cornerObj.transform.SetParent(transform);
         cornerObj.isStatic = true;
+
+        if (corner.IsPort())
+        {
+            var meshRenderer = cornerObj.GetComponentInChildren<MeshRenderer>();
+            meshRenderer.enabled = true;
+        }
     }
 }

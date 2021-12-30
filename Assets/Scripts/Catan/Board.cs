@@ -28,20 +28,14 @@ namespace Catan
             var center = new CubicHexCoord(0, 0, 0);
             var board = CubicHexCoord.SpiralOutward(new CubicHexCoord(0, 0, 0), _radius - 1);
             var water = CubicHexCoord.Ring(center, _radius);
-
-
-            var cnt = 0;
+            
             while (true)
             {
                 RandomizeBoard(board);
-                cnt++;
                 if (!ValidateBoard()) continue;
-                Debug.Log("Board valid!");
                 break;
             }
-            
-            Debug.Log("Had to randomize " + cnt + " times");
-            
+
             foreach (var coordinate in water)
             {
                 _tiles.Add(new HexTile(coordinate, TileTypeEnum.SEA, 0));
@@ -289,6 +283,21 @@ namespace Catan
                 .ToList();
         }
 
+        public bool HasTilePort(HexTile tile)
+        {
+            var portCorners = GetCornersByTile(tile.GetHashCode()).Where((c) => c.IsPort()).ToList();
+            if (portCorners.Count == 2)
+            {
+                var edges = GetEdgesByCorner(portCorners[0].GetHashCode());
+                if (edges.Any((e) => e.GetAdjacentCorner(portCorners[1]) != null))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
         public IEnumerable<HexTile> GetTilesByCorner(Corner corner)
         {
             return _tiles.Select((tile) => tile)
