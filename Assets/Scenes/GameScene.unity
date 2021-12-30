@@ -523,6 +523,7 @@ MonoBehaviour:
   chitPrefab: {fileID: 7811599586734836696, guid: e8295210addf0e24b9298e99f6a99efe, type: 3}
   cornerPlaceholderPrefab: {fileID: 7590820146349926874, guid: df3ddee95021a774cac03866365cb800, type: 3}
   roadPlaceholderPrefab: {fileID: 8402168636564452149, guid: 9a358d14ce0a8ed41a484bd7cf40a3d3, type: 3}
+  portPrefab: {fileID: 3969076447278173768, guid: acb3464dd0c1a81448ffaf6f93dea98b, type: 3}
   mountainMaterial: {fileID: 2100000, guid: a4a4dcfc19609454d814ae27af585a6a, type: 2}
   pastureMaterial: {fileID: 2100000, guid: 7672ce65ed115724489242ea48693af5, type: 2}
   hillMaterial: {fileID: 2100000, guid: 4a6459bcd613148458cee562d6b1db75, type: 2}

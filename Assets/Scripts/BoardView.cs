@@ -11,6 +11,7 @@ public class BoardView : MonoBehaviour
     public GameObject chitPrefab;
     public GameObject cornerPlaceholderPrefab;
     public GameObject roadPlaceholderPrefab;
+    public GameObject portPrefab;
 
     [Header("HexTile Materials")] 
     [SerializeField] private Material mountainMaterial;
@@ -76,7 +77,7 @@ public class BoardView : MonoBehaviour
         
         if (tile.GetTileType() == TileTypeEnum.SEA && board.HasTilePort(tile))
         {
-            var chit = Instantiate(chitPrefab, hexGo.transform, false);
+            var chit = Instantiate(portPrefab, hexGo.transform, false);
             var textComponent = chit.GetComponentInChildren<TMP_Text>();
             var sb = new StringBuilder();
             sb.AppendLine("?");
