@@ -177,9 +177,8 @@ namespace Catan
                     // group by player instead?
                     // resourcesGained.Add(item.Tile, amount);
                     player.AddResource(resourceType, amount);
-                    Debug.Log(corner.GetPlayerGuid() + " got " + item.Tile.GetResourceType() + " amount: " +
-                              corner.GetState());
-                    Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));
+                    // Events.OnResourcesUpdate.Invoke(new ResourcesGained(player, resourcesGained));
+                    Events.OnPlayerDataChanged.Invoke(player); // temporary
                 }
             }
         }
