@@ -29,9 +29,9 @@ namespace Catan
             {
                 {ResourceEnum.WOOD, 0},
                 {ResourceEnum.BRICK, 0},
-                {ResourceEnum.SHEEP, 0},
-                {ResourceEnum.WHEAT, 0},
-                {ResourceEnum.ORE, 0}
+                {ResourceEnum.SHEEP, 2},
+                {ResourceEnum.WHEAT, 2},
+                {ResourceEnum.ORE, 2}
             };
         }
 
@@ -64,6 +64,17 @@ namespace Catan
         {
             if (resource == ResourceEnum.NONE) return;
             _resources[resource] += amount;
+        }
+        
+        public void RemoveResource(ResourceEnum resource, int amount)
+        {
+            if (resource == ResourceEnum.NONE) return;
+            _resources[resource] -= amount;
+        }
+
+        public bool CanAffordResource(Dictionary<ResourceEnum, int> resourceCost)
+        {
+            return Costs.DevCard.All(item => _resources[item.Key] >= item.Value);
         }
         
         public void AddDevelopmentCard(CardTypeEnum cardType)

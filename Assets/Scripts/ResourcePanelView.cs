@@ -34,12 +34,14 @@ public class ResourcePanelView : MonoBehaviour
     {
         Events.OnResourcesUpdate.AddListener(AnimateResources);
         Events.OnPlayerTurnChanged.AddListener(UpdateUI);
+        Events.OnPlayerDataChanged.AddListener(UpdateUI);
     }
 
     private void OnDisable()
     {
         Events.OnResourcesUpdate.RemoveListener(AnimateResources);
-        Events.OnPlayerTurnChanged.AddListener(UpdateUI);
+        Events.OnPlayerTurnChanged.RemoveListener(UpdateUI);
+        Events.OnPlayerDataChanged.RemoveListener(UpdateUI);
     }
     
     private void AnimateResources(ResourcesGained resourcesGained)
