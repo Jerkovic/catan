@@ -219,7 +219,6 @@ namespace Catan
                 {
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
                     var resourcesGained = new Dictionary<HexTile, int>();
-
                     var tiles = GetBoard().GetTilesByCorner(corner)
                         .Where((t) => t.GetResourceType() != ResourceEnum.NONE);
 
@@ -261,6 +260,8 @@ namespace Catan
 
         public void BuildRoadAtEdge(int hashCode)
         {
+            var player = GetPlayerByGuid(_turnPlayerGuid);
+            
             if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnRoadCount > 0)
             {
                 Debug.Log("Too many roads in this turn");
@@ -273,7 +274,17 @@ namespace Catan
                 return;
             }
 
-            // Todo: A road must always be connected to another road edge owned by the player or connected to corner with a building owned by the player.
+            if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
+            {
+                // can afford it?
+                if (!player.CanAffordResource(Costs.Road))
+                {
+                    Debug.Log("Cant afford road building");
+                    return;
+                }
+                
+            }
+            
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
             if (ownedAdjacentCorners.Any())
@@ -288,19 +299,28 @@ namespace Catan
                         return;
                     }
                 }
+                else
+                {
+                    // TODO in this phase we can ALSO build to other edges being adjacent
+                }
 
                 if (edge.PlaceRoad(_turnPlayerGuid))
                 {
                     _currentTurnRoadCount += 1;
-                    var player = GetPlayerByGuid(_turnPlayerGuid);
                     Events.OnRoadBuilt.Invoke(new RoadBuilt(player, edge));
-                    if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE) return;
-                    NextTurn(); // Auto change turn 
+                    if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
+                    {
+                        player.DeductResourceCost(Costs.Road);
+                        Events.OnPlayerDataChanged.Invoke(player);
+                        return;
+                    };
+                    
+                    NextTurn(); // Auto change turn on initial phases 
                     return;
                 }
             }
 
-            // // Events.OnError.Invoke("Cannot build settlement at this corner");
+            // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build road at this edge");
         }
 
@@ -332,11 +352,7 @@ namespace Catan
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
             
-            // Todo: proper Deduct costs from player resources
-            foreach (var item in Costs.DevCard)
-            {
-                player.RemoveResource(item.Key, item.Value);
-            }
+            player.DeductResourceCost(Costs.DevCard);
             
             var card = _devCardDeck.TakeCard();
             player.AddDevelopmentCard(card);
