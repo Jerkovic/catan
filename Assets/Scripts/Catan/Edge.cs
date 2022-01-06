@@ -9,14 +9,14 @@ namespace Catan
         private readonly Corner _right;
         private bool _road;
 
-        private string _edgePlayerId;
+        private string _edgePlayerGuid;
 
         public Edge(Corner left, Corner right)
         {
             this._left = left;
             this._right = right;
             this._road = false;
-            _edgePlayerId = null;
+            _edgePlayerGuid = null;
         }
 
         [CanBeNull]
@@ -40,10 +40,15 @@ namespace Catan
         {
             return _road;
         }
-
+        
+        public bool OwnedByPlayerGuid(string guid)
+        {
+            return _edgePlayerGuid != null && _edgePlayerGuid.Equals(guid);
+        }
+        
         public string GetPlayerGuid()
         {
-            return _edgePlayerId;
+            return _edgePlayerGuid;
         }
 
         public Corner GetLeftCorner()
@@ -68,9 +73,9 @@ namespace Catan
 
         public bool PlaceRoad(string playerId)
         {
-            if (!string.IsNullOrEmpty(_edgePlayerId) || _road) return false;
+            if (!string.IsNullOrEmpty(_edgePlayerGuid) || _road) return false;
             _road = true;
-            _edgePlayerId = playerId;
+            _edgePlayerGuid = playerId;
             return true;
         }
     }

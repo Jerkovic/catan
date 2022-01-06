@@ -258,8 +258,26 @@ namespace Catan
             }
         }
 
+        private bool OwnAnyAdjacentCorner(Edge edge)
+        {
+            var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
+            return ownedAdjacentCorners.Any();
+        }
+
+        private bool CanBuildRoadOnEdge(Edge edge)
+        {
+            var edgeCorners = edge.GetCorners(); // * -edge- *
+            // loop over the two corners and get the edges see if player own any
+            var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode()));
+            var filteredOwned = testEdges
+                .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid)).ToList();
+            Debug.Log("Connected edges: " + filteredOwned.Count);
+            return filteredOwned.Count > 0;
+        }
+
         public void BuildRoadAtEdge(int hashCode)
         {
+            var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var player = GetPlayerByGuid(_turnPlayerGuid);
             
             if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnRoadCount > 0)
@@ -284,10 +302,8 @@ namespace Catan
                 }
                 
             }
-            
-            var edge = GetBoard().GetEdgeByHashCode(hashCode);
-            var ownedAdjacentCorners = edge.GetCorners().Where((c) => c.OwnedByPlayerGuid(_turnPlayerGuid));
-            if (ownedAdjacentCorners.Any())
+
+            if (true)
             {
                 if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE)
                 {
@@ -295,13 +311,17 @@ namespace Catan
                         .Where((c) => c.GetHashCode() == _lastSettlementCorner.GetHashCode());
                     if (!currentCorner.Any())
                     {
-                        Debug.Log("Edge be connected to settlement build in this turn!");
+                        Debug.Log("Edge has to be connected to settlement built in this turn");
                         return;
                     }
                 }
-                else
+                else // Normal phase ROLL_BUILD_TRADE
                 {
-                    // TODO in this phase we can ALSO build to other edges being adjacent
+                    if (!CanBuildRoadOnEdge(edge) && !OwnAnyAdjacentCorner(edge))
+                    {
+                        Debug.Log("Failed new check road building");
+                        return;
+                    }
                 }
 
                 if (edge.PlaceRoad(_turnPlayerGuid))

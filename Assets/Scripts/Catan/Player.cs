@@ -27,8 +27,8 @@ namespace Catan
             
             _resources = new Dictionary<ResourceEnum, int>()
             {
-                {ResourceEnum.WOOD, 0},
-                {ResourceEnum.BRICK, 0},
+                {ResourceEnum.WOOD, 12},
+                {ResourceEnum.BRICK, 12},
                 {ResourceEnum.SHEEP, 1},
                 {ResourceEnum.WHEAT, 1},
                 {ResourceEnum.ORE, 1}
