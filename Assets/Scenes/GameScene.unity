@@ -680,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 11400000, guid: 2e509ae9f604ea043ba3b48231e5e1f7, type: 2}
+  audioClipHarbor: {fileID: 11400000, guid: 91afd0e8979b3eb44b363ee2f507bd48, type: 2}
   villagePrefab: {fileID: 6972678883234245359, guid: e4e41bac6ca2cfa44b2873668ceeea95, type: 3}
 --- !u!114 &118414520
 MonoBehaviour:

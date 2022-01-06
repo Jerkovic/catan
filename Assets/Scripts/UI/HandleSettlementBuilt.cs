@@ -7,6 +7,7 @@ namespace UI
     public class HandleSettlementBuilt : MonoBehaviour
     {
         public AudioEvent audioClip;
+        public AudioEvent audioClipHarbor;
         public GameObject villagePrefab;
 
         private void OnEnable()
@@ -33,8 +34,14 @@ namespace UI
             mr.material.color = player.Color;
             
             var audioSource = go.AddComponent<AudioSource>();
-            audioClip.Play(audioSource);
-
+            if (corner.IsPort())
+            {
+                audioClipHarbor.Play(audioSource);
+            }
+            else
+            {
+                audioClip.Play(audioSource);    
+            }
         }
     }
 }

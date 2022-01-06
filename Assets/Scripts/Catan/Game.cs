@@ -267,12 +267,15 @@ namespace Catan
         private bool CanBuildRoadOnEdge(Edge edge)
         {
             var edgeCorners = edge.GetCorners(); // * -edge- *
-            // loop over the two corners and get the edges see if player own any
+            // loop over the two corners and get the edges for them and see if player own any
             var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode()));
-            var filteredOwned = testEdges
+            var filteredOwnedEdges = testEdges
                 .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid)).ToList();
-            Debug.Log("Connected edges: " + filteredOwned.Count);
-            return filteredOwned.Count > 0;
+            // TODO. Has road edge blocking opponent building?
+            // filteredOwnedEdges find the corner where edge-input
+            // var testCorners = filteredOwnedEdges.SelectMany(e => e.GetCorners());
+            Debug.Log("Connected edges: " + filteredOwnedEdges.Count);
+            return filteredOwnedEdges.Count > 0;
         }
 
         public void BuildRoadAtEdge(int hashCode)
