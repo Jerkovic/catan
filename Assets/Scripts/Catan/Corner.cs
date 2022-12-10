@@ -6,7 +6,7 @@ namespace Catan
         private readonly bool _port;
         private CornerStateEnum _state;
         private string _cornerPlayerGuid;
-        
+
         public readonly int hex1;
         public readonly int hex2;
         public readonly int hex3;
@@ -39,11 +39,16 @@ namespace Catan
             return true;
         }
 
+        public bool HasBuilding()
+        {
+            return _state == CornerStateEnum.SETTLEMENT || _state == CornerStateEnum.CITY;
+        }
+
         public bool PlaceCity(string playerId)
         {
             if (_state != CornerStateEnum.SETTLEMENT) return false;
             if (!_cornerPlayerGuid.Equals(playerId)) return false;
-            
+
             _state = CornerStateEnum.CITY;
             _cornerPlayerGuid = playerId;
             return true;
@@ -62,6 +67,11 @@ namespace Catan
         public override int GetHashCode()
         {
             return hex1 + hex2 + hex3;
+        }
+
+        public bool Equals(Corner other)
+        {
+            return GetHashCode() == other.GetHashCode();
         }
 
         public override string ToString()

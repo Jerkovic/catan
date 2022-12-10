@@ -68,7 +68,7 @@ namespace Catan
 
         public override string ToString()
         {
-            return "edge";
+            return "edge-" + GetHashCode();
         }
 
         public bool PlaceRoad(string playerId)

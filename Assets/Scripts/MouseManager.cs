@@ -32,7 +32,7 @@ public class MouseManager : MonoBehaviour // change name to
                     Debug.Log("Click settlement");
                     Events.OnClickSettlement.Invoke(ourHitObject.gameObject);
                 }
-
+                
                 if (ourHitObject != null && ourHitObject.CompareTag("HexagonMesh"))
                 {
                     Events.OnClickHexagon.Invoke(ourHitObject.parent.gameObject);
@@ -40,6 +40,7 @@ public class MouseManager : MonoBehaviour // change name to
 
                 if (ourHitObject != null && ourHitObject.CompareTag("Edge"))
                 {
+                    Debug.Log("Click Edge");
                     Events.OnClickEdge.Invoke(ourHitObject.gameObject);
                 }
 

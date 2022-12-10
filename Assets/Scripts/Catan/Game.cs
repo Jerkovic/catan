@@ -23,7 +23,10 @@ namespace Catan
 
         private GamePhaseStateEnum _gamePhaseState;
         private Corner _lastSettlementCorner;
-
+        
+        private int _currentTurnSettlementCount = 0;
+        private int _currentTurnRoadCount = 0;
+        
         public Game()
         {
             _board = new Board(3);
@@ -35,12 +38,12 @@ namespace Catan
             // set some mocked players to the game
             var player1 = new Player(Color.blue, "Robert");
             var player2 = new Player(Color.red, "Edvin");
-            var player3 = new Player(Color.yellow, "Vincent");
-            var player4 = new Player(Color.magenta, "Victoria");
+            // var player3 = new Player(Color.yellow, "Vincent");
+            // var player4 = new Player(Color.magenta, "Victoria");
             _players.Add(player1);
             _players.Add(player2);
-            _players.Add(player3);
-            _players.Add(player4);
+            // _players.Add(player3);
+            // _players.Add(player4);
         }
 
         public GamePhaseStateEnum GetGameState()
@@ -57,7 +60,7 @@ namespace Catan
         {
             Events.OnGameStarted.Invoke(GetPlayers());
 
-            Debug.Log("Initializing Game " + _gameId);
+            Debug.Log("Initializing Game #" + GetGameId());
             GetBoard().SetRobberDesert();
             _placementTurn = InitPlacementTurn();
             NextTurn();
@@ -76,11 +79,7 @@ namespace Catan
         {
             return _players.Single(p => p.Guid == guid);
         }
-
-        // Move these to top
-        private int _currentTurnSettlementCount = 0;
-        private int _currentTurnRoadCount = 0;
-
+        
         public void NextTurn()
         {
             _currentTurnRoadCount = 0;
@@ -266,14 +265,30 @@ namespace Catan
 
         private bool CanBuildRoadOnEdge(Edge edge)
         {
-            var edgeCorners = edge.GetCorners(); // * -edge- *
-            // loop over the two corners and get the edges for them and see if player own any
-            var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode()));
+            var edgeCorners = edge.GetCorners().ToList(); // corner  <- edge ->  corner
+            var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode())).ToList();
             var filteredOwnedEdges = testEdges
                 .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid)).ToList();
-            // TODO. Has road edge blocking opponent building?
-            // filteredOwnedEdges find the corner where edge-input
-            // var testCorners = filteredOwnedEdges.SelectMany(e => e.GetCorners());
+            
+            // Has road edge blocking opponent building?
+            if (filteredOwnedEdges.Count == 1)
+            {
+                var adjacentEdgeCorners = filteredOwnedEdges[0].GetCorners();
+                var allCorners = adjacentEdgeCorners.Concat(edgeCorners).ToList();
+                Debug.Log(allCorners.Count());
+                var cornerHash = allCorners.GroupBy(x => x.GetHashCode())
+                    .Where(g => g.Count() > 1)
+                    .Select(y => y.Key).ToList();
+                if (cornerHash.Any())
+                {
+                    var corner = GetBoard().GetCornerByHashCode(cornerHash[0]);
+                    if (corner.HasBuilding() && !corner.OwnedByPlayerGuid(_turnPlayerGuid))
+                    {
+                        Debug.Log("Cannot build road because of blocking building");
+                        return false;
+                    }
+                }
+            }
             Debug.Log("Connected edges: " + filteredOwnedEdges.Count);
             return filteredOwnedEdges.Count > 0;
         }
