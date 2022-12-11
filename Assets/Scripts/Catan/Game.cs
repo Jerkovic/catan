@@ -362,13 +362,13 @@ namespace Catan
             Debug.Log("Cannot build road at this edge");
         }
 
-        public void FindLongestPath()
+        private void FindLongestPath()
         {
             // We have edges / roads
             var edges = GetBoard().GetEdges();
             var edge = edges[0]; // starting edge
             var corner1 = edge.GetLeftCorner();
-            var corner2 = edge.GetLeftCorner();
+            var corner2 = edge.GetRightCorner();
             var test = GetBoard().GetEdgesByCorner(corner1.GetHashCode());
             // filter by
             // edge.HasRoad()
@@ -383,12 +383,18 @@ namespace Catan
             // If there's unmarked segments left, they're part of a new set, pick a random one and start back at 1 with another set
             // Note: A road can be broken if another play builds a settlement on a joint between two segments.
             // You need to detect this and not branch past the settlement.
+            
+            // trigger event TO animate longest road
+            
+            var roadEdges = GetBoard().GetEdges().Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid));
+            Events.OnLongestRoad.Invoke(roadEdges.ToList());
+
         }
 
         public void BuyDevelopmentCard()
         {
-            // test event TO animate road
-            Events.OnLongestRoad.Invoke(GetBoard().GetEdges().ToList());
+            // test find longest path. should not be here
+            FindLongestPath();
             
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
