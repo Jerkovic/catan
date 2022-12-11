@@ -387,6 +387,9 @@ namespace Catan
 
         public void BuyDevelopmentCard()
         {
+            // test event TO animate road
+            Events.OnLongestRoad.Invoke(GetBoard().GetEdges().ToList());
+            
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
             
@@ -397,6 +400,7 @@ namespace Catan
             
             Events.OnDevCardBought.Invoke(card.ToString());
             Events.OnPlayerDataChanged.Invoke(player);
+            
         }
     }
 }

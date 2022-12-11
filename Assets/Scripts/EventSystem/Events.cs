@@ -18,6 +18,8 @@ namespace EventSystem
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
         public static readonly Event<int> OnRollDice = new Event<int>();
         public static readonly Event<List<HexTile>> OnTilesProducing = new Event<List<HexTile>>();
+        
+        public static readonly Event<List<Edge>> OnLongestRoad = new Event<List<Edge>>();
 
         public static readonly Event<ResourcesGained> OnResourcesUpdate = new Event<ResourcesGained>();
 
