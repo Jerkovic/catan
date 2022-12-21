@@ -102,7 +102,7 @@ namespace Catan
 
             if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
             {
-                var index = _turnCounter % 4;
+                var index = _turnCounter % _players.Count;
                 _turnPlayerGuid = _players.ElementAt(index).Guid;
                 _turnCounter++;
             }
@@ -155,13 +155,13 @@ namespace Catan
 
         private void TilesProduce(IEnumerable<HexTile> producingTiles)
         {
-            var producingTileCorners = producingTiles.Select((tile) =>
-                new
-                {
-                    Tile = tile,
-                    Corners = GetBoard().GetCornersByTile(tile.GetHashCode())
-                        .Where(c => c.GetState() != CornerStateEnum.EMPTY)
-                });
+            var producingTileCorners = producingTiles.Select((tile) => new
+            {
+                Tile = tile,
+                Corners = GetBoard()
+                    .GetCornersByTile(tile.GetHashCode())
+                    .Where(c => c.GetState() != CornerStateEnum.EMPTY)
+            });
 
             var resourcesGained = new Dictionary<HexTile, int>();
 
@@ -208,6 +208,20 @@ namespace Catan
                 _lastSettlementCorner = corner;
             }
 
+            if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
+            {
+                if (player.CanAffordResource(Costs.Settlement))
+                {
+                    player.DeductResourceCost(Costs.Settlement);
+                    Events.OnPlayerDataChanged.Invoke(player);
+                }
+                else
+                {
+                    Debug.Log("Cant afford settlement");
+                    return;
+                }
+            }
+
             if (corner.PlaceSettlement(_turnPlayerGuid))
             {
                 player.AddPoints(1);
@@ -218,7 +232,8 @@ namespace Catan
                 {
                     // Second placement turn, will produce stuff for built settlement adjacent tiles
                     var resourcesGained = new Dictionary<HexTile, int>();
-                    var tiles = GetBoard().GetTilesByCorner(corner)
+                    var tiles = GetBoard()
+                        .GetTilesByCorner(corner)
                         .Where((t) => t.GetResourceType() != ResourceEnum.NONE);
 
                     foreach (var tile in tiles)
@@ -236,7 +251,6 @@ namespace Catan
                 return;
             }
 
-            // Events.OnError.Invoke("Cannot build settlement at this corner");
             Debug.Log("Cannot build settlement at this corner");
         }
 
@@ -268,7 +282,8 @@ namespace Catan
             var edgeCorners = edge.GetCorners().ToList(); // corner  <- edge ->  corner
             var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode())).ToList();
             var filteredOwnedEdges = testEdges
-                .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid)).ToList();
+                .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid))
+                .ToList();
 
             // Has road edge blocking opponent building?
             if (filteredOwnedEdges.Count == 1)
@@ -278,7 +293,8 @@ namespace Catan
                 Debug.Log(allCorners.Count());
                 var cornerHash = allCorners.GroupBy(x => x.GetHashCode())
                     .Where(g => g.Count() > 1)
-                    .Select(y => y.Key).ToList();
+                    .Select(y => y.Key)
+                    .ToList();
                 if (cornerHash.Any())
                 {
                     var corner = GetBoard().GetCornerByHashCode(cornerHash[0]);
@@ -367,9 +383,12 @@ namespace Catan
         private List<Edge> FindNeighborEdges(Edge edge)
         {
             // todo check corner if opposing player owns any of these corners
+            // filter out remove corners that : corner.HasBuilding() && !corner.OwnedByPlayerGuid(_turnPlayerGuid)
             var edgeCorners = edge.GetCorners().ToList(); // corner  <- edge ->  corner
             var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode())).ToList();
-            return testEdges.Where((e) => e.HasRoad() && e.GetHashCode() != edge.GetHashCode()).ToList();
+            return testEdges.Where((e) =>
+                    e.HasRoad() && e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid))
+                .ToList();
         }
 
         private void FindLongestPath()
@@ -380,7 +399,9 @@ namespace Catan
             // edge.GetPlayerGuid()
             // edge.GetCorners()
 
-            var playerRoadEdges = GetBoard().GetEdges().Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid))
+            var playerRoadEdges = GetBoard()
+                .GetEdges()
+                .Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid))
                 .ToList();
             // call detect longest road for current player
             var longestEdgePath = DetectLongestPath(playerRoadEdges[0]);
