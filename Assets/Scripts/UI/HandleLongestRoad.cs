@@ -26,7 +26,7 @@ namespace UI
                 var trans = GameObject.Find(edge.GetHashCode().ToString()).transform;
                 var sequence = DOTween.Sequence()
                     .Join(trans.DOPunchScale(new Vector3(.05f, .05f, .05f), .5f, 1, 2.9f));
-                sequence.SetLoops(3, LoopType.Yoyo);    
+                sequence.SetLoops(1, LoopType.Yoyo);    
             }
             
         }
