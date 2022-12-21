@@ -23,10 +23,10 @@ namespace Catan
 
         private GamePhaseStateEnum _gamePhaseState;
         private Corner _lastSettlementCorner;
-        
+
         private int _currentTurnSettlementCount = 0;
         private int _currentTurnRoadCount = 0;
-        
+
         public Game()
         {
             _board = new Board(3);
@@ -79,7 +79,7 @@ namespace Catan
         {
             return _players.Single(p => p.Guid == guid);
         }
-        
+
         public void NextTurn()
         {
             _currentTurnRoadCount = 0;
@@ -97,7 +97,7 @@ namespace Catan
                 {
                     Debug.Log("Second phase is over! Enter roll/build/trade phase");
                     _gamePhaseState = GamePhaseStateEnum.ROLL_BUILD_TRADE;
-                }    
+                }
             }
 
             if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
@@ -269,7 +269,7 @@ namespace Catan
             var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode())).ToList();
             var filteredOwnedEdges = testEdges
                 .Where((e) => e.GetHashCode() != edge.GetHashCode() && e.OwnedByPlayerGuid(_turnPlayerGuid)).ToList();
-            
+
             // Has road edge blocking opponent building?
             if (filteredOwnedEdges.Count == 1)
             {
@@ -289,6 +289,7 @@ namespace Catan
                     }
                 }
             }
+
             Debug.Log("Connected edges: " + filteredOwnedEdges.Count);
             return filteredOwnedEdges.Count > 0;
         }
@@ -297,7 +298,7 @@ namespace Catan
         {
             var edge = GetBoard().GetEdgeByHashCode(hashCode);
             var player = GetPlayerByGuid(_turnPlayerGuid);
-            
+
             if (_gamePhaseState != GamePhaseStateEnum.ROLL_BUILD_TRADE && _currentTurnRoadCount > 0)
             {
                 Debug.Log("Too many roads in this turn");
@@ -318,7 +319,6 @@ namespace Catan
                     Debug.Log("Cant afford road building");
                     return;
                 }
-                
             }
 
             if (true)
@@ -351,8 +351,10 @@ namespace Catan
                         player.DeductResourceCost(Costs.Road);
                         Events.OnPlayerDataChanged.Invoke(player);
                         return;
-                    };
-                    
+                    }
+
+                    ;
+
                     NextTurn(); // Auto change turn on initial phases 
                     return;
                 }
@@ -362,51 +364,76 @@ namespace Catan
             Debug.Log("Cannot build road at this edge");
         }
 
+        private List<Edge> FindNeighborEdges(Edge edge)
+        {
+            // todo check corner if opposing player owns any of these corners
+            var edgeCorners = edge.GetCorners().ToList(); // corner  <- edge ->  corner
+            var testEdges = edgeCorners.SelectMany(c => GetBoard().GetEdgesByCorner(c.GetHashCode())).ToList();
+            return testEdges.Where((e) => e.HasRoad() && e.GetHashCode() != edge.GetHashCode()).ToList();
+        }
+
         private void FindLongestPath()
         {
             // We have edges / roads
-            var edges = GetBoard().GetEdges();
-            var edge = edges[0]; // starting edge
-            var corner1 = edge.GetLeftCorner();
-            var corner2 = edge.GetRightCorner();
-            var test = GetBoard().GetEdgesByCorner(corner1.GetHashCode());
             // filter by
             // edge.HasRoad()
             // edge.GetPlayerGuid()
-
             // edge.GetCorners()
 
-            // Pick a random road segment, add it to a set, and mark it
-            // Branch out from this segment, ie. follow connected segments in both directions that aren't marked (if they're marked, we've already been here)
-            // If found road segment is not already in the set, add it, and mark it
-            // Keep going from new segments until you cannot find any more unmarked segments that are connected to those currently in the set
-            // If there's unmarked segments left, they're part of a new set, pick a random one and start back at 1 with another set
-            // Note: A road can be broken if another play builds a settlement on a joint between two segments.
-            // You need to detect this and not branch past the settlement.
-            
-            // trigger event TO animate longest road
-            
-            var roadEdges = GetBoard().GetEdges().Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid));
-            Events.OnLongestRoad.Invoke(roadEdges.ToList());
+            var playerRoadEdges = GetBoard().GetEdges().Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid))
+                .ToList();
+            // call detect longest road for current player
+            var longestEdgePath = DetectLongestPath(playerRoadEdges[0]);
 
+            // Method to find the longest road in the graph
+            IEnumerable<Edge> DetectLongestPath(Edge start)
+            {
+                var longestPath = new List<Edge>();
+
+                void ExplorePaths(Edge current, ICollection<Edge> path)
+                {
+                    path.Add(current);
+                    if (path.Count > longestPath.Count)
+                    {
+                        longestPath = path.ToList();
+                    }
+
+                    // Recursively explore all possible paths from the current node
+                    // find the current adjacent neighbor edges
+                    var neighborEdges = FindNeighborEdges(current);
+                    foreach (var neighborEdge in neighborEdges)
+                    {
+                        // Only explore paths that haven't been visited yet
+                        if (!path.Contains(neighborEdge))
+                        {
+                            ExplorePaths(neighborEdge, path);
+                        }
+                    }
+                }
+
+                ExplorePaths(start, new List<Edge>());
+                // return the longest path found
+                return longestPath;
+            }
+
+            Events.OnLongestRoad.Invoke(longestEdgePath.ToList());
         }
 
         public void BuyDevelopmentCard()
         {
             // test find longest path. should not be here
             FindLongestPath();
-            
+
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
-            
+
             player.DeductResourceCost(Costs.DevCard);
-            
+
             var card = _devCardDeck.TakeCard();
             player.AddDevelopmentCard(card);
-            
+
             Events.OnDevCardBought.Invoke(card.ToString());
             Events.OnPlayerDataChanged.Invoke(player);
-            
         }
     }
 }
