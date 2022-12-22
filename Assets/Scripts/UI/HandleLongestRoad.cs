@@ -20,7 +20,7 @@ namespace UI
 
         private void AnimateEdges(List<Edge> edges)
         {
-            Debug.Log("Animate Edges: " + edges.Count);
+            // Debug.Log("Animate Edges: " + edges.Count);
             foreach (var edge in edges)
             {
                 var trans = GameObject.Find(edge.GetHashCode().ToString()).transform;

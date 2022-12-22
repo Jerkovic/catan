@@ -409,8 +409,12 @@ namespace Catan
             // Method to find the longest road in the graph
             IEnumerable<Edge> DetectLongestPath(Edge start)
             {
+                Debug.Log("Start edge " + start.GetHashCode());
+                Events.OnRoadHighlight.Invoke(start);
+                
                 var longestPath = new List<Edge>();
 
+                // Explore Path method
                 void ExplorePaths(Edge current, ICollection<Edge> path)
                 {
                     path.Add(current);
@@ -422,6 +426,7 @@ namespace Catan
                     // Recursively explore all possible paths from the current node
                     // find the current adjacent neighbor edges
                     var neighborEdges = FindNeighborEdges(current);
+                    Debug.Log("Current " + current.GetHashCode() + " => " + neighborEdges.Count.ToString());
                     foreach (var neighborEdge in neighborEdges)
                     {
                         // Only explore paths that haven't been visited yet
