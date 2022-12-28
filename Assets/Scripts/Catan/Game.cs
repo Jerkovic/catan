@@ -393,18 +393,45 @@ namespace Catan
 
         private void FindLongestPath()
         {
-            // We have edges / roads
-            // filter by
-            // edge.HasRoad()
-            // edge.GetPlayerGuid()
-            // edge.GetCorners()
-
             var playerRoadEdges = GetBoard()
                 .GetEdges()
-                .Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid))
+                .Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid) && FindNeighborEdges(e).Count == 1 )
                 .ToList();
             // call detect longest road for current player
+            var test = DetectLongestPath2(playerRoadEdges[0]);
+            Debug.Log("Longest path new algorithm " + test);
             var longestEdgePath = DetectLongestPath(playerRoadEdges[0]);
+            
+            // Method to find the longest road in the graph
+            int DetectLongestPath2(Edge start)
+            {
+                var queue = new Queue<(Edge, int)>();
+                queue.Enqueue((start, 1));
+                var distances = new Dictionary<Edge, int>
+                {
+                    [start] = 1
+                };
+                var longestPath = 1;
+                
+                while (queue.Count > 0)
+                {
+                    // Pop the first edge from the queue
+                    var (edge, distance) = queue.Dequeue();
+        
+                    // Update the longest path length if necessary
+                    longestPath = Math.Max(longestPath, distance);
+                    
+                    foreach (var neighborEdge in FindNeighborEdges(edge))
+                    {
+                        if (!distances.ContainsKey(neighborEdge))
+                        {
+                            queue.Enqueue((neighborEdge, distance + 1));
+                            distances[neighborEdge] = distance + 1;
+                        }
+                    }
+                }
+                return longestPath;
+            }
 
             // Method to find the longest road in the graph
             IEnumerable<Edge> DetectLongestPath(Edge start)
@@ -438,7 +465,6 @@ namespace Catan
                 }
 
                 ExplorePaths(start, new List<Edge>());
-                // return the longest path found
                 return longestPath;
             }
 
