@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using EventSystem;
-using UnityEditor;
 using UnityEngine;
 
 namespace Catan
@@ -80,9 +79,12 @@ namespace Catan
 
         public void MoveRobberToHexagon(int hashCode)
         {
-            var tile = GetTileByHashCode(hashCode);
-            _robberTile = tile;
-            Events.OnRobberMove.Invoke(tile);
+            var destinationTile = GetTileByHashCode(hashCode);
+            if (_robberTile.GetHashCode() == hashCode) return;
+            var validTileTypes = new HashSet<TileTypeEnum> { TileTypeEnum.HILL, TileTypeEnum.FOREST, TileTypeEnum.PASTURE, TileTypeEnum.MOUNTAIN, TileTypeEnum.FIELD };
+            if (!validTileTypes.Contains(destinationTile.GetTileType())) return;
+            _robberTile = destinationTile;
+            Events.OnRobberMove.Invoke(destinationTile); // broadcast event to UI    
         }
 
         public void SetRobberDesert()

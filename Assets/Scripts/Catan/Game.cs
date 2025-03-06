@@ -473,9 +473,6 @@ namespace Catan
 
         public void BuyDevelopmentCard()
         {
-            // test find longest path. should not be here
-            FindLongestPath();
-
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
 

@@ -20,5 +20,10 @@ namespace EventSystem
         {
             Action -= listener;
         }
+        
+        public void RemoveAllListeners()
+        {
+            Action = delegate { };
+        }
     }
 }

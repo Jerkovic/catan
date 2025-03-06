@@ -9,7 +9,9 @@ namespace Managers
 {
     public class GameManager : Singleton<GameManager>
     {
-        private Catan.Game _game;
+        // Rename this class to CatanGameController?
+
+        private Game _game;
 
         private void Awake()
         {
@@ -71,7 +73,7 @@ namespace Managers
             }
         }
     
-        public void RollDices()
+        public void RequestRollDices()
         {
             GetGame().RollDices();
         }
@@ -82,7 +84,7 @@ namespace Managers
             GetGame().GetBoard().MoveRobberToHexagon(hashCode);
         }        
         
-        public Catan.Game GetGame()
+        public Game GetGame()
         {
             return _game;
         }
