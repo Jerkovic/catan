@@ -15,7 +15,7 @@ namespace Catan
         public int knights; // knight cards
         public int victoryPoints; // hidden cards of type victory_Point
 
-        private readonly List<CardTypeEnum> _developmentCards;
+        private readonly List<DevCard> _developmentCards;
         private readonly Dictionary<ResourceEnum, int> _resources;
 
         public Player(Color color, string name)
@@ -23,15 +23,15 @@ namespace Catan
             Color = color;
             Name = name;
             Guid = Game.GenerateGuid();
-            _developmentCards = new List<CardTypeEnum>();
+            _developmentCards = new List<DevCard>();
             
             _resources = new Dictionary<ResourceEnum, int>()
             {
                 {ResourceEnum.WOOD, 12},
                 {ResourceEnum.BRICK, 12},
-                {ResourceEnum.SHEEP, 1},
-                {ResourceEnum.WHEAT, 1},
-                {ResourceEnum.ORE, 1}
+                {ResourceEnum.SHEEP, 12},
+                {ResourceEnum.WHEAT, 12},
+                {ResourceEnum.ORE, 12}
             };
         }
 
@@ -59,6 +59,11 @@ namespace Catan
         {
             return _developmentCards.Count;
         }
+        
+        public IEnumerable<DevCard> GetDevelopmentCards()
+        {
+            return _developmentCards;
+        }
 
         public void AddResource(ResourceEnum resource, int amount)
         {
@@ -85,9 +90,9 @@ namespace Catan
             return resourceCost.All(item => _resources[item.Key] >= item.Value);
         }
         
-        public void AddDevelopmentCard(CardTypeEnum cardType)
+        public void AddDevelopmentCard(DevCard card)
         {
-            _developmentCards.Add(cardType);
+            _developmentCards.Add(card);
         }
     }
 }

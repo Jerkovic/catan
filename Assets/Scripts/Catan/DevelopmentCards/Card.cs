@@ -1,12 +1,31 @@
 namespace Catan.DevelopmentCards
 {
-    public class Card
+    public class DevCard
     {
-        private CardTypeEnum _cardType;
+        public CardTypeEnum CardType { get; }
+        public bool Played { get; private set; }
+        
+        // TODO this needs to track in what turn it was obtained
 
-        public Card(CardTypeEnum cardType)
+        public DevCard(CardTypeEnum cardType)
         {
-            _cardType = cardType;
+            CardType = cardType;
+            Played = false;
         }
-    }       
+
+        public void PlayCard()
+        {
+            Played = true;
+        }
+        
+        public string GetCardType()
+        {
+            return $"{CardType.ToString().Replace("_", " ")}";
+        }
+
+        public override string ToString()
+        {
+            return $"{CardType} (Played: {Played})";
+        }
+    }
 }

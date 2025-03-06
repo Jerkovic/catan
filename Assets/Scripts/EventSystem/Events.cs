@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Catan;
+using Catan.DevelopmentCards;
 using Catan.Resources;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ namespace EventSystem
         
         public static readonly Event<SettlementBuilt> OnSettlementUpgradeToCity = new Event<SettlementBuilt>();
         
-        public static readonly Event<string> OnDevCardBought = new Event<string>();
+        public static readonly Event<DevCard> OnDevCardBought = new Event<DevCard>();
     }
 
     // Event Params Models

@@ -1,3 +1,4 @@
+using Catan.DevelopmentCards;
 using EventSystem;
 using Sound;
 using UnityEngine;
@@ -19,9 +20,9 @@ namespace UI.DevCards
             Events.OnDevCardBought.RemoveListener(DevCard);
         }
 
-        private void DevCard(string cardName)
+        private void DevCard(DevCard card)
         {
-            PanelManager.Instance.ShowMessage(cardName.Replace("_", " "));
+            PanelManager.Instance.ShowMessage(card.GetCardType());
             audioClip.Play(audioSource);
         }
 

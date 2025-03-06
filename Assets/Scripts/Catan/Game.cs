@@ -139,11 +139,8 @@ namespace Catan
             var dice1 = Random.Range(1, 6);
             var dice2 = Random.Range(1, 6);
             var diceSum = dice1 + dice2;
-            // Events.OnRollDice.Invoke(diceSum); // todo send both
             Events.OnRolledDices.Invoke(new DicesRolled(dice1, dice2, diceSum));
-
             ProduceResources(diceSum);
-
             return diceSum;
         }
 
@@ -482,7 +479,7 @@ namespace Catan
             var card = _devCardDeck.TakeCard();
             player.AddDevelopmentCard(card);
 
-            Events.OnDevCardBought.Invoke(card.ToString());
+            Events.OnDevCardBought.Invoke(card);
             Events.OnPlayerDataChanged.Invoke(player);
         }
     }
