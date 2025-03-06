@@ -5,17 +5,21 @@ namespace Catan.DevelopmentCards
         public CardTypeEnum CardType { get; }
         public bool Played { get; private set; }
         
-        // TODO this needs to track in what turn it was obtained
+        public int ObtainedTurn { get; set; }
+        public int PlayedTurn { get; private set; }
 
         public DevCard(CardTypeEnum cardType)
         {
             CardType = cardType;
             Played = false;
+            ObtainedTurn = 0;
+            PlayedTurn = 0;
         }
 
-        public void PlayCard()
+        public void PlayCard(int turn)
         {
             Played = true;
+            PlayedTurn = turn;
         }
         
         public string GetCardType()
@@ -23,9 +27,14 @@ namespace Catan.DevelopmentCards
             return $"{CardType.ToString().Replace("_", " ")}";
         }
 
+        public string GetCardStatus()
+        {
+            return $"({ObtainedTurn.ToString()}, {PlayedTurn.ToString()})";
+        }
+
         public override string ToString()
         {
-            return $"{CardType} (Played: {Played})";
+            return $"{CardType}";
         }
     }
 }

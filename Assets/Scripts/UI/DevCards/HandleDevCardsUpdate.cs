@@ -37,7 +37,7 @@ namespace UI.DevCards
             {
                 var textObj = Instantiate(textPrefab, contentParent);
                 var textComponent = textObj.GetComponent<TMP_Text>();
-                textComponent.text = card.GetCardType() + '[' + card.Played.ToString() + ']';
+                textComponent.text = card.GetCardType() + '[' + card.GetCardStatus() + ']';
             }
             
         }

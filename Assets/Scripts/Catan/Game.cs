@@ -110,13 +110,19 @@ namespace Catan
             {
                 _turnPlayerGuid = _placementTurn.ElementAt(_turnCounter++);
             }
-
+            
             Events.OnPlayerTurnChanged.Invoke(GetPlayerByGuid(_turnPlayerGuid));
         }
 
         public string GetTurnPlayerGuid()
         {
             return _turnPlayerGuid;
+        }
+        
+        
+        public int GetTurnCounter()
+        {
+            return _turnCounter;
         }
 
         public static string GenerateGuid()
@@ -477,10 +483,11 @@ namespace Catan
             player.DeductResourceCost(Costs.DevCard);
 
             var card = _devCardDeck.TakeCard();
+            card.ObtainedTurn = _turnCounter; // track obtain identifier
             player.AddDevelopmentCard(card);
 
             Events.OnDevCardBought.Invoke(card);
-            Events.OnPlayerDataChanged.Invoke(player);
+            Events.OnPlayerDataChanged.Invoke(player); // for debugging purpose
         }
     }
 }
