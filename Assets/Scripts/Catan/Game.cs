@@ -139,7 +139,8 @@ namespace Catan
             var dice1 = Random.Range(1, 6);
             var dice2 = Random.Range(1, 6);
             var diceSum = dice1 + dice2;
-            Events.OnRollDice.Invoke(diceSum); // todo send both 
+            // Events.OnRollDice.Invoke(diceSum); // todo send both
+            Events.OnRolledDices.Invoke(new DicesRolled(dice1, dice2, diceSum));
 
             ProduceResources(diceSum);
 
@@ -267,7 +268,7 @@ namespace Catan
             }
             else
             {
-                Debug.Log("Cannot upgrade settlement to city!");
+                Debug.Log("Cannot upgrade this settlement to a city");
             }
         }
 
@@ -353,7 +354,7 @@ namespace Catan
                 {
                     if (!CanBuildRoadOnEdge(edge) && !OwnAnyAdjacentCorner(edge))
                     {
-                        Debug.Log("Failed new check road building");
+                        Debug.Log("Edge is not valid for road building");
                         return;
                     }
                 }

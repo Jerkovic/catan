@@ -13,20 +13,19 @@ namespace UI
         
         private void OnEnable()
         {
-            Events.OnRollDice.AddListener(DisplayRollDiceResult);
+            Events.OnRolledDices.AddListener(DisplayRollDiceResult);
         }
         
         private void OnDisable()
         {
-            Events.OnRollDice.RemoveListener(DisplayRollDiceResult);
+            Events.OnRolledDices.RemoveListener(DisplayRollDiceResult);
         }
     
-        private void DisplayRollDiceResult(int num)
+        private void DisplayRollDiceResult(DicesRolled dicesRolled)
         {
-            // sound test
             audioClip.Play(audioSource);
-            label.text = num.ToString();
+            var text = $"{dicesRolled.Total.ToString()} [{dicesRolled.Dice1}][{dicesRolled.Dice2}]";
+            label.text = text;
         }
-    
     }
 }

@@ -16,7 +16,7 @@ namespace EventSystem
         // Events Invoked in the Game
         public static readonly Event<List<Player>> OnGameStarted = new Event<List<Player>>();
         public static readonly Event<HexTile> OnRobberMove = new Event<HexTile>();
-        public static readonly Event<int> OnRollDice = new Event<int>();
+        public static readonly Event<DicesRolled> OnRolledDices = new Event<DicesRolled>();
         public static readonly Event<List<HexTile>> OnTilesProducing = new Event<List<HexTile>>();
         
         public static readonly Event<List<Edge>> OnLongestRoad = new Event<List<Edge>>();
@@ -35,6 +35,21 @@ namespace EventSystem
     }
 
     // Event Params Models
+    public class DicesRolled
+    {
+        public int Dice1 { get; set; }
+
+        public int Dice2 { get; set; }
+
+        public int Total { get; set; }
+
+        public DicesRolled(int dice1, int dice2, int total)
+        {
+            Dice1 = dice1;
+            Dice2 = dice2;
+            Total = total;
+        }
+    }
     public class ResourcesGained
     {
         public Player Player { get; set; }
