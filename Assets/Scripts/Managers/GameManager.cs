@@ -78,8 +78,8 @@ namespace Managers
     
         private void RequestMoveRobber(GameObject go)
         {
-            Debug.Log("Move robber to tile " + go.name);
-            // Todo implement move robber
+            var hashCode = int.Parse(go.name);
+            GetGame().GetBoard().MoveRobberToHexagon(hashCode);
         }        
         
         public Catan.Game GetGame()

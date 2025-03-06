@@ -78,6 +78,13 @@ namespace Catan
             }
         }
 
+        public void MoveRobberToHexagon(int hashCode)
+        {
+            var tile = GetTileByHashCode(hashCode);
+            _robberTile = tile;
+            Events.OnRobberMove.Invoke(tile);
+        }
+
         public void SetRobberDesert()
         {
             var desertTile = _tiles.First(tile => tile.GetTileType() == TileTypeEnum.DESERT);
