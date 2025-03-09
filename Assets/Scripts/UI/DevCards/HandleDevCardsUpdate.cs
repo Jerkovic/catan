@@ -16,13 +16,13 @@ namespace UI.DevCards
 
         private void OnEnable()
         {
-            Events.OnPlayerDataChanged.AddListener(OnDevCardsUpdated);
+            Events.OnPlayerDevCardsChanged.AddListener(OnDevCardsUpdated);
             Events.OnPlayerTurnChanged.AddListener(OnDevCardsUpdated);
         }
 
         private void OnDisable()
         {
-            Events.OnPlayerDataChanged.RemoveListener(OnDevCardsUpdated);
+            Events.OnPlayerDevCardsChanged.RemoveListener(OnDevCardsUpdated);
             Events.OnPlayerTurnChanged.RemoveListener(OnDevCardsUpdated);
         }
 

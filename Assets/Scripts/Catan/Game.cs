@@ -488,7 +488,8 @@ namespace Catan
             player.AddDevelopmentCard(card);
 
             Events.OnDevCardBought.Invoke(card);
-            Events.OnPlayerDataChanged.Invoke(player); // for debugging purpose
+            Events.OnPlayerDataChanged.Invoke(player);
+            Events.OnPlayerDevCardsChanged.Invoke(player);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace EventSystem
 
         public static readonly Event<Player> OnPlayerTurnChanged = new Event<Player>();
         public static readonly Event<Player> OnPlayerDataChanged = new Event<Player>();
+        public static readonly Event<Player> OnPlayerDevCardsChanged = new Event<Player>();
         public static readonly Event<SettlementBuilt> OnSettlementBuilt = new Event<SettlementBuilt>();
         public static readonly Event<RoadBuilt> OnRoadBuilt = new Event<RoadBuilt>();
         
