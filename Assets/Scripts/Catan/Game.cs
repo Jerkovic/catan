@@ -103,7 +103,8 @@ namespace Catan
             if (_gamePhaseState == GamePhaseStateEnum.ROLL_BUILD_TRADE)
             {
                 var index = _turnCounter % _players.Count;
-                _turnPlayerGuid = _players.ElementAt(index).Guid;
+                var turnPlayer = _players.ElementAt(index);
+                _turnPlayerGuid = turnPlayer.Guid;
                 _turnCounter++;
             }
             else // placement phase

@@ -12,8 +12,7 @@ namespace Catan
         public string Guid { get; set; }
         public Color Color { get; set; }
         private int _points = 0;
-        public int knights; // knight cards
-        public int victoryPoints; // hidden cards of type victory_Point
+        private int _turn = 0;
 
         private readonly List<DevCard> _developmentCards;
         private readonly Dictionary<ResourceEnum, int> _resources;
@@ -47,7 +46,19 @@ namespace Catan
         
         public int GetPoints()
         {
-            return _points;
+            return _points + GetVictoryPoints();
+        }
+
+        private int GetVictoryPoints()
+        {
+            /*
+            Settlements – Each is worth 1 point.
+            Cities – Each is worth 2 points.
+            Victory Point Development Cards
+            Largest Army Bonus – The player with the largest army (3+ knights) gets 2 points.
+            Longest Road Bonus – The player with the longest road (5+ segments) gets 2 points.
+            */
+            return GetDevelopmentCards().Count(card => card.CardType == CardTypeEnum.VICTORY_POINT);
         }
 
         public int GetResourcesCount()
@@ -93,6 +104,16 @@ namespace Catan
         public void AddDevelopmentCard(DevCard card)
         {
             _developmentCards.Add(card);
+        }
+
+        public int GetTurn()
+        {
+            return _turn;
+        }
+        
+        public void SetTurn(int turn)
+        {
+            _turn = turn;
         }
     }
 }

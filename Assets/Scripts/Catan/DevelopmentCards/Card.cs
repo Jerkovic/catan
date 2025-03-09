@@ -16,15 +16,29 @@ namespace Catan.DevelopmentCards
             PlayedTurn = 0;
         }
 
-        public void PlayCard(int turn)
+        public bool PlayCard(int turn)
         {
+            if (CanBePlayed()) return false;
             Played = true;
             PlayedTurn = turn;
+            return true;
         }
         
         public string GetCardType()
         {
             return $"{CardType.ToString().Replace("_", " ")}";
+        }
+
+        public bool CanBePlayed()
+        {
+            // Cannot play a Victory Point card
+            if (CardType == CardTypeEnum.VICTORY_POINT)
+                return false;
+
+            // Todo Cannot play the card on the same turn it was obtained
+
+            // Cannot play a card that has already been used
+            return !Played;
         }
 
         public string GetCardStatus()

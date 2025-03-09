@@ -3,6 +3,8 @@ using Catan;
 using EventSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 namespace UI.DevCards
 {
@@ -10,15 +12,18 @@ namespace UI.DevCards
     {
         public GameObject textPrefab;
         public Transform contentParent; // Panel's Content object
+        private Button _btn; 
 
         private void OnEnable()
         {
             Events.OnPlayerDataChanged.AddListener(OnDevCardsUpdated);
+            Events.OnPlayerTurnChanged.AddListener(OnDevCardsUpdated);
         }
 
         private void OnDisable()
         {
             Events.OnPlayerDataChanged.RemoveListener(OnDevCardsUpdated);
+            Events.OnPlayerTurnChanged.RemoveListener(OnDevCardsUpdated);
         }
 
         private void OnDevCardsUpdated(Player player)
@@ -36,6 +41,12 @@ namespace UI.DevCards
             foreach (var card in cards)
             {
                 var textObj = Instantiate(textPrefab, contentParent);
+                _btn = textObj.transform.GetChild(0).GetComponentInChildren<Button>();
+                if (!card.CanBePlayed())  
+                {
+                    _btn.interactable = false;
+                } 
+
                 var textComponent = textObj.GetComponent<TMP_Text>();
                 textComponent.text = card.GetCardType() + '[' + card.GetCardStatus() + ']';
             }
