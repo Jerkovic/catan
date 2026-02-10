@@ -400,84 +400,17 @@ namespace Catan
         {
             var playerRoadEdges = GetBoard()
                 .GetEdges()
-                .Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid) && FindNeighborEdges(e).Count == 1 )
+                .Where(e => e.HasRoad() && e.OwnedByPlayerGuid(_turnPlayerGuid) )
                 .ToList();
             // call detect longest road for current player
-            var test = DetectLongestPath2(playerRoadEdges[0]);
-            Debug.Log("Longest path new algorithm " + test);
-            var longestEdgePath = DetectLongestPath(playerRoadEdges[0]);
-            
-            // Method to find the longest road in the graph
-            int DetectLongestPath2(Edge start)
-            {
-                var queue = new Queue<(Edge, int)>();
-                queue.Enqueue((start, 1));
-                var distances = new Dictionary<Edge, int>
-                {
-                    [start] = 1
-                };
-                var longestPath = 1;
-                
-                while (queue.Count > 0)
-                {
-                    // Pop the first edge from the queue
-                    var (edge, distance) = queue.Dequeue();
-        
-                    // Update the longest path length if necessary
-                    longestPath = Math.Max(longestPath, distance);
-                    
-                    foreach (var neighborEdge in FindNeighborEdges(edge))
-                    {
-                        if (!distances.ContainsKey(neighborEdge))
-                        {
-                            queue.Enqueue((neighborEdge, distance + 1));
-                            distances[neighborEdge] = distance + 1;
-                        }
-                    }
-                }
-                return longestPath;
-            }
 
-            // Method to find the longest road in the graph
-            IEnumerable<Edge> DetectLongestPath(Edge start)
-            {
-                Debug.Log("Start edge " + start.GetHashCode());
-                Events.OnRoadHighlight.Invoke(start);
-                
-                var longestPath = new List<Edge>();
-
-                // Explore Path method
-                void ExplorePaths(Edge current, ICollection<Edge> path)
-                {
-                    path.Add(current);
-                    if (path.Count > longestPath.Count)
-                    {
-                        longestPath = path.ToList();
-                    }
-
-                    // Recursively explore all possible paths from the current node
-                    // find the current adjacent neighbor edges
-                    var neighborEdges = FindNeighborEdges(current);
-                    Debug.Log("Current " + current.GetHashCode() + " => " + neighborEdges.Count.ToString());
-                    foreach (var neighborEdge in neighborEdges)
-                    {
-                        // Only explore paths that haven't been visited yet
-                        if (!path.Contains(neighborEdge))
-                        {
-                            ExplorePaths(neighborEdge, path);
-                        }
-                    }
-                }
-
-                ExplorePaths(start, new List<Edge>());
-                return longestPath;
-            }
-
-            Events.OnLongestRoad.Invoke(longestEdgePath.ToList());
+            Events.OnLongestRoad.Invoke(playerRoadEdges.ToList());
         }
 
         public void BuyDevelopmentCard()
         {
+            FindLongestPath(); // test
+            
             var player = GetPlayerByGuid(_turnPlayerGuid);
             if (!player.CanAffordResource(Costs.DevCard)) return;
 
